@@ -1,0 +1,40 @@
+title: Lending and Borowing in DeFi
+key: lending-and-borrowing-in-defi
+summary: >
+  This is a introductory course for anyone trying to understand how lending and borrowing works in DeFi
+highlights:
+  - Lending and Borrowing in DeFi
+  - Aave
+  - Compound
+  - Notional
+  - Liquity
+  - Alchemix
+  - Euler
+  - Venus
+publishStatus: Draft
+thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/DeFi/defi_logo.jpeg
+details: >-
+  In this course we first give some introduction to Lending and Borrowing in DeFi and then we 
+  discuss how lending and borrowing works in various protocols
+
+  1) Chapter 1 - Lending and Borrowing in DeFi
+
+  2) Chapter 2 - Aave Protocol
+
+  3) Chapter 3 - Compound Protocol
+
+  4) Notional
+
+  5) Liquity
+
+  6) Alchemix
+
+  7) Euler
+
+  8) Venus
+duration: 30 mins - 1 hour
+topics:
+  - title: Compound
+    key: compound
+    details: >
+      This chapter explains how compound works

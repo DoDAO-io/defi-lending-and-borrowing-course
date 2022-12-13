@@ -1,0 +1,31 @@
+{
+  "key": "lending-and-borrowing-in-defi",
+  "title": "Lending and Borowing in DeFi",
+  "summary": "This is a introductory course for anyone trying to understand how lending and borrowing works in DeFi\n",
+  "details": "In this course we first give some introduction to Lending and Borrowing in DeFi and then we  discuss how lending and borrowing works in various protocols\n1) Chapter 1 - Lending and Borrowing in DeFi\n2) Chapter 2 - Aave Protocol\n3) Chapter 3 - Compound Protocol\n4) Notional\n5) Liquity\n6) Alchemix\n7) Euler\n8) Venus",
+  "duration": "30 mins - 1 hour",
+  "highlights": [
+    "Lending and Borrowing in DeFi",
+    "Aave",
+    "Compound",
+    "Notional",
+    "Liquity",
+    "Alchemix",
+    "Euler",
+    "Venus"
+  ],
+  "publishStatus": "Draft",
+  "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/DeFi/defi_logo.jpeg",
+  "topics": [
+    {
+      "title": "Compound",
+      "key": "compound",
+      "details": "This chapter explains how compound works\n",
+      "order": 0,
+      "explanations": [],
+      "questions": [],
+      "readings": [],
+      "summaries": []
+    }
+  ]
+}
