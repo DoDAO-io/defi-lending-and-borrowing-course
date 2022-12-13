@@ -1,13 +1,23 @@
 - key: about-compound
-  shortTitle: About Compound
-  details: |-
-    About Compound
-
-
-    About Compound
-
-    About Compound
   title: About Compound
+  shortTitle: About Compound
+  details: >+
+    Compound is one of the first DeFi platforms in the DeFi space. Like other
+    DeFi lending and borrowing platforms, users in Compound can Lend asserts to
+    earn interest and can also borrow by having a over collateralized position. 
+
+
+    Compound recently released their version three of the protocol, also Called
+    "Compound III". and it is quite different from V2.
+
+
+    A very key difference in supplying assets in Compound V2 and V3 is that as
+    of Compound V3, only one of the assets supplied by the user is eligible to
+    earn interest as per the supply APY of that asset. This asset is called base
+    token and it will not be used as collateral. All other assets supplied by
+    the user will be considered as collateral and interest will not be accrued
+    by these assets. Also, cTokens are no longer used by the protocol. 
+
 - key: comp-token
   title: COMP Token
   shortTitle: COMP Token
