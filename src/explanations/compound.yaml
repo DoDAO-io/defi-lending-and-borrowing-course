@@ -45,3 +45,16 @@
 
     COMP can only be claimed by addresses that interact with the protocol and
     are able to call the claim function.
+- key: references
+  shortTitle: References
+  details: |-
+    Here are some important links to learn more about Compound III
+
+    https://medium.com/compound-finance/compound-iii-is-live-a7983dee7e60
+
+    https://www.comp.xyz/t/compound-iii/3351
+
+    https://compound.finance/governance/comp
+
+    https://compound.finance
+  title: References
