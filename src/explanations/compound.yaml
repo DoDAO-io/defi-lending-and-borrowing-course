@@ -1,0 +1,31 @@
+- key: comp-token
+  title: COMP Token
+  shortTitle: COMP Token
+  details: >-
+    Compound (COMP) is an ERC-20 asset that empowers community governance of the
+    Compound protocol; COMP token-holders and their delegates debate, propose,
+    and vote on all changes to the protocol.
+
+
+    By placing COMP directly into the hands of users and applications, an
+    increasingly large ecosystem will be able to upgrade the protocol, and will
+    be incentivized to collectively steward the protocol into the future with
+    good governance.
+
+
+    Each day, approximately 1,234 COMP will be distributed to users of the
+    protocol; the distribution is allocated to each market (ETH, USDC, DAI…),
+    and is set through the governance process by COMP token-holders.
+
+
+    Within each market, half of the distribution is earned by suppliers, and the
+    other half by borrowers.
+
+
+    When you use Compound to supply or borrow assets, you'll automatically begin
+    accruing COMP; in the Market Distribution table above, you can see how much
+    COMP is distributed by market and activity.
+
+
+    COMP is only claimable by addresses that directly interact with the protocol
+    (msg.sender), and that are capable of calling the claim function.

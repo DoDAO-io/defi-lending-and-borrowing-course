@@ -1,7 +1,8 @@
 title: Lending and Borowing in DeFi
 key: lending-and-borrowing-in-defi
 summary: >
-  This is a introductory course for anyone trying to understand how lending and borrowing works in DeFi
+  This is a introductory course for anyone trying to understand how lending and
+  borrowing works in DeFi
 highlights:
   - Lending and Borrowing in DeFi
   - Aave
@@ -14,8 +15,8 @@ highlights:
 publishStatus: Draft
 thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/DeFi/defi_logo.jpeg
 details: >-
-  In this course we first give some introduction to Lending and Borrowing in DeFi and then we 
-  discuss how lending and borrowing works in various protocols
+  In this course we first give some introduction to Lending and Borrowing in
+  DeFi and then we  discuss how lending and borrowing works in various protocols
 
   1) Chapter 1 - Lending and Borrowing in DeFi
 
@@ -36,5 +37,6 @@ duration: 30 mins - 1 hour
 topics:
   - title: Compound
     key: compound
-    details: >
+    details: |
       This chapter explains how compound works
+    explanations: compound.yaml
