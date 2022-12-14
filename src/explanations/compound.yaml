@@ -14,7 +14,7 @@
     "Compound III". and it is quite different from V2. Compound III prioritized
     safely and isolation of the assets above everything. In V3 when you supply
     collateral, it remains your property. It can never be withdrawn by other
-    users (except during liquidation)
+    users (except during liquidation).
 
 
     In the new version of the protocol, there is a separate market for each
@@ -23,6 +23,9 @@
     wants to borrow that base token from the market, he can deposit one or more
     of the other tokens listed in the market as collateral. No interest will be
     accrued by these assets that are supplied as collateral.
+
+
+    The major concepts to understand in Compound III are,
 
 
     ### Utilization and Interest Rates
@@ -55,6 +58,12 @@
 
     ### Supply
 
+    The supply function allows users to add assets to the protocol in order to
+    increase their borrowing capacity. This function can be used to add
+    collateral, supply the base asset, or repay an open borrow of the base
+    asset. Collateral can only be added if the market is below its supplyCap.
+
+
     Compound III enables users to earn interest on their positive balances of
     the base asset, based on separate interest rate models that are set by
     governance.
@@ -79,16 +88,21 @@
     ```
 
 
-    ### Borrow
+    ### Withdraw (borrow)
+
+    The withdraw method is used to take out collateral that isn't being used to
+    support an open borrow. The base asset can be borrowed using the withdraw
+    function. The resulting balance must meet the borrowing collateral factor
+    requirements.
 
     The collateral assets that a user adds to their account using the supply
     function increases their borrowing capacity. The percentage of the
     collateral value that can be borrowed is represented by the borrowing
-    collateral factor. In order for a user to borrow an amount, it must meet the
-    required borrowing collateral factor. If an account fails to meet the
-    required borrow collateral factor, the user cannot borrow any additional
-    assets until they supply more collateral or reduce their borrow balance
-    using the supply function.
+    collateral factor. If an account fails to meet the required borrow
+    collateral factor, the user cannot borrow any additional assets until they
+    supply more collateral or reduce their borrow balance using the supply
+    function.
+
 
     ```solidity
 
@@ -102,10 +116,11 @@
     ### Liquidation
 
     When an account’s borrow balance exceeds the set liquidation collateral
-    limits, the account is then eligible for liquidation. The latest version of
-    the Compound protocol has a different liquidation system than the one before
-    it. In order to keep the system running smoothly, the protocol takes in
-    borrower accounts that don't meet the collateral requirements.
+    limit which is separate and higher than borrow collateral factor, the
+    account is then eligible for liquidation. The latest version of the Compound
+    protocol has a different liquidation system than the one before it. In order
+    to keep the system running smoothly, the protocol takes in borrower accounts
+    that don't meet the collateral requirements.
 
 
     If a borrower accrues too much interest on their borrow, or the USD value of
@@ -114,7 +129,7 @@
 
 
     The protocol price feed allows a liquidator to determine the discounted
-    price of seized collateral and sell it publicly. Any account(or liquidator)
+    price of seized collateral and sell it publicly. Any account (or liquidator)
     can buy the discounted collateral using the base asset, and the liquidator
     can then buy it back at a higher price on a DEX and pocket the difference.
 
