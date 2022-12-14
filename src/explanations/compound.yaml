@@ -137,9 +137,10 @@
   title: COMP Token
   shortTitle: COMP Token
   details: >-
-    The COMP token allows users to participate in the governance of the Compound
-    protocol. COMP token-holders and their delegates debate, propose and vote on
-    all changes to the protocol. 
+    The COMP token is the native token of Compound, it allows users to
+    participate in the governance of the Compound protocol. COMP token-holders
+    and their delegates debate, propose and vote on all changes to the
+    protocol. 
 
 
     This system empowers the community to govern the Compound protocol and
@@ -150,7 +151,10 @@
 
     Each day, approximately 1,234 COMP are distributed to users of the protocol;
     the distribution is allocated to each market (ETH, USDC, DAI…), and is set
-    through the governance process by COMP token-holders.
+    through the governance process by COMP token-holders. COMP accumulates based
+    how much is invested by you and everyone else using the protocol. Each time
+    you interact with the protocol, supply, borrow, and so on, the COMP you
+    accumulated will appear in your wallet.
 
 
     Within each market, half of the COMP tokens are earned by suppliers and the
