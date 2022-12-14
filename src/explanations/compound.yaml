@@ -34,6 +34,25 @@
     interest.
 
 
+    This function returns the current protocol utilization of the base asset.
+    The formula for producing the utilization is:
+
+
+    `Utilization = TotalBorrows / TotalSupply`
+
+
+    ```solidity
+
+    function getUtilization() public view returns (uint)
+
+
+    // RETURNS: The current protocol utilization percentage as a decimal,
+    represented by an unsigned integer, scaled up by 10 ^ 18. E.g. 1e17 or
+    100000000000000000 is 10% utilization.
+
+    ```
+
+
     ### Supply
 
     Compound III enables users to earn interest on their positive balances of
@@ -47,11 +66,29 @@
 
 
     ```solidity
-       function getSupplyRate(uint utilization) public view returns (uint64)
 
-      //  utilization: The utilization at which to calculate the rate.
-      //  RETURNS: The per second supply rate as the decimal representation of a percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1% APR.
+    function getSupplyRate(uint utilization) public view returns (uint64)
+
+
+    //  utilization: The utilization at which to calculate the rate.
+
+    //  RETURNS: The per second supply rate as the decimal representation of a
+    percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1%
+    APR.
+
     ```
+
+
+    ### Borrow
+
+    The collateral assets that a user adds to their account using the supply
+    function increases their borrowing capacity. The percentage of the
+    collateral value that can be borrowed is represented by the borrowing
+    collateral factor. In order for a user to borrow an amount, it must meet the
+    required borrowing collateral factor. If an account fails to meet the
+    required borrow collateral factor, the user cannot borrow any additional
+    assets until they supply more collateral or reduce their borrow balance
+    using the supply function.
 - key: comp-token
   title: COMP Token
   shortTitle: COMP Token
