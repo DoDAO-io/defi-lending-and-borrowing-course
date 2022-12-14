@@ -117,7 +117,7 @@
     ### Liquidation
 
     When an account’s borrow balance exceeds the set liquidation collateral
-    limit which is separate and higher than borrow collateral factor, the
+    limit (which is separate and higher than borrow collateral factor), the
     account is then eligible for liquidation. The latest version of the Compound
     protocol has a different liquidation system than the one before it. In order
     to keep the system running smoothly, the protocol takes in borrower accounts
