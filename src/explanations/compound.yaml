@@ -1,7 +1,7 @@
 - key: about-compound
   title: About Compound
   shortTitle: About Compound
-  details: >-
+  details: >+
     ### Introduction
 
 
@@ -97,6 +97,27 @@
     comet.withdraw(0xwbtcAddress, 100000000);
 
     ```
+
+
+    ### Liquidation
+
+    When an account’s borrow balance exceeds the set liquidation collateral
+    limits, the account is then eligible for liquidation. The latest version of
+    the Compound protocol has a different liquidation system than the one before
+    it. In order to keep the system running smoothly, the protocol takes in
+    borrower accounts that don't meet the collateral requirements.
+
+
+    If a borrower accrues too much interest on their borrow, or the USD value of
+    their collateral reduces, or the USD value of their borrow increases, the
+    account becomes liquidatable.
+
+
+    The protocol price feed allows a liquidator to determine the discounted
+    price of seized collateral and sell it publicly. Any account(or liquidator)
+    can buy the discounted collateral using the base asset, and the liquidator
+    can then buy it back at a higher price on a DEX and pocket the difference.
+
 - key: comp-token
   title: COMP Token
   shortTitle: COMP Token
