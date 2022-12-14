@@ -1,7 +1,10 @@
 - key: about-compound
   title: About Compound
   shortTitle: About Compound
-  details: >+
+  details: >
+    ### Introduction
+
+
     Compound is one of the first DeFi platforms in the DeFi space. Like other
     DeFi lending and borrowing platforms, users in Compound can Lend asserts to
     earn interest and can also borrow by having a over collateralized position. 
@@ -21,6 +24,34 @@
     of the other tokens listed in the market as collateral. No interest will be
     accrued by these assets that are supplied as collateral.
 
+
+    ### Utilization and Interest Rates
+
+    The interest rates for supply and borrowing are based on the utilization
+    rate of the base asset. There is a point beyond which the interest rate
+    starts to increase more rapidly, called the "kink." Interest accrues every
+    second, using the block timestamp. Collateral assets do not earn or pay
+    interest.
+
+
+    ### Supply
+
+    Compound III enables users to earn interest on their positive balances of
+    the base asset, based on separate interest rate models that are set by
+    governance.
+
+
+    To calculate the Compound III supply APR as a percentage, divide the current
+    utilization by 10 ^ 18 and multiply by the approximate number of seconds in
+    one year, then scale up by 100.
+
+
+    ```solidity
+       function getSupplyRate(uint utilization) public view returns (uint64)
+
+       utilization: The utilization at which to calculate the rate.
+       RETURNS: The per second supply rate as the decimal representation of a percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1% APR.
+    ```
 - key: comp-token
   title: COMP Token
   shortTitle: COMP Token
