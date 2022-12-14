@@ -49,8 +49,8 @@
     ```solidity
        function getSupplyRate(uint utilization) public view returns (uint64)
 
-       utilization: The utilization at which to calculate the rate.
-       RETURNS: The per second supply rate as the decimal representation of a percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1% APR.
+      //  utilization: The utilization at which to calculate the rate.
+      //  RETURNS: The per second supply rate as the decimal representation of a percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1% APR.
     ```
 - key: comp-token
   title: COMP Token
