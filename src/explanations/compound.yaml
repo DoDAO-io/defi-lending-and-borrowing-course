@@ -22,7 +22,8 @@
     lend the base token in the market and can earn interest. When a borrower
     wants to borrow that base token from the market, he can deposit one or more
     of the other tokens listed in the market as collateral. No interest will be
-    accrued by these assets that are supplied as collateral.
+    accrued by these assets that are supplied as collateral and cTokens are no
+    longer used.
 
 
     The major concepts to understand in Compound III are,
