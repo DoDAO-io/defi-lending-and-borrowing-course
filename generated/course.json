@@ -18,6 +18,15 @@
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/DeFi/defi_logo.jpeg",
   "topics": [
     {
+      "key": "intoduction",
+      "title": "Intoduction",
+      "details": "In the context of decentralized finance (DeFi), lending and borrowing refers to the practice of using smart contracts on blockchain technology to facilitate the lending and borrowing of digital assets. These smart contracts allow for the automation of the lending and borrowing process, enabling users to lend and borrow funds without the need for a traditional financial intermediary such as a bank.\n\n\n\n",
+      "explanations": [],
+      "readings": [],
+      "summaries": [],
+      "questions": []
+    },
+    {
       "title": "Compound",
       "key": "compound",
       "details": "Compound finance is one of the first decentralized finance (DeFi) protocols that allows users to lend and borrow cryptocurrencies. The interest rates on the platform are determined by supply and demand, with the goal of providing a fair and transparent way for users to earn returns on their assets or access capital.\n\n\n\n",
@@ -45,15 +54,6 @@
       "questions": [],
       "readings": [],
       "summaries": []
-    },
-    {
-      "key": "intoduction",
-      "title": "Intoduction",
-      "details": "In the context of decentralized finance (DeFi), lending and borrowing refers to the practice of using smart contracts on blockchain technology to facilitate the lending and borrowing of digital assets. These smart contracts allow for the automation of the lending and borrowing process, enabling users to lend and borrow funds without the need for a traditional financial intermediary such as a bank.\n\n\n\n",
-      "explanations": [],
-      "readings": [],
-      "summaries": [],
-      "questions": []
     }
   ]
 }

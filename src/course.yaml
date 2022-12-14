@@ -35,18 +35,6 @@ details: >-
   8) Venus
 duration: 30 mins - 1 hour
 topics:
-  - title: Compound
-    key: compound
-    details: >+
-      Compound finance is one of the first decentralized finance (DeFi)
-      protocols that allows users to lend and borrow cryptocurrencies. The
-      interest rates on the platform are determined by supply and demand, with
-      the goal of providing a fair and transparent way for users to earn returns
-      on their assets or access capital.
-
-
-
-    explanations: compound.yaml
   - key: intoduction
     title: Intoduction
     details: >+
@@ -59,3 +47,15 @@ topics:
 
 
 
+  - title: Compound
+    key: compound
+    details: >+
+      Compound finance is one of the first decentralized finance (DeFi)
+      protocols that allows users to lend and borrow cryptocurrencies. The
+      interest rates on the platform are determined by supply and demand, with
+      the goal of providing a fair and transparent way for users to earn returns
+      on their assets or access capital.
+
+
+
+    explanations: compound.yaml
