@@ -1,7 +1,7 @@
 - key: about-compound
   title: About Compound
   shortTitle: About Compound
-  details: >
+  details: >-
     ### Introduction
 
 
@@ -89,6 +89,14 @@
     required borrow collateral factor, the user cannot borrow any additional
     assets until they supply more collateral or reduce their borrow balance
     using the supply function.
+
+    ```solidity
+
+    Comet comet = Comet(0xCometAddress);
+
+    comet.withdraw(0xwbtcAddress, 100000000);
+
+    ```
 - key: comp-token
   title: COMP Token
   shortTitle: COMP Token
