@@ -8,15 +8,18 @@
 
 
     Compound recently released their version three of the protocol, also Called
-    "Compound III". and it is quite different from V2.
+    "Compound III". and it is quite different from V2. Compound III prioritized
+    safely and isolation of the assets above everything. In V3 when you supply
+    collateral, it remains your property. It can never be withdrawn by other
+    users (except during liquidation)
 
 
-    A very key difference in supplying assets in Compound V2 and V3 is that as
-    of Compound V3, only one of the assets supplied by the user is eligible to
-    earn interest as per the supply APY of that asset. This asset is called base
-    token and it will not be used as collateral. All other assets supplied by
-    the user will be considered as collateral and interest will not be accrued
-    by these assets. Also, cTokens are no longer used by the protocol. 
+    In the new version of the protocol, there is a separate market for each
+    token. That token acts as the "base token" in that market. A supplier can
+    lend the base token in the market and can earn interest. When a borrower
+    wants to borrow that base token from the market, he can deposit one or more
+    of the other tokens listed in the market as collateral. No interest will be
+    accrued by these assets that are supplied as collateral.
 
 - key: comp-token
   title: COMP Token
