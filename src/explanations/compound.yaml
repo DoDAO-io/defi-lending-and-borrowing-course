@@ -146,6 +146,7 @@
     COMP can only be claimed by addresses that interact with the protocol and
     are able to call the claim function.
 - key: references
+  title: References
   shortTitle: References
   details: |-
     Here are some important links to learn more about Compound III
@@ -157,4 +158,5 @@
     https://compound.finance/governance/comp
 
     https://compound.finance
-  title: References
+
+    https://www.comp.xyz/t/the-compound-iii-liquidation-guide/3452
