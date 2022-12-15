@@ -1,0 +1,85 @@
+## Header
+This is the course header. This will be added on top of every page. Go to [DoDAO.io](https://www.dodao.io) to know more.
+
+ ---
+ 
+ ## Compound
+ 
+ **About Compound**        
+### Introduction
+
+Compound is one of the first DeFi platforms in the DeFi space. Like other DeFi lending and borrowing platforms, users in Compound can Lend asserts to earn interest and can also borrow by having a over collateralized position. 
+
+Compound recently released their version three of the protocol, also Called "Compound III". and it is quite different from V2. Compound III prioritized safely and isolation of the assets above everything. In V3 when you supply collateral, it remains your property. It can never be withdrawn by other users (except during liquidation).
+
+In the new version of the protocol, there is a separate market for each token. That token acts as the "base token" in that market. A supplier can lend the base token in the market and can earn interest. When a borrower wants to borrow that base token from the market, he can deposit one or more of the other tokens listed in the market as collateral. No interest will be accrued by these assets that are supplied as collateral and cTokens are no longer used.
+
+The major concepts to understand in Compound III are,
+
+### Utilization and Interest Rates
+The interest rates for supply and borrowing are based on the utilization rate of the base asset. There is a point beyond which the interest rate starts to increase more rapidly, called the "kink." Interest accrues every second, using the block timestamp. Collateral assets do not earn or pay interest.
+
+This function returns the current protocol utilization of the base asset. The formula for producing the utilization is:
+
+`Utilization = TotalBorrows / TotalSupply`
+
+```solidity
+function getUtilization() public view returns (uint)
+
+// RETURNS: The current protocol utilization percentage as a decimal, represented by an unsigned integer, scaled up by 10 ^ 18. E.g. 1e17 or 100000000000000000 is 10% utilization.
+```
+
+### Supply
+The supply function allows users to add assets to the protocol in order to increase their borrowing capacity. This function can be used to add collateral, supply the base asset, or repay an open borrow of the base asset. Collateral can only be added if the market is below its supplyCap.
+
+Compound III enables users to earn interest on their positive balances of the base asset, based on separate interest rate models that are set by governance.
+
+To calculate the Compound III supply APR as a percentage, divide the current utilization by 10 ^ 18 and multiply by the approximate number of seconds in one year, then scale up by 100.
+
+```solidity
+function getSupplyRate(uint utilization) public view returns (uint64)
+
+//  utilization: The utilization at which to calculate the rate.
+//  RETURNS: The per second supply rate as the decimal representation of a percentage scaled up by 10 ^ 18. E.g. 317100000 indicates, roughly, a 1% APR.
+```
+
+### Withdraw (borrow)
+The withdraw method is used to take out collateral that isn't being used to support an open borrow. The base asset can be borrowed using the withdraw function. The resulting balance must meet the borrowing collateral factor requirements.
+The collateral assets that a user adds to their account using the supply function increases their borrowing capacity. The percentage of the collateral value that can be borrowed is represented by the borrowing collateral factor. If an account fails to meet the required borrow collateral factor, the user cannot borrow any additional assets until they supply more collateral or reduce their borrow balance using the supply function.
+
+```solidity
+Comet comet = Comet(0xCometAddress);
+comet.withdraw(0xwbtcAddress, 100000000);
+```
+
+### Liquidation
+When an account’s borrow balance exceeds the set liquidation collateral limit (which is separate and higher than borrow collateral factor), the account is then eligible for liquidation. The latest version of the Compound protocol has a different liquidation system than the one before it. In order to keep the system running smoothly, the protocol takes in borrower accounts that don't meet the collateral requirements.
+
+If a borrower accrues too much interest on their borrow, or the USD value of their collateral reduces, or the USD value of their borrow increases, the account becomes liquidatable.
+
+The protocol price feed allows a liquidator to determine the discounted price of seized collateral and sell it publicly. Any account (or liquidator) can buy the discounted collateral using the base asset, and the liquidator can then buy it back at a higher price on a DEX and pocket the difference.
+
+ 
+ **COMP Token**        
+The COMP token is the native token of Compound, it allows users to participate in the governance of the Compound protocol. COMP token-holders and their delegates debate, propose and vote on all changes to the protocol. 
+
+This system empowers the community to govern the Compound protocol and ensures that those who use the protocol have a say in its future. The daily distribution of COMP tokens ensures that users are incentivized to participate in good governance.
+
+Each day, approximately 1,234 COMP are distributed to users of the protocol; the distribution is allocated to each market (ETH, USDC, DAI…), and is set through the governance process by COMP token-holders. COMP accumulates based how much is invested by you and everyone else using the protocol. Each time you interact with the protocol, supply, borrow, and so on, the COMP you accumulated will appear in your wallet.
+
+Within each market, half of the COMP tokens are earned by suppliers and the other half by borrowers. When users use Compound to supply or borrow assets, they automatically start accruing COMP. 
+
+COMP can only be claimed by addresses that interact with the protocol and are able to call the claim function. 
+ **References**        
+Here are some important links to learn more about Compound III
+
+https://medium.com/compound-finance/compound-iii-is-live-a7983dee7e60
+
+https://www.comp.xyz/t/compound-iii/3351
+
+https://compound.finance/governance/comp
+
+https://compound.finance
+
+https://www.comp.xyz/t/the-compound-iii-liquidation-guide/3452 
+ 

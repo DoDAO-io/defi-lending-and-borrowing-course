@@ -22,4 +22,5 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
  
  | S.No        | Title       | Contents   | Links      | Status      | Completion Week |
  | ----------- | ----------- |----------- |----------- | ----------- | ----------- |
- | 1      | Compound | | [Details](generated/topics/compound.md) <br/>  <br/>  <br/>  <br/>  | undefined | undefined | 
+ | 1      | Intoduction | | [Details](generated/topics/intoduction.md) <br/>  <br/>  <br/>  <br/>  | undefined | undefined |
+ | 2      | Compound | | [Details](generated/topics/compound.md) <br/> [Explanations](generated/explanations/compound.md) <br/>  <br/>  <br/>  | undefined | undefined | 
