@@ -8,14 +8,14 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
  
 ---
 
-##### What are the differences between Compound V2 and Compound III?  
+##### What are the differences between Compound V2 and Compound III (V3)?  
 
 - [ ]  Collateral assets no longer earn interest
 - [ ]  Only one token, called base token can earn interest and cannot be used as collateral
 - [ ]  cTokens are no longer in use
 - [x]  All of the above
   
-Hint: none
+Hint: NoHint
          
 Explanation: In the new version of the protocol, there is a separate market for each token. That token acts as the "base token" in that market, only one base token can be set. A supplier can lend the base token in the market and can earn interest. No interest will be accrued by assets that are supplied as collateral and cTokens are no longer used.
 
@@ -24,16 +24,16 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### Interest rates for supply and borrow is dependant on?  
+##### Interest rates for supply and borrow are dependant on?  
 
 - [ ]  A linear function
 - [ ]  Governance
 - [ ]  Compound DAO
 - [x]  Utilization rates
   
-Hint: none
+Hint: NoHint
          
-Explanation: The interest rates for supply and borrowing are based on the utilization rate of the base asset. Given by, totalborrows/ totalsupply of given asset.
+Explanation: The interest rates for supply and borrowing are based on the utilization rate of the base asset. Given by, `totalborrows / totalsupply` of given asset.
 
 Sub Topics: No Sub-Topics
  
@@ -72,12 +72,12 @@ Sub Topics: No Sub-Topics
 
 ##### When is an account liquidated?  
 
-- [ ]  When the account's borrow balance exceeds the liquidation collateral limit
-- [ ]  When the account balance for the given account is negative
-- [x]  Both A and B are true and both imply the same phenomenon
+- [x]  When the account's borrow balance exceeds the liquidation collateral limit
+- [ ]  When the tokens held in the market go above a certain limit
+- [ ]  Both A and B are true and both imply the same phenomenon
 - [ ]  Both A and B are false
   
-Hint: none
+Hint: NoHint
          
 Explanation: When an account’s borrow balance exceeds the set liquidation collateral limit (which is separate and higher than borrow collateral factor), the account is then eligible for liquidation. Meaning, when the account balance for the account is negative. If a borrower accrues too much interest on their borrow, or the USD value of their collateral reduces, or the USD value of their borrow increases, the account becomes liquidatable.
 
@@ -150,9 +150,9 @@ Sub Topics: No Sub-Topics
 
 ##### What is the liquidator required to do in a liquidation event? How are they incentivized?  
 
-- [x]  The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan
-- [ ]  The collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit
-- [ ]  The protocol just requires the liquidator to call the liquidate function, for this, the liquidator is rewarded in base tokens
+- [ ]  The protocol does not liquidate bad loans, it instead takes the collateral and starts earning interest on it
+- [ ]  The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan, the collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit
+- [x]  The protocol just requires the liquidator to call the liquidate function, for this, the liquidator is rewarded in base tokens
 - [ ]  The protocol liquidates bad loans on its own, there is no need for liquidators
   
 Hint: NoHint

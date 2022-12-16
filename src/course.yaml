@@ -71,6 +71,19 @@ topics:
 
 
 
-   
+    explanations: euler.yaml
     questions: euler.yaml
 
+  - title: Venus
+    key: venus
+    details: >+
+      Venus is an algorithm based money market system on the BNB blockchain. Venus brings the money 
+      market protocol of Compound and the minting protocol of MakerDAO together, allowing the user to use 
+      one collateral for both the functionalities.
+ 
+
+
+
+   
+    explanations: venus.yaml
+   
