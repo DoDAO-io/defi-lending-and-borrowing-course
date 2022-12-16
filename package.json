@@ -1,5 +1,5 @@
 {
-  "name": "dodao-aave-developer-1-course",
+  "name": "dodao-lending-and-borrowing-course",
   "version": "1.0.0",
   "description": "This course gives an introduction to AAVE",
   "scripts": {
@@ -7,13 +7,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DoDAO-io/dodao-defi-course.git"
+    "url": "git+https://github.com/DoDAO-io/dodao-lending-and-borrowing-course.git"
   },
   "author": "robin",
   "bugs": {
-    "url": "https://github.com/DoDAO-io/dodao-aave-developer-1-course/issues"
+    "url": "https://github.com/DoDAO-io/dodao-lending-and-borrowing-course/issues"
   },
-  "homepage": "https://github.com/DoDAO-io/dodao-aave-developer-1-course#readme",
+  "homepage": "https://github.com/DoDAO-io/dodao-lending-and-borrowing-course#readme",
   "dependencies": {
     "dodao-course-processor": "^0.1.33"
   }
