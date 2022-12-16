@@ -1,0 +1,216 @@
+- uuid: 404918c8-abc0-4547-b991-e2821c87dbe0
+  type: SingleChoice
+  content: What are the differences between Compound V2 and Compound III?
+  hint: none
+  explanation:  In the new version of the protocol, there is a separate market for each
+    token. That token acts as the "base token" in that market, only one base token can be set. A supplier can
+    lend the base token in the market and can earn interest. No interest will be
+    accrued by assets that are supplied as collateral and cTokens are no
+    longer used.
+  answerKeys:
+    - D
+  difficultyLevel: "Low"
+  choices:
+    - content: Collateral assets no longer earn interest
+      key: A
+      
+    - content: Only one token, called base token can earn interest and cannot be used as collateral
+      key: B
+      
+    - content: cTokens are no longer in use
+      key: C
+      
+    - content: All of the above
+      key: D
+      
+- uuid: 698b459b-419e-4f96-9026-baee2d6d0955
+  type: SingleChoice
+  content: Interest rates for supply and borrow is dependant on?
+  hint: none
+  explanation: The interest rates for supply and borrowing are based on the utilization
+    rate of the base asset. Given by, totalborrows/ totalsupply of given asset.
+  answerKeys:
+    - D
+  difficultyLevel: "Low"
+  choices:
+    - content: A linear function 
+      key: A
+      
+    - content: Governance
+      key: B
+      
+    - content: Compound DAO
+      key: C
+      
+    - content: Utilization rates
+      key: D
+      
+- uuid: ede2cc4d-a9bd-421a-aef7-136f82aae406
+  type: MultipleChoice
+  content: The supply function is used to perform which of the following actions?
+  hint: NoHint
+  explanation: Supply function can be used to add
+    collateral, supply the base asset, or repay an open borrow of the base
+    asset.
+  answerKeys:
+    - A
+    - B
+    - C
+  difficultyLevel: "Low"
+  choices:
+    - content: Add collateral
+      key: A
+      
+    - content: Supply base asset
+      key: B
+      
+    - content: Repay borrow
+      key: C
+      
+    - content: Withdraw more borrowed asset
+      key: D
+      
+- uuid: da919821-0434-4b54-9884-adea630399a6
+  type: SingleChoice
+  content: Any amount of a collateral asset can be supplied to the protocol, there are no supply caps imposed on supplying collateral. 
+  hint: NoHint
+  explanation: Collateral can only be added if the market is below its supplyCap.
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: "True"
+      key: A
+      
+    - content: "False"
+      key: B
+          
+- uuid: b97eca51-e79c-4a51-9ecc-4b81b46ce762
+  type: SingleChoice
+  content: When is an account liquidated?
+  hint: none
+  explanation: When an account’s borrow balance exceeds the set liquidation collateral
+    limit (which is separate and higher than borrow collateral factor), the
+    account is then eligible for liquidation. Meaning, when the account balance for the account is negative. 
+    If a borrower accrues too much interest on their borrow, or the USD value of
+    their collateral reduces, or the USD value of their borrow increases, the
+    account becomes liquidatable.
+  answerKeys:
+    - C
+  difficultyLevel: "Medium"
+  choices:
+    - content: When the account's borrow balance exceeds the liquidation collateral limit
+      key: A
+      
+    - content: When the account balance for the given account is negative
+      key: B
+      
+    - content: Both A and B are true and both imply the same phenomenon
+      key: C
+      
+    - content: Both A and B are false
+      key: D
+
+- uuid: e712019c-013c-4d0a-92c9-f57b257c3831
+  type: MultipleChoice
+  content: What is the governance token of Compound? How can it be earned?
+  hint: NoHint
+  explanation: COMP is the governance token of Compound. It is earned by borrowers and lenders, that is, by interacting with the protocol COMP automatically accrues to the account.
+  answerKeys:
+    - B
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: USDC is the governance token of Compound
+      key: A
+      
+    - content: COMP is the governance token of Compound
+      key: B
+      
+    - content: The governance token can only be bought from DEXs and not earned from the Compound protocol
+      key: C
+      
+    - content: The governance token can be earned by interacting with the protocol (Lending, borrowing, etc) and can also be bought on DEXs
+      key: D
+            
+- uuid: 9f6899b0-25fa-4a20-89f3-e7a5ee4ca9d6
+  type: SingleChoice
+  content: Which of these is true about COMP distrubution?
+  hint: NoHint
+  explanation: Equal amount of COMP is distrubuted to lenders and borrowers.
+  answerKeys:
+    - A
+  difficultyLevel: "Low"
+  choices:
+    - content: COMP is distrubuted in equal amounts to lenders and borrowers
+      key: A
+      
+    - content: COMP is distrubuted more to borrowers 
+      key: B
+      
+    - content: COMP is sometimes not distrubuted to lenders 
+      key: C
+      
+    - content: COMP distrubution does not follow any pattern
+      key: D
+      
+
+- uuid: f2b8920e-e0fa-4094-9e28-1510358f561c
+  type: SingleChoice
+  content:  The percentage of the collateral value that can be borrowed is represented by the liquidation collateral factor
+  hint: NoHint
+  explanation: The percentage of the collateral value that can be borrowed is represented by the borrowing collateral factor
+  answerKeys:
+    - B
+  difficultyLevel: "Low"
+  choices:
+    - content: "True"
+      key: A
+      
+    - content: "False"
+      key: B
+      
+- uuid: b89b5ae9-9c38-4794-b6f7-bf5190ac7b7e
+  type: MultipleChoice
+  content: Which of the following about supply and borrow rate model is true?
+  hint: NoHint
+  explanation: Supply and borrow rate models are not the same, they are two different models. Interest accrues every second on both borrows and supplies.
+  answerKeys:
+    - B
+    - C
+  difficultyLevel: "High"
+  choices:
+    - content: Supply and borrow rate models are one and the same
+      key: A
+      
+    - content: Supply and borrow rate models are two separate models
+      key: B
+      
+    - content: Interest accrues every second in Compound III
+      key: C
+      
+    - content: Interest accrued is accounted for using cTokens
+      key: D
+      
+- uuid: 4badce29-7108-450f-9872-b555be198cb4
+  type: MultipleChoice
+  content: What is the liquidator required to do in a liquidation event? How are they incentivized? 
+  hint: NoHint
+  explanation:  The protocol price feed allows a liquidator to determine the discounted price of seized collateral and sell it publicly. Any account (or liquidator)
+    can buy the discounted collateral using the base asset, and the liquidator can then buy it back at a higher price on a DEX and pocket the difference.
+  answerKeys:
+    - A
+  difficultyLevel: "High"
+  choices:
+    - content: The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan
+      key: A
+      
+    - content: The collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit
+      key: B
+      
+    - content: The protocol just requires the liquidator to call the liquidate function, for this, the liquidator is rewarded in base tokens
+      key: C
+      
+    - content: The protocol liquidates bad loans on its own, there is no need for liquidators
+      key: D
+      
