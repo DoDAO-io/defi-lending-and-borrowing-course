@@ -53,7 +53,577 @@
           "details": "Here are some important links to learn more about Compound III\n\nhttps://medium.com/compound-finance/compound-iii-is-live-a7983dee7e60\n\nhttps://www.comp.xyz/t/compound-iii/3351\n\nhttps://compound.finance/governance/comp\n\nhttps://compound.finance\n\nhttps://www.comp.xyz/t/the-compound-iii-liquidation-guide/3452"
         }
       ],
-      "questions": [],
+      "questions": [
+        {
+          "uuid": "404918c8-abc0-4547-b991-e2821c87dbe0",
+          "type": "SingleChoice",
+          "content": "What are the differences between Compound V2 and Compound III?",
+          "hint": "none",
+          "explanation": "In the new version of the protocol, there is a separate market for each token. That token acts as the \"base token\" in that market, only one base token can be set. A supplier can lend the base token in the market and can earn interest. No interest will be accrued by assets that are supplied as collateral and cTokens are no longer used.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Collateral assets no longer earn interest",
+              "key": "A"
+            },
+            {
+              "content": "Only one token, called base token can earn interest and cannot be used as collateral",
+              "key": "B"
+            },
+            {
+              "content": "cTokens are no longer in use",
+              "key": "C"
+            },
+            {
+              "content": "All of the above",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "698b459b-419e-4f96-9026-baee2d6d0955",
+          "type": "SingleChoice",
+          "content": "Interest rates for supply and borrow is dependant on?",
+          "hint": "none",
+          "explanation": "The interest rates for supply and borrowing are based on the utilization rate of the base asset. Given by, totalborrows/ totalsupply of given asset.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "A linear function",
+              "key": "A"
+            },
+            {
+              "content": "Governance",
+              "key": "B"
+            },
+            {
+              "content": "Compound DAO",
+              "key": "C"
+            },
+            {
+              "content": "Utilization rates",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "ede2cc4d-a9bd-421a-aef7-136f82aae406",
+          "type": "MultipleChoice",
+          "content": "The supply function is used to perform which of the following actions?",
+          "hint": "NoHint",
+          "explanation": "Supply function can be used to add collateral, supply the base asset, or repay an open borrow of the base asset.",
+          "answerKeys": [
+            "A",
+            "B",
+            "C"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Add collateral",
+              "key": "A"
+            },
+            {
+              "content": "Supply base asset",
+              "key": "B"
+            },
+            {
+              "content": "Repay borrow",
+              "key": "C"
+            },
+            {
+              "content": "Withdraw more borrowed asset",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "da919821-0434-4b54-9884-adea630399a6",
+          "type": "SingleChoice",
+          "content": "Any amount of a collateral asset can be supplied to the protocol, there are no supply caps imposed on supplying collateral.",
+          "hint": "NoHint",
+          "explanation": "Collateral can only be added if the market is below its supplyCap.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "b97eca51-e79c-4a51-9ecc-4b81b46ce762",
+          "type": "SingleChoice",
+          "content": "When is an account liquidated?",
+          "hint": "none",
+          "explanation": "When an account’s borrow balance exceeds the set liquidation collateral limit (which is separate and higher than borrow collateral factor), the account is then eligible for liquidation. Meaning, when the account balance for the account is negative. If a borrower accrues too much interest on their borrow, or the USD value of their collateral reduces, or the USD value of their borrow increases, the account becomes liquidatable.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "When the account's borrow balance exceeds the liquidation collateral limit",
+              "key": "A"
+            },
+            {
+              "content": "When the account balance for the given account is negative",
+              "key": "B"
+            },
+            {
+              "content": "Both A and B are true and both imply the same phenomenon",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B are false",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e712019c-013c-4d0a-92c9-f57b257c3831",
+          "type": "MultipleChoice",
+          "content": "What is the governance token of Compound? How can it be earned?",
+          "hint": "NoHint",
+          "explanation": "COMP is the governance token of Compound. It is earned by borrowers and lenders, that is, by interacting with the protocol COMP automatically accrues to the account.",
+          "answerKeys": [
+            "B",
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "USDC is the governance token of Compound",
+              "key": "A"
+            },
+            {
+              "content": "COMP is the governance token of Compound",
+              "key": "B"
+            },
+            {
+              "content": "The governance token can only be bought from DEXs and not earned from the Compound protocol",
+              "key": "C"
+            },
+            {
+              "content": "The governance token can be earned by interacting with the protocol (Lending, borrowing, etc) and can also be bought on DEXs",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "9f6899b0-25fa-4a20-89f3-e7a5ee4ca9d6",
+          "type": "SingleChoice",
+          "content": "Which of these is true about COMP distrubution?",
+          "hint": "NoHint",
+          "explanation": "Equal amount of COMP is distrubuted to lenders and borrowers.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "COMP is distrubuted in equal amounts to lenders and borrowers",
+              "key": "A"
+            },
+            {
+              "content": "COMP is distrubuted more to borrowers",
+              "key": "B"
+            },
+            {
+              "content": "COMP is sometimes not distrubuted to lenders",
+              "key": "C"
+            },
+            {
+              "content": "COMP distrubution does not follow any pattern",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "f2b8920e-e0fa-4094-9e28-1510358f561c",
+          "type": "SingleChoice",
+          "content": "The percentage of the collateral value that can be borrowed is represented by the liquidation collateral factor",
+          "hint": "NoHint",
+          "explanation": "The percentage of the collateral value that can be borrowed is represented by the borrowing collateral factor",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "b89b5ae9-9c38-4794-b6f7-bf5190ac7b7e",
+          "type": "MultipleChoice",
+          "content": "Which of the following about supply and borrow rate model is true?",
+          "hint": "NoHint",
+          "explanation": "Supply and borrow rate models are not the same, they are two different models. Interest accrues every second on both borrows and supplies.",
+          "answerKeys": [
+            "B",
+            "C"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Supply and borrow rate models are one and the same",
+              "key": "A"
+            },
+            {
+              "content": "Supply and borrow rate models are two separate models",
+              "key": "B"
+            },
+            {
+              "content": "Interest accrues every second in Compound III",
+              "key": "C"
+            },
+            {
+              "content": "Interest accrued is accounted for using cTokens",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "4badce29-7108-450f-9872-b555be198cb4",
+          "type": "MultipleChoice",
+          "content": "What is the liquidator required to do in a liquidation event? How are they incentivized?",
+          "hint": "NoHint",
+          "explanation": "The protocol price feed allows a liquidator to determine the discounted price of seized collateral and sell it publicly. Any account (or liquidator) can buy the discounted collateral using the base asset, and the liquidator can then buy it back at a higher price on a DEX and pocket the difference.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan",
+              "key": "A"
+            },
+            {
+              "content": "The collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit",
+              "key": "B"
+            },
+            {
+              "content": "The protocol just requires the liquidator to call the liquidate function, for this, the liquidator is rewarded in base tokens",
+              "key": "C"
+            },
+            {
+              "content": "The protocol liquidates bad loans on its own, there is no need for liquidators",
+              "key": "D"
+            }
+          ]
+        }
+      ],
+      "readings": [],
+      "summaries": []
+    },
+    {
+      "title": "Euler",
+      "key": "euler",
+      "details": "Euler is a non-custodial DeFi protocol that allows users to lend and borrow and  the main factor that differentiates Euler form other trusted protocols like Aave  and Compound is that, in Euler any asset that has a WETH pair on Uniswap v3 can be  added as a lending market on Euler by anyone straight away.\n\n\n\n\n",
+      "order": 2,
+      "explanations": [],
+      "questions": [
+        {
+          "uuid": "f0f8c657-0045-4293-b244-8b0ae29cb5ec",
+          "type": "SingleChoice",
+          "content": "What feature differentiates Euler from other DeFi protocols?",
+          "hint": "none",
+          "explanation": "The main factor that differentiates Euler form other trusted protocols like Aave and Compound is permissionless listing of assets.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Lending and borrowing",
+              "key": "A"
+            },
+            {
+              "content": "Governance",
+              "key": "B"
+            },
+            {
+              "content": "Debt tokenization",
+              "key": "C"
+            },
+            {
+              "content": "Permissionless listing",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "a5106ee5-8f33-49e7-8725-c43860555ec4",
+          "type": "SingleChoice",
+          "content": "What is the necessary condition to permissionlessly list assets on Euler?",
+          "hint": "none",
+          "explanation": "The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "The asset must go through governance scrutiny",
+              "key": "A"
+            },
+            {
+              "content": "The asset must be worth atleast 1 USD",
+              "key": "B"
+            },
+            {
+              "content": "The asset must have a WBTC pair on Uniswap v3",
+              "key": "C"
+            },
+            {
+              "content": "The asset must have a WETH pair on Uniswap V3",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "a23ef57c-1c26-4069-8d45-985c4d2b5ed4",
+          "type": "MultipleChoice",
+          "content": "What are the mechanisms adopted by Euler to minimize risk that comes with listing multiple assets?",
+          "hint": "NoHint",
+          "explanation": "Euler mitigates risk by using different types of pools which can/cannot be isolated from other assets, they have an asset tier list to employ this feature. They also use risk-adjusted collateral factor. This limits the exposure in case there are any bad debts.",
+          "answerKeys": [
+            "A",
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Asset tiers",
+              "key": "A"
+            },
+            {
+              "content": "Risk-adjusted collateral factor",
+              "key": "B"
+            },
+            {
+              "content": "Strict KYC and AML procedure",
+              "key": "C"
+            },
+            {
+              "content": "None of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "dbdf9dae-4dc9-4643-913d-97281c30d280",
+          "type": "SingleChoice",
+          "content": "When a user borrows isolation tier asset from an account, that account is locked from further borrowing of any other asset",
+          "hint": "NoHint",
+          "explanation": "Isolation tier assets can only be borrowed in isolation. What this means is that they cannot be borrowed alongside other assets using the same pool of collateral.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "dba0a8a8-1786-4363-bc2c-45b2b62daabb",
+          "type": "SingleChoice",
+          "content": "When is an account at the risk of liquidation?",
+          "hint": "none",
+          "explanation": "A borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "When the user attempts to borrow two isolated tier assets from the same account",
+              "key": "A"
+            },
+            {
+              "content": "When the user borrows an asset from isolated tier",
+              "key": "B"
+            },
+            {
+              "content": "When value of risk adjusted liabilities exceeds value of risk adjusted collateral",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B are false",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d0b87731-dbef-4b4c-8470-9e4820c7c782",
+          "type": "SingleChoice",
+          "content": "How does Euler handle liquidation incentives differently?",
+          "hint": "NoHint",
+          "explanation": "In Euler instead of a fixed discount percentage on seized collateral, they allow the discount to increase depending on how far under water a position is.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "The percentage discount on seized collateral is fixed",
+              "key": "A"
+            },
+            {
+              "content": "The percentage discount on the seized collateral increases as the loan becomes worse (more underwater)",
+              "key": "B"
+            },
+            {
+              "content": "The percentage discount on seized collateral decreases as the loan becomes worse (more underwater)",
+              "key": "C"
+            },
+            {
+              "content": "The liquidation incentive becomes a kind of English auction",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b44da552-c2d3-44b3-bfa3-275def274438",
+          "type": "MultipleChoice",
+          "content": "Why do we need sub accounts? what is the concept of defer liquidity?",
+          "hint": "NoHint",
+          "explanation": "Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner. Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.",
+          "answerKeys": [
+            "A",
+            "B",
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account",
+              "key": "A"
+            },
+            {
+              "content": "Defer liquidity is a concept that allows user to bundle a bunch of transactions and perfom a liquidity check on the user only at the end of the bundle instead of checking after every transaction",
+              "key": "B"
+            },
+            {
+              "content": "Defer liqudity is what is done in transaction builder",
+              "key": "C"
+            },
+            {
+              "content": "sub accounts are other Ethereum accounts of the same user",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "365e954a-5232-4cce-89bf-9cbc2a2a1e7a",
+          "type": "SingleChoice",
+          "content": "Euler lacks a native concept of flash loans",
+          "hint": "NoHint",
+          "explanation": "Euler lacks a native concept of flash loans. But by making use of the defer liquidity feature, users can make an uncollateralized borrow, perform whatever operation they like, and then repay the borrow - all without being charged extra fees.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "9d4a471c-63fb-4b23-af1a-51a8ae532907",
+          "type": "MultipleChoice",
+          "content": "Which of the following is true about dTokens and eTokens",
+          "hint": "NoHint",
+          "explanation": "Euler tokenises debts on the protocol with ERC20-compliant interfaces known as dTokens. Rather than being able to send tokens to anyone but requiring approval to take them, dTokens can be taken by anyone but require approval to accept them. This also prevents users from \"burning\" their dTokens. Lenders who deposit into a liquidity pool on Euler, receive interest-bearing ERC20 eTokens in return, which can be redeemed for their share of the underlying assets in the pool at any time, provided there are unborrowed tokens in the pool.",
+          "answerKeys": [
+            "B",
+            "C",
+            "D"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "eTokens keep track of debt",
+              "key": "A"
+            },
+            {
+              "content": "dTokens are ERC20-compliant interfaces,dTokens accrue the debt to be paid by users who have borrowed. They can be transferred to other accounts, but instead of transaction approval from the sender, it needs to be approved by the receiver",
+              "key": "B"
+            },
+            {
+              "content": "eTokens are ERC20-compliant interfaces that the users receive on supplying collateral to the protocol. They accrue interest and overtime can be redeemed for a larger amount of underlying tokens. They can be redeemed given the redemption will not make open borrows unsustainable.",
+              "key": "C"
+            },
+            {
+              "content": "Burning dTokens would mean that the loan is being repaid",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "69600516-96c1-47fa-8d5b-ee7fc3f4d799",
+          "type": "MultipleChoice",
+          "content": "What is minting and burning in Euler?",
+          "hint": "NoHint",
+          "explanation": "Minting is the recursive supplying and borrowing of the same asset as the collateral in order to achieve a leveraged position. Burning is deleting one set of deposit and borrow the multiple sets of deposits and borrows made in minting. Say you have 1000 USDC and you can make a borrow of upto 90% of USDC value, you take a loan of 900 USDC. Now you take the 900 USDC and supply it as collateral. Now with the increased borrowing capacity, you take a loan of 810 USDC and supply it as collateral again. Now in the Euler protocol, you are earning interest on 1710 USDC while you only had 1000 USDC to begin with.",
+          "answerKeys": [
+            "A",
+            "C"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "Minting is the recursive supplying and borrowing of the same asset as the collateral in order to achieve a leveraged position.",
+              "key": "A"
+            },
+            {
+              "content": "Minting is borrowing EUL by overcollateralization",
+              "key": "B"
+            },
+            {
+              "content": "Burning is withdrawing one supply and repaying its respective borrow from the multiple sets of borrows and supplies made in minting",
+              "key": "C"
+            },
+            {
+              "content": "Burning is repaying the borrow position of EUL",
+              "key": "D"
+            }
+          ]
+        }
+      ],
       "readings": [],
       "summaries": []
     }
