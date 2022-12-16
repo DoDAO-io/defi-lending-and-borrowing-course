@@ -25,7 +25,7 @@
   hint: none
   explanation: The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away. 
   answerKeys:
-    - C
+    - D
   difficultyLevel: "Medium"
   choices:
     - content: The asset must go through governance scrutiny
@@ -95,7 +95,7 @@
     - content: When value of risk adjusted liabilities exceeds value of risk adjusted collateral
       key: C
       
-    - content: Both A and B are false
+    - content: Both A and B are true
       key: D
 
 - uuid: d0b87731-dbef-4b4c-8470-9e4820c7c782
@@ -120,19 +120,38 @@
       key: D
             
 - uuid: b44da552-c2d3-44b3-bfa3-275def274438
-  type: MultipleChoice
-  content: Why do we need sub accounts? what is the concept of defer liquidity?
+  type: SingleChoice
+  content: Why do we need sub accounts? 
   hint: NoHint
   explanation: Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence
    sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner.
-   Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.
   answerKeys:
     - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account
+      key: A
+      
+    - content: Sub accounts are the number of accounts of the user that went underwater in the past
+      key: B
+      
+    - content: sub accounts are used to determine credibility of user
+      key: C
+      
+    - content: sub accounts are other Ethereum accounts of the same user
+      key: D
+
+- uuid: d343389e-00f5-431e-a6cf-30d14d3004bf
+  type: MultipleChoice
+  content: What is the concept of defer liquidity?
+  hint: NoHint
+  explanation: Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.
+  answerKeys:
     - B
     - C
   difficultyLevel: "Medium"
   choices:
-    - content: Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account
+    - content: Defer liqudity is used in Euler to trick the protocol into sanctioning excess funds to the user
       key: A
       
     - content: Defer liquidity is a concept that allows user to bundle a bunch of transactions and perfom a liquidity check on the user only at the end of the bundle instead of checking after every transaction
@@ -141,9 +160,10 @@
     - content: Defer liqudity is what is done in transaction builder
       key: C
       
-    - content: sub accounts are other Ethereum accounts of the same user
+    - content: Defer liqudity means to take uncollateralized loans
       key: D
       
+
 
 - uuid: 365e954a-5232-4cce-89bf-9cbc2a2a1e7a
   type: SingleChoice
@@ -154,10 +174,10 @@
     - A
   difficultyLevel: "Low"
   choices:
-    - content: "True"
+    - content: True, but by using the concept of defer liquidity and transaction builder the user can make uncollateralized loans and perform operations for one block time and repay their borrows
       key: A
       
-    - content: "False"
+    - content: False, Euler has an inbuilt flashloan function
       key: B
       
 - uuid: 9d4a471c-63fb-4b23-af1a-51a8ae532907

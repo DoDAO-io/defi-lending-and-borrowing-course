@@ -1,7 +1,7 @@
 - uuid: 404918c8-abc0-4547-b991-e2821c87dbe0
   type: SingleChoice
-  content: What are the differences between Compound V2 and Compound III?
-  hint: none
+  content: What are the differences between Compound V2 and Compound III (V3)?
+  hint: NoHint
   explanation:  In the new version of the protocol, there is a separate market for each
     token. That token acts as the "base token" in that market, only one base token can be set. A supplier can
     lend the base token in the market and can earn interest. No interest will be
@@ -25,10 +25,10 @@
       
 - uuid: 698b459b-419e-4f96-9026-baee2d6d0955
   type: SingleChoice
-  content: Interest rates for supply and borrow is dependant on?
-  hint: none
+  content: Interest rates for supply and borrow are dependant on?
+  hint: NoHint
   explanation: The interest rates for supply and borrowing are based on the utilization
-    rate of the base asset. Given by, totalborrows/ totalsupply of given asset.
+    rate of the base asset. Given by, `totalborrows / totalsupply` of given asset.
   answerKeys:
     - D
   difficultyLevel: "Low"
@@ -88,7 +88,7 @@
 - uuid: b97eca51-e79c-4a51-9ecc-4b81b46ce762
   type: SingleChoice
   content: When is an account liquidated?
-  hint: none
+  hint: NoHint
   explanation: When an account’s borrow balance exceeds the set liquidation collateral
     limit (which is separate and higher than borrow collateral factor), the
     account is then eligible for liquidation. Meaning, when the account balance for the account is negative. 
@@ -96,13 +96,13 @@
     their collateral reduces, or the USD value of their borrow increases, the
     account becomes liquidatable.
   answerKeys:
-    - C
+    - A
   difficultyLevel: "Medium"
   choices:
     - content: When the account's borrow balance exceeds the liquidation collateral limit
       key: A
       
-    - content: When the tokens in the market fall below the desired ratio
+    - content: When the tokens held in the market go above a certain limit
       key: B
       
     - content: Both A and B are true and both imply the same phenomenon
@@ -193,19 +193,19 @@
       key: D
       
 - uuid: 4badce29-7108-450f-9872-b555be198cb4
-  type: MultipleChoice
+  type: SingleChoice
   content: What is the liquidator required to do in a liquidation event? How are they incentivized? 
   hint: NoHint
   explanation:  The protocol price feed allows a liquidator to determine the discounted price of seized collateral and sell it publicly. Any account (or liquidator)
     can buy the discounted collateral using the base asset, and the liquidator can then buy it back at a higher price on a DEX and pocket the difference.
   answerKeys:
-    - A
+    - C
   difficultyLevel: "High"
   choices:
-    - content: The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan
+    - content: The protocol does not liquidate bad loans, it instead takes the collateral and starts earning interest on it
       key: A
       
-    - content: The collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit
+    - content: The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan, the collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit
       key: B
       
     - content: The protocol just requires the liquidator to call the liquidate function, for this, the liquidator is rewarded in base tokens
