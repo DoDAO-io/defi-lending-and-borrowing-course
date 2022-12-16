@@ -102,7 +102,7 @@
     - content: When the account's borrow balance exceeds the liquidation collateral limit
       key: A
       
-    - content: When the account balance for the given account is negative
+    - content: When the tokens in the market fall below the desired ratio
       key: B
       
     - content: Both A and B are true and both imply the same phenomenon
