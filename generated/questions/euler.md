@@ -15,7 +15,7 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
 - [ ]  Debt tokenization
 - [x]  Permissionless listing
   
-Hint: none
+Hint: NoHint
          
 Explanation: The main factor that differentiates Euler form other trusted protocols like Aave and Compound is permissionless listing of assets.
 
@@ -31,7 +31,7 @@ Sub Topics: No Sub-Topics
 - [ ]  The asset must have a WBTC pair on Uniswap v3
 - [x]  The asset must have a WETH pair on Uniswap V3
   
-Hint: none
+Hint: NoHint
          
 Explanation: The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away.
 
@@ -77,7 +77,7 @@ Sub Topics: No Sub-Topics
 - [x]  When value of risk adjusted liabilities exceeds value of risk adjusted collateral
 - [ ]  Both A and B are true
   
-Hint: none
+Hint: NoHint
          
 Explanation: A borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral.
 

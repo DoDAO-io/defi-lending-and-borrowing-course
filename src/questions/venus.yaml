@@ -1,0 +1,229 @@
+- uuid: 9e285187-2ae0-42dc-8b91-e36926634f47
+  type: SingleChoice
+  content: Which of these features are available in Venus?
+  hint: NoHint
+  explanation: Venus has the features of a money market protocol and stablecoin minting protocol together.
+  answerKeys:
+    - D
+  difficultyLevel: "Low"
+  choices:
+    - content: Money market features
+      key: A
+      
+    - content: Stablecoin minting feature
+      key: B
+      
+    - content: Permissionless listing
+      key: C
+      
+    - content: Both A and B
+      key: D
+      
+- uuid: db7b0642-1254-40c1-955a-4f50af3fd615
+  type: SingleChoice
+  content: What are the usecases of vTokens?
+  hint: NoHint
+  explanation: vTokens are used to accrue interest for the user supplied collateral. They can be used as collateral to borrow.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: To accrue interest on assets supplied and be used as collateral
+      key: A
+      
+    - content: To accrue debt and be used as collateral
+      key: B
+      
+    - content: To accrue debt only
+      key: C
+      
+    - content: To accrue debt and interest for borrowed and supplied assets respectively
+      key: D
+      
+- uuid: 6d862849-fcb2-4d76-b96c-170f556d5c72
+  type: SingleChoice
+  content: The Mint function in Venus is used to?
+  hint: NoHint
+  explanation: The mint function in venus is used to supply assets to the protocol and mint an equivalent amount of vTokens for the underlying asset.
+  answerKeys:
+    - C
+  difficultyLevel: "Medium"
+  choices:
+    - content: To mint their stable coin, VAI
+      key: A
+      
+    - content: To recursively supply and borrow the same asset to achieve a leveraged position
+      key: B
+      
+    - content: To supply assets and mint vTokens
+      key: C
+      
+    - content: None of these
+      key: D
+      
+- uuid: b64d4986-72a8-45cd-97a2-84749a4755cc
+  type: SingleChoice
+  content: What asset is VAI pegged to? At what LTV is it borrowed at?
+  hint: NoHint
+  explanation: VAI is pegged to the USD and it is borrowed at 50% LTV.
+  answerKeys:
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: VAI is pegged to the EUR, it has LTV of 60%
+      key: A
+      
+    - content: VAI is pegged to the ETH, it has LTV of 70%
+      key: B
+      
+    - content: VAI is pegged to the gold, it has LTV of 20%
+      key: C
+      
+    - content: VAI is pegged to the USD, it has LTV of 50%
+      key: D
+          
+- uuid: aea581c9-d986-4ba1-a224-a06e36a0a12b
+  type: MultipleChoice
+  content: What is account liquidity? How is it calculated?
+  hint: NoHint
+  explanation: Account Liquidity represents the USD value of assets borrowable by a user, before it reaches liquidation.
+    For each market the user has entered into, their supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity.
+  answerKeys:
+    - A
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: Account liquidity represents USD value of assets borrowable by user before it reaches liquidation
+      key: A
+      
+    - content: Account liquidity represents total collateral supplied to the protocol by the user
+      key: B
+      
+    - content: The total collateral supplied by user to each market is multipled with the respective collateral factor and then summed, to give account liquidity
+      key: C
+      
+    - content: Supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity
+      key: D
+
+- uuid: 697fa18b-3cf7-4210-affe-a45c59323838
+  type: SingleChoice
+  content: What is the governance token of Venus?
+  hint: NoHint
+  explanation: XVS is the goveranance token of Venus
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: VEN is the governance token of Venus
+      key: A
+      
+    - content: XVS is the governance token of Venus
+      key: B
+      
+    - content: VAI is the governance token of Venus
+      key: C
+      
+    - content: VNS is the governance token of Venus
+      key: D
+            
+- uuid: 6d8ee145-b7aa-463b-8cd6-842a10aafb75
+  type: SingleChoice
+  content: How is the amount of XVS distrubuted decided?
+  hint: NoHint
+  explanation: How much XVS is distributed to suppliers and borrowers in each market is determined by “venus speed”. This number is updated regularly to ensure that XVS is being distributed proportionally to the amount of utility each market provides.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: Decided by a value called "venus speed"
+      key: A
+      
+    - content: Decided by a value called "XVS distrubution rate"
+      key: B
+      
+    - content: Decided by VenusDAO
+      key: C
+      
+    - content: Decided by price oracles
+      key: D
+
+- uuid: aee45a32-dcee-48b3-a42e-4e545b52fdf7
+  type: SingleChoice
+  content: What is VRT? What is its use case?
+  hint: NoHint
+  explanation: VRT is Venus Reward Token, it can be redeemed for XVS at a fixed rate.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: VRT is Venus Reward Token, used to redeem XVS at a fixed rate
+      key: A
+      
+    - content: VRT is Venus Repeat Token, used to borrow XVS at a fixed rate
+      key: B
+      
+    - content: VRT is Venus Reward Token, used to gain interest at a fixed rate
+      key: C
+      
+    - content: VRT is Venus Return Token, used to redeem XVS at a fixed rate
+      key: D
+      
+
+
+- uuid: 87d32f53-099d-4188-89a1-e942d7d408e3
+  type: SingleChoice
+  content: There is no vault mechanism in Venus
+  hint: NoHint
+  explanation: Venus Vault is a mechanism that locks XVS to improve the system’s anti-risk ability and distributes staking rewards.           
+  answerKeys:
+    - B
+  difficultyLevel: "Low"
+  choices:
+    - content: "True"
+      key: A
+      
+    - content: "False"
+      key: B
+      
+- uuid: 4b108797-6c8a-4235-8675-90174da10dc5
+  type: SingleChoice
+  content: How do vaults help Venus in the case of a shortfall (negative account liquidity) event?
+  hint: NoHint
+  explanation: After a risk event occurs in Venus and only if the Venus risk fund account is not sufficient to cover the shortfall, the XVS depositor in the vault will pay a maximum of 10% of the total deposit amount to compensate for the loss.
+  answerKeys:
+    - B
+  difficultyLevel: "High"
+  choices:
+    - content: There are no vaults in Venus
+      key: A
+      
+    - content: In case Venus risk funds are not sufficient to cover the shortfall, the XVS vault will be liquidated to to a maximum of 10% per user's deposited XVS to cover the loss
+      key: B
+      
+    - content: Immediately, the XVS vault will be liquidated to to a maximum of 10% per user's deposited XVS to cover the loss
+      key: C
+      
+    - content: XVS vaults are not used in times of risk events
+      key: D
+      
+- uuid: e2d1368c-edf0-4445-a7c5-e411a265e9b8
+  type: SingleChoice
+  content: What happens when a user has negative account liquidity?
+  hint: NoHint
+  explanation: A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.
+  answerKeys:
+    - A
+  difficultyLevel: "High"
+  choices:
+    - content: The user will be liquidated, their collateral will be sold for a discounted price and their loan will be repaid in parts or whole by a liquidator
+      key: A
+      
+    - content: The user will be liquidated, their collateral will be held by the protocol and their loan will be repaid in parts or whole by a liquidator
+      key: B
+      
+    - content: The user will be warned by the Venus DAO
+      key: C
+      
+    - content: The user will be allowed to stay with negative liquidity without facing any consequences
+      key: D
+      

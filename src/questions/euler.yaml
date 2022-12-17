@@ -1,7 +1,7 @@
 - uuid: f0f8c657-0045-4293-b244-8b0ae29cb5ec
   type: SingleChoice
   content: What feature differentiates Euler from other DeFi protocols?
-  hint: none
+  hint: NoHint
   explanation: The main factor that differentiates Euler form other trusted protocols like Aave and Compound is permissionless listing of assets.
   answerKeys:
     - D
@@ -22,7 +22,7 @@
 - uuid: a5106ee5-8f33-49e7-8725-c43860555ec4
   type: SingleChoice
   content: What is the necessary condition to permissionlessly list assets on Euler?
-  hint: none
+  hint: NoHint
   explanation: The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away. 
   answerKeys:
     - D
@@ -80,7 +80,7 @@
 - uuid: dba0a8a8-1786-4363-bc2c-45b2b62daabb
   type: SingleChoice
   content: When is an account at the risk of liquidation? 
-  hint: none
+  hint: NoHint
   explanation: A borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral.
   answerKeys:
     - C
