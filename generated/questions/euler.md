@@ -15,7 +15,7 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
 - [ ]  Debt tokenization
 - [x]  Permissionless listing
   
-Hint: none
+Hint: NoHint
          
 Explanation: The main factor that differentiates Euler form other trusted protocols like Aave and Compound is permissionless listing of assets.
 
@@ -28,10 +28,10 @@ Sub Topics: No Sub-Topics
 
 - [ ]  The asset must go through governance scrutiny
 - [ ]  The asset must be worth atleast 1 USD
-- [x]  The asset must have a WBTC pair on Uniswap v3
-- [ ]  The asset must have a WETH pair on Uniswap V3
+- [ ]  The asset must have a WBTC pair on Uniswap v3
+- [x]  The asset must have a WETH pair on Uniswap V3
   
-Hint: none
+Hint: NoHint
          
 Explanation: The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away.
 
@@ -75,9 +75,9 @@ Sub Topics: No Sub-Topics
 - [ ]  When the user attempts to borrow two isolated tier assets from the same account
 - [ ]  When the user borrows an asset from isolated tier
 - [x]  When value of risk adjusted liabilities exceeds value of risk adjusted collateral
-- [ ]  Both A and B are false
+- [ ]  Both A and B are true
   
-Hint: none
+Hint: NoHint
          
 Explanation: A borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral.
 
@@ -102,16 +102,32 @@ Sub Topics: No Sub-Topics
 
 ---
 
-##### Why do we need sub accounts? what is the concept of defer liquidity?  
+##### Why do we need sub accounts?  
 
 - [x]  Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account
-- [x]  Defer liquidity is a concept that allows user to bundle a bunch of transactions and perfom a liquidity check on the user only at the end of the bundle instead of checking after every transaction
-- [x]  Defer liqudity is what is done in transaction builder
+- [ ]  Sub accounts are the number of accounts of the user that went underwater in the past
+- [ ]  sub accounts are used to determine credibility of user
 - [ ]  sub accounts are other Ethereum accounts of the same user
   
 Hint: NoHint
          
-Explanation: Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner. Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.
+Explanation: Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner.
+
+Sub Topics: No Sub-Topics
+ 
+
+---
+
+##### What is the concept of defer liquidity?  
+
+- [ ]  Defer liqudity is used in Euler to trick the protocol into sanctioning excess funds to the user
+- [x]  Defer liquidity is a concept that allows user to bundle a bunch of transactions and perfom a liquidity check on the user only at the end of the bundle instead of checking after every transaction
+- [x]  Defer liqudity is what is done in transaction builder
+- [ ]  Defer liqudity means to take uncollateralized loans
+  
+Hint: NoHint
+         
+Explanation: Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.
 
 Sub Topics: No Sub-Topics
  
@@ -120,8 +136,8 @@ Sub Topics: No Sub-Topics
 
 ##### Euler lacks a native concept of flash loans  
 
-- [x]  True
-- [ ]  False
+- [x]  True, but by using the concept of defer liquidity and transaction builder the user can make uncollateralized loans and perform operations for one block time and repay their borrows
+- [ ]  False, Euler has an inbuilt flashloan function
   
 Hint: NoHint
          

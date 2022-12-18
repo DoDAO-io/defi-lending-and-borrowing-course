@@ -59,8 +59,8 @@
         {
           "uuid": "404918c8-abc0-4547-b991-e2821c87dbe0",
           "type": "SingleChoice",
-          "content": "What are the differences between Compound V2 and Compound III?",
-          "hint": "none",
+          "content": "What are the differences between Compound V2 and Compound III (V3)?",
+          "hint": "NoHint",
           "explanation": "In the new version of the protocol, there is a separate market for each token. That token acts as the \"base token\" in that market, only one base token can be set. A supplier can lend the base token in the market and can earn interest. No interest will be accrued by assets that are supplied as collateral and cTokens are no longer used.",
           "answerKeys": [
             "D"
@@ -88,9 +88,9 @@
         {
           "uuid": "698b459b-419e-4f96-9026-baee2d6d0955",
           "type": "SingleChoice",
-          "content": "Interest rates for supply and borrow is dependant on?",
-          "hint": "none",
-          "explanation": "The interest rates for supply and borrowing are based on the utilization rate of the base asset. Given by, totalborrows/ totalsupply of given asset.",
+          "content": "Interest rates for supply and borrow are dependant on?",
+          "hint": "NoHint",
+          "explanation": "The interest rates for supply and borrowing are based on the utilization rate of the base asset. Given by, `totalborrows / totalsupply` of given asset.",
           "answerKeys": [
             "D"
           ],
@@ -170,10 +170,10 @@
           "uuid": "b97eca51-e79c-4a51-9ecc-4b81b46ce762",
           "type": "SingleChoice",
           "content": "When is an account liquidated?",
-          "hint": "none",
+          "hint": "NoHint",
           "explanation": "When an account’s borrow balance exceeds the set liquidation collateral limit (which is separate and higher than borrow collateral factor), the account is then eligible for liquidation. Meaning, when the account balance for the account is negative. If a borrower accrues too much interest on their borrow, or the USD value of their collateral reduces, or the USD value of their borrow increases, the account becomes liquidatable.",
           "answerKeys": [
-            "C"
+            "A"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -182,7 +182,7 @@
               "key": "A"
             },
             {
-              "content": "When the account balance for the given account is negative",
+              "content": "When the tokens held in the market go above a certain limit",
               "key": "B"
             },
             {
@@ -307,21 +307,21 @@
         },
         {
           "uuid": "4badce29-7108-450f-9872-b555be198cb4",
-          "type": "MultipleChoice",
+          "type": "SingleChoice",
           "content": "What is the liquidator required to do in a liquidation event? How are they incentivized?",
           "hint": "NoHint",
           "explanation": "The protocol price feed allows a liquidator to determine the discounted price of seized collateral and sell it publicly. Any account (or liquidator) can buy the discounted collateral using the base asset, and the liquidator can then buy it back at a higher price on a DEX and pocket the difference.",
           "answerKeys": [
-            "A"
+            "C"
           ],
           "difficultyLevel": "High",
           "choices": [
             {
-              "content": "The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan",
+              "content": "The protocol does not liquidate bad loans, it instead takes the collateral and starts earning interest on it",
               "key": "A"
             },
             {
-              "content": "The collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit",
+              "content": "The protocol requires the liquidator to seize collateral and repay the loan like it was their own loan, the collateral can be bought at a discounted price by the liquidator using their base token, which can be sold at a higher price for a profit",
               "key": "B"
             },
             {
@@ -341,15 +341,34 @@
     {
       "title": "Euler",
       "key": "euler",
-      "details": "Euler is a non-custodial DeFi protocol that allows users to lend and borrow and  the main factor that differentiates Euler form other trusted protocols like Aave  and Compound is that, in Euler any asset that has a WETH pair on Uniswap v3 can be  added as a lending market on Euler by anyone straight away.\n\n\n\n\n",
+      "details": "Euler is a non-custodial DeFi protocol that allows users to lend and borrow and  the main factor that differentiates Euler form other trusted protocols like Aave  and Compound is that, in Euler any asset that has a WETH pair on Uniswap v3 can be  added as a lending market on Euler by anyone straight away.\n\n\n\n",
       "order": 2,
-      "explanations": [],
+      "explanations": [
+        {
+          "key": "about-euler",
+          "title": "About Euler",
+          "shortTitle": "About Euler",
+          "details": "\n### What is Euler \nEuler is a non-custodial DeFi protocol that allows users to lend and borrow and the main factor that differentiates Euler form other trusted protocols like Aave and Compound is that,  in Euler any asset that has a WETH pair on Uniswap v3 can be added as a lending market on Euler by anyone straight away. There is a  significant unmet demand for lending and borrowing  the long tail of crypto assets which are not listed on Aave or Compound. Euler is managed by holders of a protocol native governance token called Euler Governance Token (EUL). \n\n### Asset Tiers\nListing multiple assets which are not necessarily mainstream comes with risk as their price can fluctuate a lot. Euler mitigates this risk by using different types of  pools which can/cannot be isolated from other assets.  This limits the exposure in case there are any bad debts. Another concept adopted by Euler is that they consider the risk factor of both the collateral and the borrowed asset to come up with the maximum amount that can be borrowed for the said collateral-liability asset pair called **risk-adjusted collateral**.   For example, in borrowing XYZ with a collateral factor of 0.5, say you are using $1000 USDC with a collateral factor of 0.9, the maximum amount borrowable would come out ot be 1000*0.5*0.9 = $450 worth of XYZ as opposed to the usual 1000*0.9 that we are used to. \n* Isolation-tier -** ** assets are available for ordinary lending and borrowing, but they cannot be used as collateral to borrow other assets, and they can only be borrowed in isolation. What this means is that they cannot be borrowed alongside other assets using the same pool of collateral.  * Cross-tier -** ** assets are available for ordinary lending and borrowing, and cannot be used as collateral to borrow other assets, but they can be borrowed alongside other assets. For example, if a user has USDC and DAI as collateral, and they want to borrow cross-tier assets ABC and XYZ, then they can do so from a single account on Euler. * Collateral-tier - assets are available for ordinary lending and borrowing, cross-borrowing, and they can be used as collateral. For example, a user can deposit collateral assets DAI and USDC, and use them to borrow collateral assets UNI and LINK, all from a single account.\n\n### Liquidations\nA borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral. A borrower who has just become in violation still has enough collateral to repay their loan, but is at risk of defaulting on their loan. As a result,  they may be liquidated to limit the potential for them to default. One of the issues with a fixed discount percentage for the liquidators on the collateral of the loan they repaid is that potential liquidators often have to engage in priority gas auctions (PGA) in order to find profitable liquidations, which exposes  the liquidation bonus as MEV (miner extractable value). In Euler they allow the discount to increase depending on how far under water a position is. Now, liquidators are forced to engage into a type of Dutch auction. As the discount gradually goes up, each liquidator must decide if they want to bid for a liquidation at the current discount being offered. Liquidator A might  be able to profit at 4%, but liquidator B might be so at 3.5% because they have a more efficient operation. This process is made more efficient by the TWAP oracles used on the Euler network which allow for a more smooth price movement over time which facilitates the dutch auction, preventing all liquidators from jumping in at once.\n\n### Internal Working\nLenders who deposit into a liquidity pool on Euler, receive interest-bearing ERC20 eTokens in return, which can be redeemed for their share of the underlying assets in the pool at any time, provided there are unborrowed tokens in the pool.  Euler tokenises debts on the protocol with ERC20-compliant interfaces known as dTokens. The dToken interface allows the construction of positions without needing to interact with underlying assets, and can be used to create derivative products that include debt obligations. Euler uses a reversed version of the regular ERC20 transfer/approved methods for dTokens. This means that rather than being able to send tokens to anyone but requiring approval to take them, dTokens can be taken by anyone but require approval to accept them. This also prevents users from \"burning\" their dTokens.\n\n### Other Important Features\nEuler has a lot of innovative features and models that are built on top of the base lending and borrowing layer. These are\n\n#### Minting & Burning and Leverage:\nMinting is the recursive supplying and borrowing of the same asset as the collateral in order to achieve a leveraged position. Eg: Say you have 1000 USDC and you can make a borrow of upto 90% of USDC value, you take a loan of 900 USDC. Now you take the 900 USDC and supply it as collateral. Now with the increased borrowing  capacity, you take a loan of 810 USDC and supply it as collateral again. Now in the Euler protocol, you are earning interest on 1710 USDC while you only had 1000 USDC to begin with, thus increasing your yield. This concept of recursive borrowing and supplying is “Mint” and what it helps the user achieve is called leverage.\nBurning is to delete one set of “borrow” and “deposit”, that is to repay one borrow position and withdraw the respective collateral i.e deleting one set of deposit and borrow the multiple sets of deposits and borrows made. \n\n#### Sub Accounts\nEuler also has a very protocol specific feature called sub-accounts. Once an account is borrowed in an isolated tier, it would be locked from borrowing other assets. In order to not limit the user, Euler enables every Ethereum account to create up-to 256 sub-accounts, allowing the user to segregate their liabilities according to their needs.\n\n#### Transaction Builder\nEuler allows users to bundle a bunch of actions that would otherwise be separate transactions on their own into one by using the transaction builder. This feature ties in with the defer liquidity feature where the liquidity check on the user is done after a bundle of transactions considered as one, whereas usually, a liquidation  check is performed after every action that requires user liquidity (Borrow, withdraw etc). \n\n#### Feeless Flash Loans\nEuler lacks a native concept of flash loans. But by making use of the defer liquidity feature, users can make an uncollateralized borrow, perform whatever operation they like, and then repay the borrow - all without being charged extra fees. This can be used to rebalance positions, build-up leveraged positions, take advantage of external arbitrage opportunities, and more. Because Euler only charges fees according to the time value of money, and from the blockchain's perspective flash loans are held for a duration of 0 seconds, they are entirely free on Euler (ignoring gas costs).\n\n#### Interest Rates\nTo improve capital efficiency and do away with errors in determining parameters for the interest rates of every lending market, Euler uses reactive interest rates. By using a PID controller, Euler amplifies or dampens the rate of change in interest rates when utilization is above or below the target level of utilization respectively. As a result, reactive interest rates  that adapt to market conditions for the underlying asset in real-time are created, without the need for ongoing governance intervention. Interest is accrued every second on Euler.\n\n"
+        },
+        {
+          "key": "eul-Token",
+          "title": "EUL token",
+          "shortTitle": "EUL token",
+          "details": "\n## EUL\nThe total supply of EUL is 27,182,818 (in homage to Euler’s number,[ e](https://en.wikipedia.org/wiki/E_(mathematical_constant))). The total supply of EUL is fixed for the first 4 years, after which EUL token holders may enact a governance proposal to inflate the supply by a maximum 2.718% per year. In that scenario, newly minted EUL will enter circulation via the Treasury.\nThe Euler protocol will be managed by holders of the Euler Governance Token (EUL), a native governance token for the protocol. EUL tokens will represent the voting power of the protocol software. Holders with enough EUL tokens will be able to make a formal proposal for change on the protocol. Token holders will then be able to vote on the proposal themselves or delegate their vote shares to a third party. \nDecisions token holders might vote on include proposals to alter:\n* The tier of an asset * Collateral and borrow factors * Price oracle parameters * Reactive interest rate model parameters * Reserve factors\n**How can you earn EUL?** The Euler token (EUL) is distributed to borrowers on select markets on the platform. Note that EUL is only earned by borrowing and cannot be earned by simply lending to the protocol.\n\n   \n "
+        },
+        {
+          "key": "references",
+          "title": "References",
+          "shortTitle": "References",
+          "details": "Here are some important links to learn more about Compound III (V3)\n\nhttps://docs.euler.finance/getting-started/white-paper\n\nhttps://app.euler.finance/\n\nhttps://goerli.euler.finance/"
+        }
+      ],
       "questions": [
         {
           "uuid": "f0f8c657-0045-4293-b244-8b0ae29cb5ec",
           "type": "SingleChoice",
           "content": "What feature differentiates Euler from other DeFi protocols?",
-          "hint": "none",
+          "hint": "NoHint",
           "explanation": "The main factor that differentiates Euler form other trusted protocols like Aave and Compound is permissionless listing of assets.",
           "answerKeys": [
             "D"
@@ -378,10 +397,10 @@
           "uuid": "a5106ee5-8f33-49e7-8725-c43860555ec4",
           "type": "SingleChoice",
           "content": "What is the necessary condition to permissionlessly list assets on Euler?",
-          "hint": "none",
+          "hint": "NoHint",
           "explanation": "The asset must have a WETH pair on Uniswap v3, then it can be added as a lending market on Euler by anyone straight away.",
           "answerKeys": [
-            "C"
+            "D"
           ],
           "difficultyLevel": "Medium",
           "choices": [
@@ -458,7 +477,7 @@
           "uuid": "dba0a8a8-1786-4363-bc2c-45b2b62daabb",
           "type": "SingleChoice",
           "content": "When is an account at the risk of liquidation?",
-          "hint": "none",
+          "hint": "NoHint",
           "explanation": "A borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral.",
           "answerKeys": [
             "C"
@@ -478,7 +497,7 @@
               "key": "C"
             },
             {
-              "content": "Both A and B are false",
+              "content": "Both A and B are true",
               "key": "D"
             }
           ]
@@ -514,19 +533,47 @@
         },
         {
           "uuid": "b44da552-c2d3-44b3-bfa3-275def274438",
-          "type": "MultipleChoice",
-          "content": "Why do we need sub accounts? what is the concept of defer liquidity?",
+          "type": "SingleChoice",
+          "content": "Why do we need sub accounts?",
           "hint": "NoHint",
-          "explanation": "Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner. Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.",
+          "explanation": "Once a user borrows an isolation tier asset, that account is locked from borrowing further. It would be cumbersome to create multiple ethereum accounts for each borrow from isolation tier, hence sub accounts were introduced where users can create upto 256 subaccounts per ethereum account and manage liabilities in an efficient manner.",
           "answerKeys": [
-            "A",
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account",
+              "key": "A"
+            },
+            {
+              "content": "Sub accounts are the number of accounts of the user that went underwater in the past",
+              "key": "B"
+            },
+            {
+              "content": "sub accounts are used to determine credibility of user",
+              "key": "C"
+            },
+            {
+              "content": "sub accounts are other Ethereum accounts of the same user",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "d343389e-00f5-431e-a6cf-30d14d3004bf",
+          "type": "MultipleChoice",
+          "content": "What is the concept of defer liquidity?",
+          "hint": "NoHint",
+          "explanation": "Defer liquidity  is a function where the user can postpone (defer) liquidity checks on the account so that it is checked once after multiple transactions instead of once every transaction.",
+          "answerKeys": [
             "B",
             "C"
           ],
           "difficultyLevel": "Medium",
           "choices": [
             {
-              "content": "Sub accounts are accounts in Euler that the user can create with the same Ethereum account in order to segregate their liabilites and borrow multiple isolation tier assets from the same Ethereum account",
+              "content": "Defer liqudity is used in Euler to trick the protocol into sanctioning excess funds to the user",
               "key": "A"
             },
             {
@@ -538,7 +585,7 @@
               "key": "C"
             },
             {
-              "content": "sub accounts are other Ethereum accounts of the same user",
+              "content": "Defer liqudity means to take uncollateralized loans",
               "key": "D"
             }
           ]
@@ -555,11 +602,11 @@
           "difficultyLevel": "Low",
           "choices": [
             {
-              "content": "True",
+              "content": "True, but by using the concept of defer liquidity and transaction builder the user can make uncollateralized loans and perform operations for one block time and repay their borrows",
               "key": "A"
             },
             {
-              "content": "False",
+              "content": "False, Euler has an inbuilt flashloan function",
               "key": "B"
             }
           ]
@@ -626,6 +673,35 @@
           ]
         }
       ],
+      "readings": [],
+      "summaries": []
+    },
+    {
+      "title": "Venus",
+      "key": "venus",
+      "details": "Venus is an algorithm based money market system on the BNB blockchain. Venus brings the money  market protocol of Compound and the minting protocol of MakerDAO together, allowing the user to use  one collateral for both the functionalities.\n\n\n\n\n\n",
+      "order": 3,
+      "explanations": [
+        {
+          "key": "about-venus",
+          "title": "About Venus",
+          "shortTitle": "About Venus",
+          "details": "\n### What is Venus?\nVenus is an algorithm based money market system on the BNB blockchain. It is a fork of Compound and MakerDAO.\n### Why do we need Venus?\nVenus brings the money market protocol of Compound and the minting protocol of MakerDAO together, allowing the user to use one collateral for both the functionalities. Let us discuss lending and borrowing on Venus. Built on the binance blockchain, Venus has inherent advantages like quick transaction times and low transaction costs. It  combines the features of lending and borrowing along with minting stable coins, making it flexible.  Let us discuss its features in the next sections.\n### Lending and borrowing\n**How is interest accrued in Venus? What are vTokens and how do they function?** Each asset supported by the Venus Protocol is integrated through a vToken contract, an EIP-20 compliant representation of balances supplied to the protocol. \nEvery time a user interacts with the Venus protocol, they do so through the vTokens smart contract. By supplying assets to the protocol, users earn an equivalent amount  of vTokens of the underlying asset according to the current exchange rate. The exchange rate depends on the supply rate value of the market entered. This means that the number of  vTokens you hold remains the same while the amount of underlying asset you can redeem using it will keep increasing, hence accumulating interest. Interest is accumulated every block in Venus, similar to Compound.\nBy minting vTokens, users  * Earn interest through the vToken's exchange rate, which increases in value relative to the underlying asset. * Gain the ability to use vTokens as collateral.\nLet us now look at the functions offered within the lending and borrowing spectrum in Venus.\n**Mint/Supply - **The mint function allows a user to transfer an asset into the protocol in order to begin accumulating interest based on the current supply rate. The user then receives a quantity of vTokens, which is equal to the number of underlying tokens supplied divided by the current exchange rate.\n**Borrow - **The borrow function allows users to take out a loan from the protocol, which starts accruing interest based on the asset's borrowing rate. The amount borrowed can't be more than the user's account liquidity or the market's available liquidity. We'll discuss account liquidity more later.              \n**Redeem - **The redeem function allows users to convert a specified amount of vTokens into the underlying asset. The amount of underlying tokens received is equal to the number of vTokens redeemed, multiplied by the current exchange rate. To redeem vTokens, the user must have enough liquidity in their account and there must be enough liquidity available in the market. \n**Repay borrow -** The repay function transfers an asset into the protocol, reducing the user's borrow balance. You can also repay a borrow on behalf of another address using the `repay borrow behalf` function.\nLike DAI, Venus has its own stablecoin, VAI. VAI is pegged to the USD. VAI is minted by borrowing it at 50% LTV. That is, $100 worth of assets can be used as collateral to mint a maximum of 50 VAI. Borrowing VAI works exactly similar to normal borrowing we have discussed above in the Venus protocol. This is where Venus derives its functionality from MakerDAO.\n###Liquidation                                                                   \n**What is account liquidity? ** Account Liquidity represents the USD value of assets borrowable by a user, before it reaches liquidation. Users with a shortfall (negative liquidity) are subject to liquidation, and can’t withdraw or borrow assets until Account Liquidity is positive again.\n**How is it calculated?** For each market the user has entered into, their supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity. Borrowing an asset reduces Account Liquidity for each USD borrowed. Withdrawing an asset reduces Account Liquidity  by the asset’s collateral factor times each USD withdrawn.\n**What happens when a user has negative account liquidity? ** A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.  The liquidation incentive is the discount that the liquidator receives. The liquidator first has to seize an asset as collateral as if they are repaying their own borrow, on repaying they receive vTokens with said incentive.\n\n\n"
+        },
+        {
+          "key": "tokens",
+          "title": "Rewards and tokens",
+          "shortTitle": "Rewards and tokens",
+          "details": "\n### Tokens and rewards    \n### XVS                                                                                              \n**What is XVS? How is XVS distributed? **                                                                                                    XVS is the native token of Venus, used in governance. XVS is earned by interacting with the protocol (by borrowing, lending and staking). Let us get into a few details in the next section.                                                                                         How much XVS is distributed to suppliers and borrowers in each market is determined by “venus speed”. This number is updated regularly to ensure that XVS is being distributed proportionally to the amount of utility each market provides.  Any user can call the Unitroller's refreshVenusSpeeds method at any time in order to update the Venus speeds for all markets. The venusRate indicates how much XVS goes to the suppliers or borrowers, so doubling this number shows how much  XVS goes to all suppliers and borrowers combined, meaning equal amount of XVS is emitted to borrowers and suppliers. \n**How can XVS be claimed?** Venus users automatically earn XVS coins for each block they contribute to or borrow from the protocol. The protocol will automatically transfer the accrued XVS to a user's address when the total amount of XVS earned by that address (in a market)  reaches a certain threshold. If the address executes any of the mint, borrow, transfer, liquidateBorrow, repayBorrow, or redeem functions on that market, the user can claim their Venus tokens. Alternatively, users can call the claimVenus method on any  vToken contract at any time for more granular control over which markets to claim from.\n**Is staking/vault mechanism available on Venus? Can XVS be earned in any other way?** Venus Vault is a mechanism that locks XVS to improve the system’s anti-risk ability and distributes staking rewards. Apart from lending and borrowing to earn XVS, XVS can be staked/ held in Venus vaults to earn it as interest, the rewards are part of  the daily XVS output. It is important to note that XVS is the governance token of the Venus protocol and only staked XVS is eligible to be used as vote in the governance of Venus. Holding XVS in the vault gives you voting power, which you can delegate if  you choose to. Will enable you to obtain income distribution from the Venus protocol. The XVS deposited in the vault will have a 7 day period which you have to wait out till you can redeem your XVS, the XVS deposited in vaults cannot be used as collateral for borrowing.                                                                                                                             The Vault has multiple functions such as risk guarantee, voting governance, income distribution and rewards distribution, ensuring that the XVS holders’ benefits and responsibilities are equal.                                                                                                              **How does vaults help Venus in case of risk events?**                                                         After a risk event occurs in Venus and only if the Venus risk fund account is not sufficient to cover the shortfall, the XVS depositor in the vault will pay a maximum of 10% of the total deposit amount to compensate for the loss.\n### VRT                                                                                                                                         Apart from XVS, there is VRT (Venus Reward Token) which was created in order to distribute the liquidity mining distribution among borrowers. VRT can be deposited in the VRT vault to earn rewards. In addition to that there is also provision for the user to exchange between  VRT and XVS at the rate of 12000 VRT = 1 XVS. Currently, VRT can be earned as interest in vaults. Only use case for VRT in the Venus protocol currently is to redeem it for XVS at the rate mentioned above. VRT can also be deposited in the VRT vault to obtain rewards. These two  functions will be available for a period of 12 months, after which VRT will no longer play a role in the Venus ecosystem.\n   \n "
+        },
+        {
+          "key": "references",
+          "title": "References",
+          "shortTitle": "References",
+          "details": "Here are some important links to learn more about Compound III (V3)\n\nhttps://docs.venus.io/docs/getstarted#introduction\n\nhttps://blog.venus.io/venus-tokenomics-proposal-final-version-cc9afb51bdb7\n\nhttps://venus.io/\n\nhttps://testnet.venus.io/"
+        }
+      ],
+      "questions": [],
       "readings": [],
       "summaries": []
     }

@@ -165,6 +165,7 @@
 
     COMP can only be claimed by addresses that interact with the protocol and
     are able to call the claim function.
+    
 - key: references
   title: References
   shortTitle: References
