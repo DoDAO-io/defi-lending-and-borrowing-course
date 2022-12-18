@@ -66,6 +66,7 @@
     protocol, reducing the user's borrow balance. You can also repay a borrow on
     behalf of another address using the `repay borrow behalf` function.
 
+
     Like DAI, Venus has its own stablecoin, VAI. VAI is pegged to the USD. VAI
     is minted by borrowing it at 50% LTV. That is, $100 worth of assets can be
     used as collateral to mint a maximum of 50 VAI. Borrowing VAI works exactly
