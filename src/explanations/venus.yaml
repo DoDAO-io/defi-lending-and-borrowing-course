@@ -31,18 +31,23 @@
     can redeem using it will keep increasing, hence accumulating interest.
     Interest is accumulated every block in Venus, similar to Compound.
 
-    By minting vTokens, users  * Earn interest through the vToken's exchange
-    rate, which increases in value relative to the underlying asset. * Gain the
-    ability to use vTokens as collateral.
+
+    By minting vTokens, users  
+
+    * Earn interest through the vToken's exchange rate, which increases in value
+    relative to the underlying asset. 
+
+    * Gain the ability to use vTokens as collateral.
+
 
     Let us now look at the functions offered within the lending and borrowing
     spectrum in Venus.
 
-    **Mint/Supply - **The mint function allows a user to transfer an asset into
-    the protocol in order to begin accumulating interest based on the current
-    supply rate. The user then receives a quantity of vTokens, which is equal to
-    the number of underlying tokens supplied divided by the current exchange
-    rate.
+    * **Mint/Supply -** The mint function allows a user to transfer an asset
+    into the protocol in order to begin accumulating interest based on the
+    current supply rate. The user then receives a quantity of vTokens, which is
+    equal to the number of underlying tokens supplied divided by the current
+    exchange rate.
 
     * **Borrow -** The borrow function allows users to take out a loan from the
     protocol, which starts accruing interest based on the asset's borrowing
