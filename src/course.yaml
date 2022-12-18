@@ -60,14 +60,14 @@ topics:
 
     explanations: compound.yaml
     questions: compound.yaml
-
   - title: Euler
     key: euler
     details: >+
-      Euler is a non-custodial DeFi protocol that allows users to lend and borrow and 
-      the main factor that differentiates Euler form other trusted protocols like Aave 
-      and Compound is that, in Euler any asset that has a WETH pair on Uniswap v3 can be 
-      added as a lending market on Euler by anyone straight away.
+      Euler is a non-custodial DeFi protocol that allows users to lend and
+      borrow and  the main factor that differentiates Euler form other trusted
+      protocols like Aave  and Compound is that, in Euler any asset that has a
+      WETH pair on Uniswap v3 can be  added as a lending market on Euler by
+      anyone straight away.
 
 
 
@@ -84,6 +84,8 @@ topics:
 
 
 
-   
+
     explanations: venus.yaml
-   
+
+courseAdmins:
+  - '0xc28f5a9f1dcaf540660adde8b93d172f560d140f'

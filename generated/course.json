@@ -16,7 +16,9 @@
   ],
   "publishStatus": "Draft",
   "thumbnail": "https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/DeFi/defi_logo.jpeg",
-  "courseAdmins": [],
+  "courseAdmins": [
+    "0xc28f5a9f1dcaf540660adde8b93d172f560d140f"
+  ],
   "topics": [
     {
       "title": "Intoduction",
