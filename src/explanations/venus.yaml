@@ -110,14 +110,11 @@
   title: Rewards and tokens
   shortTitle: Rewards and tokens
   details: >-
+    ## XVS - Governance Token
 
-    ### Tokens and rewards    
+    #### XVS  - What is XVS and how is it
+    distributed?                                                                                            
 
-    ###
-    XVS                                                                                              
-
-    **What is XVS? How is XVS distributed?
-    **                                                                                                   
     XVS is the native token of Venus, used in governance. XVS is earned by
     interacting with the protocol (by borrowing, lending and staking). Let us
     get into a few details in the next
@@ -131,41 +128,51 @@
     number shows how much  XVS goes to all suppliers and borrowers combined,
     meaning equal amount of XVS is emitted to borrowers and suppliers. 
 
-    **How can XVS be claimed?** Venus users automatically earn XVS coins for
-    each block they contribute to or borrow from the protocol. The protocol will
-    automatically transfer the accrued XVS to a user's address when the total
-    amount of XVS earned by that address (in a market)  reaches a certain
-    threshold. If the address executes any of the mint, borrow, transfer,
-    liquidateBorrow, repayBorrow, or redeem functions on that market, the user
-    can claim their Venus tokens. Alternatively, users can call the claimVenus
-    method on any  vToken contract at any time for more granular control over
-    which markets to claim from.
 
-    **Is staking/vault mechanism available on Venus? Can XVS be earned in any
-    other way?** Venus Vault is a mechanism that locks XVS to improve the
-    system’s anti-risk ability and distributes staking rewards. Apart from
-    lending and borrowing to earn XVS, XVS can be staked/ held in Venus vaults
-    to earn it as interest, the rewards are part of  the daily XVS output. It is
-    important to note that XVS is the governance token of the Venus protocol and
-    only staked XVS is eligible to be used as vote in the governance of Venus.
-    Holding XVS in the vault gives you voting power, which you can delegate if 
-    you choose to. Will enable you to obtain income distribution from the Venus
-    protocol. The XVS deposited in the vault will have a 7 day period which you
-    have to wait out till you can redeem your XVS, the XVS deposited in vaults
-    cannot be used as collateral for
+    #### **How can XVS be claimed?** 
+
+    Venus users automatically earn XVS coins for each block they contribute to
+    or borrow from the protocol. The protocol will automatically transfer the
+    accrued XVS to a user's address when the total amount of XVS earned by that
+    address (in a market)  reaches a certain threshold. If the address executes
+    any of the mint, borrow, transfer, liquidateBorrow, repayBorrow, or redeem
+    functions on that market, the user can claim their Venus tokens.
+    Alternatively, users can call the claimVenus method on any  vToken contract
+    at any time for more granular control over which markets to claim from.
+
+
+    #### **Is staking/vault mechanism available on Venus? Can XVS be earned in
+    any other way?** 
+
+    Venus Vault is a mechanism that locks XVS to improve the system’s anti-risk
+    ability and distributes staking rewards. Apart from lending and borrowing to
+    earn XVS, XVS can be staked/ held in Venus vaults to earn it as interest,
+    the rewards are part of  the daily XVS output. It is important to note that
+    XVS is the governance token of the Venus protocol and only staked XVS is
+    eligible to be used as vote in the governance of Venus. Holding XVS in the
+    vault gives you voting power, which you can delegate if  you choose to. Will
+    enable you to obtain income distribution from the Venus protocol. The XVS
+    deposited in the vault will have a 7 day period which you have to wait out
+    till you can redeem your XVS, the XVS deposited in vaults cannot be used as
+    collateral for
     borrowing.                                                                                                                            
     The Vault has multiple functions such as risk guarantee, voting governance,
     income distribution and rewards distribution, ensuring that the XVS holders’
     benefits and responsibilities are
-    equal.                                                                                                             
-    **How does vaults help Venus in case of risk
-    events?**                                                         After a
-    risk event occurs in Venus and only if the Venus risk fund account is not
-    sufficient to cover the shortfall, the XVS depositor in the vault will pay a
-    maximum of 10% of the total deposit amount to compensate for the loss.
+    equal.                                                                                                              
 
-    ###
-    VRT                                                                                                                                        
+
+    #### **How does vaults help Venus in case of risk events?**
+
+    After a risk event occurs in Venus and only if the Venus risk fund account
+    is not sufficient to cover the shortfall, the XVS depositor in the vault
+    will pay a maximum of 10% of the total deposit amount to compensate for the
+    loss.
+
+
+    ##
+    VRT                                                                                                                                         
+
     Apart from XVS, there is VRT (Venus Reward Token) which was created in order
     to distribute the liquidity mining distribution among borrowers. VRT can be
     deposited in the VRT vault to earn rewards. In addition to that there is
