@@ -71,7 +71,7 @@
     ###
     Liquidation                                                                   
 
-    #### **What is account liquidity? ** 
+    #### **What is account liquidity?** 
 
     Account Liquidity represents the USD value of assets borrowable by a user,
     before it reaches liquidation. Users with a shortfall (negative liquidity)
