@@ -57,7 +57,7 @@
     liquidity in their account and there must be enough liquidity available in
     the market. 
 
-    * * *Repay borrow -** The repay function transfers an asset into the
+    * **Repay borrow -** The repay function transfers an asset into the
     protocol, reducing the user's borrow balance. You can also repay a borrow on
     behalf of another address using the `repay borrow behalf` function.
 
@@ -68,7 +68,8 @@
     This is where Venus derives its functionality from MakerDAO.
 
 
-    ###Liquidation                                                                   
+    ###
+    Liquidation                                                                   
 
     #### **What is account liquidity? ** 
 
