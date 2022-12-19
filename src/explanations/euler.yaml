@@ -23,7 +23,7 @@
    ### Risk adjusted collateral 
 
    Another concept adopted by Euler is that they consider the risk factor of both the collateral and the borrowed asset to come up with the maximum amount that can be borrowed for the said collateral-liability asset pair called **risk-adjusted collateral**.  
-   For example, in borrowing XYZ with a collateral factor of 0.5, say you are using $1000 USDC with a collateral factor of 0.9, the maximum amount borrowable would come out ot be 1000*0.5*0.9 = $450 worth of XYZ as opposed to the usual 1000*0.9 that we are used to. 
+   For example, in borrowing XYZ with a collateral factor of 0.5, say you are using $1000 USDC with a collateral factor of 0.9, the maximum amount borrowable would come out ot be 1000 * 0.5 * 0.9 = $450 worth of XYZ as opposed to the usual 1000 * 0.9 that we are used to. 
    
    
    ### Liquidations
