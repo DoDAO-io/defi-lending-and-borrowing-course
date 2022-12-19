@@ -23,6 +23,12 @@ Let us now look at the functions offered within the lending and borrowing spectr
 * **Repay borrow -** The repay function transfers an asset into the protocol, reducing the user's borrow balance. You can also repay a borrow on behalf of another address using the `repay borrow behalf` function.
 ### VAI
 Like DAI, Venus has its own stablecoin, VAI. VAI is pegged to the USD. VAI is minted by borrowing it at 50% LTV. That is, $100 worth of assets can be used as collateral to mint a maximum of 50 VAI. Borrowing VAI works exactly similar to normal borrowing we have discussed above in the Venus protocol. This is where Venus derives its functionality from MakerDAO.
+### Markets
+Each token listed on Venus has its own market where it can be supplied and borrowed. Each market in Venus has its own distrubution rate for XVS, and supply and borrow rates for the given asset.  It is not mandatory that all markets provide a supply and borrow rate. For example, currently the XVS market in Venus does not provide any rewards for supplying or borrowing. Enter and Exit markets are commonly used terms when it comes to a market.
+
+**Enter Market -** In order to supply collateral or borrow in a market, it must be entered first. 
+
+**Exit Market -** Exited markets will not count towards account liquidity calculations. To exit would mean that the user has no more open borrows/ debt in the market and the user is not supplying to the market.
 
 ### Liquidation                                                                   
 **Account liquidity** <br> Account Liquidity represents the USD value of assets borrowable by a user, before it reaches liquidation. Users with a shortfall (negative liquidity) are subject to liquidation, and can’t withdraw or borrow assets until Account Liquidity is positive again. <br><br> **How is it calculated?** <br> For each market the user has entered into, their supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity. Borrowing an asset reduces Account Liquidity for each USD borrowed. Withdrawing an asset reduces Account Liquidity  by the asset’s collateral factor times each USD withdrawn. <br><br> **Liquidation event** <br> A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.  The liquidation incentive is the discount that the liquidator receives. The liquidator first has to seize an asset as collateral as if they are repaying their own borrow, on repaying they receive vTokens with said incentive.
@@ -35,7 +41,19 @@ Like DAI, Venus has its own stablecoin, VAI. VAI is pegged to the USD. VAI is mi
 ### Tokens and Vaults    
 ### XVS                                                                                              
 **XVS and its distribution**   
-XVS is the native token of Venus, used in governance. XVS is earned by interacting with the protocol (by borrowing, lending and staking).                                                                                      How much XVS is distributed to suppliers and borrowers in each market is determined by “venus speed”. This number is updated regularly to ensure that XVS is being distributed proportionally to the amount of utility each market provides.  Any user can call the Unitroller's refreshVenusSpeeds method at any time in order to update the Venus speeds for all markets. The venusRate indicates how much XVS goes to the suppliers or borrowers, so doubling this number shows how much  XVS goes to all suppliers and borrowers combined, meaning equal amount of XVS is emitted to borrowers and suppliers. 
+XVS is the native token of Venus, used in governance. XVS is earned by interacting with the protocol (by borrowing, lending and staking), for each block that the user is actively supplying to, borrowing from, or staking in the protocol, the user accumulates XVS.                                                                                      How much XVS is distributed to suppliers and borrowers in each market is determined by “venus speed”. This number is updated regularly to ensure that XVS is being distributed proportionally to the amount of utility each market provides.  The venus speed is updated automatically each time a user interacts with the protocol.
+**Venus rate**
+It is an integer that indicates the rate at which the protocol distributes XVS to markets’ suppliers or borrowers, every BSC block. The value is the amount of XVS (in wei), per block, per given market.
+
+Venus speed is determined by,
+
+` utility = vTokenTotalBorrows * assetPrice `
+
+` utilityFraction = utility / sumOfAllVenusedMarketUtilities `
+
+` marketVenusSpeed = venusRate * utilityFraction `
+
+
 <br><br> **Claiming XVS**
   <br>
 Venus users automatically earn XVS coins for each block they contribute to or borrow from the protocol. The protocol will automatically transfer the accrued XVS to a user's address when the total amount of XVS earned by that address (in a market)  reaches a certain threshold. If the address executes any of the mint, borrow, transfer, liquidateBorrow, repayBorrow, or redeem functions on that market, the user can claim their Venus tokens. Alternatively, users can call the claimVenus method on any  vToken contract at any time for more granular control over which markets to claim from.

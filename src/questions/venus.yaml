@@ -42,7 +42,7 @@
       
 - uuid: 6d862849-fcb2-4d76-b96c-170f556d5c72
   type: SingleChoice
-  content: The Mint function in Venus is used to?
+  content: The Mint (supply) function in Venus is used to?
   hint: NoHint
   explanation: The mint function in venus is used to supply assets to the protocol and mint an equivalent amount of vTokens for the underlying asset.
   answerKeys:
