@@ -7,7 +7,7 @@
     - D
   difficultyLevel: "Low"
   choices:
-    - content: Money market features
+    - content: Lending and borrowing
       key: A
       
     - content: Stablecoin minting feature
@@ -23,12 +23,12 @@
   type: SingleChoice
   content: What are the usecases of vTokens?
   hint: NoHint
-  explanation: vTokens are used to accrue interest for the user supplied collateral. They can be used as collateral to borrow.
+  explanation: vToken contract is used for interacting with all the currency supported by Venus. They can be used as collateral to borrow.
   answerKeys:
-    - A
+    - D
   difficultyLevel: "Medium"
   choices:
-    - content: To accrue interest on assets supplied and be used as collateral
+    - content: To accrue interest only assets supplied
       key: A
       
     - content: To accrue debt and be used as collateral
@@ -37,12 +37,12 @@
     - content: To accrue debt only
       key: C
       
-    - content: To accrue debt and interest for borrowed and supplied assets respectively
+    - content: To accrue debt and interest for borrowed and supplied assets respectively and be used as collateral
       key: D
       
 - uuid: 6d862849-fcb2-4d76-b96c-170f556d5c72
   type: SingleChoice
-  content: The Mint function in Venus is used to?
+  content: The Mint (supply) function in Venus is used to?
   hint: NoHint
   explanation: The mint function in venus is used to supply assets to the protocol and mint an equivalent amount of vTokens for the underlying asset.
   answerKeys:
@@ -172,9 +172,9 @@
 
 - uuid: 87d32f53-099d-4188-89a1-e942d7d408e3
   type: SingleChoice
-  content: There is no vault mechanism in Venus
+  content: A user gains voting power by accumulating XVS in their account from interacting with the protocol
   hint: NoHint
-  explanation: Venus Vault is a mechanism that locks XVS to improve the system’s anti-risk ability and distributes staking rewards.           
+  explanation: False, a user cannot gain voting power just by XVS accumulating XVS by interacting with the protocol. XVS has to be staked to get voting power.       
   answerKeys:
     - B
   difficultyLevel: "Low"
