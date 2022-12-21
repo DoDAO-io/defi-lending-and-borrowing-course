@@ -1,0 +1,243 @@
+- uuid: 7f149261-b99b-49eb-9813-669ec7b1bcb1
+  type: SingleChoice
+  content: How do aTokens accrue interest for the supplier / lender?
+  hint: NoHint
+  explanation: The value of an aToken is pegged to the value of the corresponding asset at a 1:1 ratio, and the user accumulates aTokens in their wallet according to the interest rate offered.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens remains the same
+      key: A
+      
+    - content: The number of aTokens in the user's possession keeps remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing
+      key: B
+      
+    - content: The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens also increases
+      key: C
+      
+    - content: aTokens are not used as of Aave V3
+      key: D
+      
+- uuid: 384ffe8c-9ec7-4b9c-bef7-9eb1c4f464aa
+  type: SingleChoice
+  content: What logic does Aave follow to keep count of user's debt?
+  hint: NoHint
+  explanation: Aave uses debt tokenization to keep count of user's debt called Debt tokens. Debt tokens are interest-accruing tokens that are minted and burned on borrow and repay, representing the debt owed by the token holder and are non-transferrable. 
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: Debt tokenization
+      key: A
+      
+    - content: Calculation and accounting of debt in smart contracts
+      key: B
+      
+    - content: Appointing individuals to keep track of debt
+      key: C
+      
+    - content: Both A and C
+      key: D
+      
+- uuid: 672b8249-5e9b-4589-aee5-c0b0d27eab3a
+  type: MultipleChoice
+  content: What are the types of debt tokens in Aave?
+  hint: NoHint
+  explanation: Stable and variable debt tokens are the two type of debt tokens in Aave.
+  answerKeys:
+    - C
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: EMI debt tokens
+      key: A
+      
+    - content: Transferrable debt tokens
+      key: B
+      
+    - content: Variable debt tokens
+      key: C
+      
+    - content: Stable debt tokens
+      key: D
+      
+- uuid: 9c36eba7-363d-4b0f-8e02-880b80930f03
+  type: SingleChoice
+  content: Which of these functionalities in Aave is built upon flash loans?
+  hint: NoHint
+  explanation: Collateral swapping / trading and Repay with collateral are built by using Flash Loans V2.
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: Interest on supplied asset
+      key: A
+      
+    - content: Collateral trading and repaying with collateral
+      key: B
+      
+    - content: Debt tokenization
+      key: C
+      
+    - content: Credit delegation
+      key: D
+          
+- uuid: a153bd00-916b-4eef-81d4-20fe5be5014a
+  type: SingleChoice
+  content: Which of the following are use cases of aTokens
+  hint: NoHint
+  explanation: aTokens are used to accrue interest, and they can also be used to directly repay loans without redeeming them for their underlying tokens.
+  answerKeys:
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: Repay loans
+      key: A
+      
+    - content: Accrue interest on supplied collateral
+      key: B
+      
+    - content: Debt tokenization
+      key: C
+      
+    - content: Both A and B
+      key: D
+
+- uuid: 048e1805-d768-4988-804d-617a7b3ed51d
+  type: SingleChoice
+  content: Which of the following is a use case for E-Mode
+  hint: NoHint
+  explanation: E-Mode allows the borrower to maximize capital efficiency by increasing the LTV and lowering the liquidation threshold on assets borrowed in E-Mode.
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: Minimize capital efficiency
+      key: A
+      
+    - content: Maximize capital efficiency
+      key: B
+      
+    - content: To borrow newly listed assets
+      key: C
+      
+    - content: To improve the security of the protocol
+      key: D
+            
+- uuid: 7e5100a4-5aa8-423c-a38d-8c1c53f72ded
+  type: SingleChoice
+  content: Which of the following modes in Aave allows the user to list new assets with a designated debt ceiling?
+  hint: NoHint
+  explanation: Isolation mode on Aave lets you list new assets as Isolated with a designated debt ceiling. 
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: Isolation mode
+      key: A
+      
+    - content: E-Mode
+      key: B
+      
+    - content: Siloed borrowing mode
+      key: C
+      
+    - content: New listing mode
+      key: D
+
+- uuid: 982e2c16-d5b7-473d-ada9-605f35e14794
+  type: SingleChoice
+  content: In what denomination are the rewards users get for staking Aave in the Safety Module?
+  hint: NoHint
+  explanation: The Aave Protocol V3 now supports multiple rewards per token, which means that it's possible for an asset listing to enable additional incentive rewards denominated in underlying tokens. 
+
+  answerKeys:
+    - D
+  difficultyLevel: "Medium"
+  choices:
+    - content: In stkAAVE
+      key: A
+      
+    - content: In underlying tokens
+      key: B
+      
+    - content: Only in aTokens
+      key: C
+      
+    - content: Both A and B
+      key: D
+      
+
+
+- uuid: 9e2e7ef6-2978-47bc-a6c9-29c38d686436
+  type: SingleChoice
+  content: Debt tokens are transferrable.
+  hint: NoHint
+  explanation: False, debt tokens are not transferrable.
+  answerKeys:
+    - B
+  difficultyLevel: "Low"
+  choices:
+    - content: "True"
+      key: A
+      
+    - content: "False"
+      key: B
+      
+- uuid: 8d57cef0-aea7-4666-bbe9-c4166ef19a98
+  type: SingleChoice
+  content: How does locking your AAVE in the Safety Module help in a shortfall event?
+  hint: NoHint
+  explanation: If a Shortfall Event occurs, part of the locked AAVE is auctioned on the market to help raise funds to cover the deficit. 
+  answerKeys:
+    - B
+  difficultyLevel: "Medium"
+  choices:
+    - content: Part of the AAVE locked in the Safety Module will be given to the lenders in the market where there is a shortfall
+      key: A
+      
+    - content: Part of the AAVE locked in the Safety Module will be auctioned off to help raise funds to cover the deficit
+      key: B
+      
+    - content: The AAVE locked in the Safety Module will be unlocked and given back to those who staked it
+      key: C
+      
+    - content: The Safety Module does not help in the event of a shortfall
+      key: D
+      
+- uuid: cc90df55-794c-4c98-b957-4523d2d8a518
+  type: SingleChoice
+  content: What are the ways of participating in liquidating a bad loan?
+  hint: NoHint
+  explanation: A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.
+  answerKeys:
+    - A
+  difficultyLevel: "Medium"
+  choices:
+    - content: By calling liquidationCall directly in the pool contract and by creating bots or automated systed to liquidate bad loans
+      key: A
+      
+    - content: By buying the collateral from the address with bad debt by an off-chain settlement
+      key: B
+      
+    - content: Only by calling liquidationCall directly in the pool 
+      key: C
+      
+    - content: Only by creating your own automated system to liquidate loans
+      key: D
+
+- uuid: b6196329-09be-4fdf-b8fa-76212137a04f
+  type: SingleChoice
+  content: Users can only receive awards on their behalf for staking AAVE.
+  hint: NoHint
+  explanation: False, Aave V3 allows users to claim rewards to another account, as well as themselves, and to claim multiple types of rewards per asset in a single transaction.
+  answerKeys:
+    - B
+  difficultyLevel: "Low"
+  choices:
+    - content: "True"
+      key: A
+      
+    - content: "False"
+      key: B

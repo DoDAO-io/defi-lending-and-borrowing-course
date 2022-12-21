@@ -344,15 +344,15 @@
       "explanations": [
         {
           "key": "about-euler",
+          "title": "About Euler",
           "shortTitle": "About Euler",
-          "details": "\n### What is Euler \nEuler is a non-custodial DeFi protocol that allows users to lend and borrow. What sets Euler apart from other trusted protocols like Aave and Compound is that anyone can add any asset that has a WETH pair on Uniswap v3 as a lending market on Euler straight away. There is significant unmet demand for lending and borrowing the long tail of crypto assets which are not listed on Aave or Compound, and Euler provides users with the opportunity to list these assets. This makes it possible to tap into a whole new world of potential earning opportunities. Euler is managed by holders  of the protocol native governance token called Euler Governance Token (EUL). \n\n### Asset Tiers\nListing multiple assets which are not necessarily mainstream comes with risk as their price can fluctuate a lot. Euler mitigates this risk by using different types of  pools which can/cannot be isolated from other assets.  This limits the exposure in case there are any bad debts. \n* **Isolation-tier -** assets are available for ordinary lending and borrowing, but they cannot be used as collateral to borrow other assets, and they can only be borrowed in isolation. What this means is that they cannot be borrowed alongside other assets using the same pool of collateral. \n* **Cross-tier -**  assets are available for ordinary lending and borrowing, and cannot be used as collateral to borrow other assets, but they can be borrowed alongside other assets. For example, if a user has USDC and DAI as collateral, and they want to borrow cross-tier assets ABC and XYZ, then they can do so from a single account on Euler.\n* **Collateral-tier -** assets are available for ordinary lending and borrowing, cross-borrowing, and they can be used as collateral. For example, a user can deposit collateral assets DAI and USDC, and use them to borrow collateral assets UNI and LINK, all from a single account.\n\n### Risk adjusted collateral \nAnother concept adopted by Euler is that they consider the risk factor of both the collateral and the borrowed asset to come up with the maximum amount that can be borrowed for the said collateral-liability asset pair called **risk-adjusted collateral**.   \n\nFor example, in borrowing XYZ with a collateral factor of 0.5, say you are using $1000 USDC with a collateral factor of 0.9, the maximum amount borrowable would come out to be \n\n`1000 * 0.5 * 0.9 = $450 worth of XYZ`\n\n as opposed to the usual 1000 * 0.9 that we are used to. \n\n### Liquidations\nA borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral. A borrower who has just become in violation still has enough collateral to repay their loan, but is at risk of defaulting on their loan. As a result,  they may be liquidated to limit the potential for them to default. One of the issues with a fixed discount percentage for the liquidators on the collateral of the loan they repaid is that potential liquidators often have to engage in priority gas auctions (PGA) in order to find profitable liquidations, which exposes the liquidation bonus as MEV (miner extractable value).  \n\nIn Euler they allow the discount to increase depending on how far underwater a position is. Now, liquidators are forced to engage in a type of Dutch auction. As the discount gradually goes up, each liquidator must decide if they want to bid for liquidation at the current discount being offered. For example, liquidator  A might be able to profit at 4%, but liquidator B might be so at 3.5% because they have a more efficient operation. This process is made more efficient by the TWAP oracles used on the Euler network which allow for a more smooth price movement over time and facilitates the dutch auction, preventing all liquidators from jumping in at once.\n\n### Internal Working\nLenders who deposit into a liquidity pool on Euler, receive interest-bearing ERC20 eTokens in return, which can be redeemed for their share of the underlying assets in the pool at any time, provided there are unborrowed tokens in the pool.  Euler tokenizes debts on the protocol with ERC20-compliant interfaces known as dTokens. The dToken interface allows the construction of positions without needing to interact with underlying assets, and can be used to create derivative products that include debt obligations. Euler uses a reversed version of the regular ERC20 transfer/approved methods for dTokens. This means that rather than being able to send tokens to anyone but requiring approval to take them, dTokens can be taken by anyone but require approval to accept them. This also prevents users from \"burning\" their dTokens.\n\n### Other Important Features\nEuler has a lot of innovative features and models that are built on top of the base lending and borrowing layer. These are\n\n**Minting & Burning and Leverage -**\nMinting is the recursive supplying and borrowing of the same asset as the collateral in order to achieve a leveraged position. Eg: Say you have 1000 USDC and you can make a borrow of up to 90% of USDC value, you take a loan of 900 USDC. Now you take the 900 USDC and supply it as collateral. Now with the increased borrowing capacity, you take a loan of 810 USDC and supply it as collateral again. Now in the Euler protocol, you are earning interest on 1710 USDC while you only had 1000 USDC to begin with, thus increasing your yield. This concept of recursive borrowing and supplying is “Mint” and what it helps the user achieve is called leverage.\nBurning is to delete one set of “borrow” and “deposit”, that is to repay one borrow position and withdraw the respective collateral i.e deleting one set of deposit and borrow the multiple sets of deposits and borrows made. \n\n**Sub Accounts -**\nEuler also has a very protocol-specific feature called sub-accounts. Once an account is borrowed in an isolated tier, it would be locked from borrowing other assets. In order to not limit the user, Euler enables every Ethereum account to create up-to 256 sub-accounts, allowing the user to segregate their liabilities according to their needs.\n\n**Transaction Builder -**\nEuler allows users to bundle a bunch of actions that would otherwise be separate transactions on their own into one by using the transaction builder. This feature ties in with the defer liquidity feature where the liquidity check on the user is done after a bundle of transactions considered as one, whereas usually, a liquidation  check is performed after every action that requires user liquidity (Borrow, withdraw etc). \n\n**Feeless Flash Loans -**\nEuler lacks a native concept of flash loans. But by making use of the defer liquidity feature, users can make an uncollateralized borrow, perform whatever operation they like, and then repay the borrow - all without being charged extra fees. This can be used to rebalance positions, build-up leveraged positions, take advantage of external arbitrage opportunities, and more. Because Euler only charges fees according to the time value of money, and from the blockchain's perspective flash loans are held for a duration of 0 seconds, they are entirely free on Euler (ignoring gas costs).\n\n**Interest Rates -**\nTo improve capital efficiency and do away with errors in determining parameters for the interest rates of every lending market, Euler uses reactive interest rates. By using a PID controller, Euler amplifies or dampens the rate of change in interest rates when utilization is above or below the target level of utilization respectively. As a result, reactive interest rates  that adapt to market conditions for the underlying asset in real-time are created, without the need for ongoing governance intervention. Interest is accrued every second on Euler.\n\n",
-          "title": "About Euler"
+          "details": "\n### What is Euler \nEuler is a non-custodial DeFi protocol that allows users to lend and borrow. What sets Euler apart from other trusted protocols like Aave and Compound is that anyone can add any asset that has a WETH pair on Uniswap v3 as a lending market on Euler straight away. There is significant unmet demand for lending and borrowing the long tail of crypto assets which are not listed on Aave or Compound, and Euler provides users with the opportunity to list these assets. This makes it possible to tap into a whole new world of potential earning opportunities. Euler is managed by holders  of the protocol native governance token called Euler Governance Token (EUL). \n\n### Asset Tiers\nListing multiple assets which are not necessarily mainstream comes with risk as their price can fluctuate a lot. Euler mitigates this risk by using different types of  pools which can/cannot be isolated from other assets.  This limits the exposure in case there are any bad debts. \n* **Isolation-tier -** assets are available for ordinary lending and borrowing, but they cannot be used as collateral to borrow other assets, and they can only be borrowed in isolation. What this means is that they cannot be borrowed alongside other assets using the same pool of collateral. \n* **Cross-tier -**  assets are available for ordinary lending and borrowing, and cannot be used as collateral to borrow other assets, but they can be borrowed alongside other assets. For example, if a user has USDC and DAI as collateral, and they want to borrow cross-tier assets ABC and XYZ, then they can do so from a single account on Euler.\n* **Collateral-tier -** assets are available for ordinary lending and borrowing, cross-borrowing, and they can be used as collateral. For example, a user can deposit collateral assets DAI and USDC, and use them to borrow collateral assets UNI and LINK, all from a single account.\n\n### Risk adjusted collateral \nAnother concept adopted by Euler is that they consider the risk factor of both the collateral and the borrowed asset to come up with the maximum amount that can be borrowed for the said collateral-liability asset pair called **risk-adjusted collateral**.   \n\nFor example, in borrowing XYZ with a collateral factor of 0.5, say you are using $1000 USDC with a collateral factor of 0.9, the maximum amount borrowable would come out to be \n\n`1000 * 0.5 * 0.9 = $450 worth of XYZ`\n\n as opposed to the usual `1000 * 0.9` that we are used to. \n\n### Liquidations\nA borrower is considered to be in violation of Euler when the value of their risk-adjusted liabilities exceeds the value of their risk-adjusted collateral. A borrower who has just become in violation still has enough collateral to repay their loan, but is at risk of defaulting on their loan. As a result,  they may be liquidated to limit the potential for them to default. One of the issues with a fixed discount percentage for the liquidators on the collateral of the loan they repaid is that potential liquidators often have to engage in priority gas auctions (PGA) in order to find profitable liquidations, which exposes the liquidation bonus as MEV (miner extractable value).  \n\nIn Euler they allow the discount to increase depending on how far underwater a position is. Now, liquidators are forced to engage in a type of Dutch auction. As the discount gradually goes up, each liquidator must decide if they want to bid for liquidation at the current discount being offered. For example, liquidator  A might be able to profit at 4%, but liquidator B might be so at 3.5% because they have a more efficient operation. This process is made more efficient by the TWAP oracles used on the Euler network which allow for a more smooth price movement over time and facilitates the dutch auction, preventing all liquidators from jumping in at once.\n\n### Internal Working\nLenders who deposit into a liquidity pool on Euler, receive interest-bearing ERC20 eTokens in return, which can be redeemed for their share of the underlying assets in the pool at any time, provided there are unborrowed tokens in the pool.  Euler tokenizes debts on the protocol with ERC20-compliant interfaces known as dTokens. The dToken interface allows the construction of positions without needing to interact with underlying assets, and can be used to create derivative products that include debt obligations. Euler uses a reversed version of the regular ERC20 transfer/approved methods for dTokens. This means that rather than being able to send tokens to anyone but requiring approval to take them, dTokens can be taken by anyone but require approval to accept them. This also prevents users from \"burning\" their dTokens.\n\n### Other Important Features\nEuler has a lot of innovative features and models that are built on top of the base lending and borrowing layer. These are\n\n**Minting & Burning and Leverage -**\nMinting is the recursive supplying and borrowing of the same asset as the collateral in order to achieve a leveraged position. Eg: Say you have 1000 USDC and you can make a borrow of up to 90% of USDC value, you take a loan of 900 USDC. Now you take the 900 USDC and supply it as collateral. Now with the increased borrowing capacity, you take a loan of 810 USDC and supply it as collateral again. Now in the Euler protocol, you are earning interest on 1710 USDC while you only had 1000 USDC to begin with, thus increasing your yield. This concept of recursive borrowing and supplying is “Mint” and what it helps the user achieve is called leverage.\nBurning is to delete one set of “borrow” and “deposit”, that is to repay one borrow position and withdraw the respective collateral i.e deleting one set of deposit and borrow the multiple sets of deposits and borrows made. \n\n**Sub Accounts -**\nEuler also has a very protocol-specific feature called sub-accounts. Once an account is borrowed in an isolated tier, it would be locked from borrowing other assets. In order to not limit the user, Euler enables every Ethereum account to create up-to 256 sub-accounts, allowing the user to segregate their liabilities according to their needs.\n\n**Transaction Builder -**\nEuler allows users to bundle a bunch of actions that would otherwise be separate transactions on their own into one by using the transaction builder. This feature ties in with the defer liquidity feature where the liquidity check on the user is done after a bundle of transactions considered as one, whereas usually, a liquidation  check is performed after every action that requires user liquidity (Borrow, withdraw etc). \n\n**Feeless Flash Loans -**\nEuler lacks a native concept of flash loans. But by making use of the defer liquidity feature, users can make an uncollateralized borrow, perform whatever operation they like, and then repay the borrow - all without being charged extra fees. This can be used to rebalance positions, build-up leveraged positions, take advantage of external arbitrage opportunities, and more. Because Euler only charges fees according to the time value of money, and from the blockchain's perspective flash loans are held for a duration of 0 seconds, they are entirely free on Euler (ignoring gas costs).\n\n**Interest Rates -**\nTo improve capital efficiency and do away with errors in determining parameters for the interest rates of every lending market, Euler uses reactive interest rates. By using a PID controller, Euler amplifies or dampens the rate of change in interest rates when utilization is above or below the target level of utilization respectively. As a result, reactive interest rates  that adapt to market conditions for the underlying asset in real-time are created, without the need for ongoing governance intervention. Interest is accrued every second on Euler.\n\n"
         },
         {
           "key": "eul-token",
           "title": "EUL token",
           "shortTitle": "EUL token",
-          "details": "\n## EUL\nThe total supply of EUL is 27,182,818 (in homage to Euler’s number, e. The total supply of EUL is fixed for the first 4 years, after which EUL token holders may enact a governance proposal to inflate the supply by a maximum 2.718% per year. In that scenario, newly minted EUL will enter circulation via the Treasury. The Euler protocol will be managed by holders of the Euler Governance Token (EUL), a native governance token for the protocol. EUL tokens will represent the voting power of the protocol software. Holders with enough EUL tokens will be able to make a formal proposal for change on the protocol. Token holders will then be able to vote on the proposal themselves or delegate their vote shares to a third party. \nDecisions token holders might vote on include proposals to alter:\n* The tier of an asset * Collateral and borrow factors * Price oracle parameters * Reactive interest rate model parameters * Reserve factors\n**How can you earn EUL?** The Euler token (EUL) is distributed to borrowers on select markets on the platform. Note that EUL is only earned by borrowing and cannot be earned by simply lending to the protocol.\n\n   \n "
+          "details": "\n### EUL\nThe total supply of EUL is 27,182,818 (in homage to Euler’s number, e. The total supply of EUL is fixed for the first 4 years, after which EUL token holders may enact a governance proposal to inflate the supply by a maximum 2.718% per year. In that scenario, newly minted EUL will enter circulation via the Treasury. The Euler protocol will be managed by holders of the Euler Governance Token (EUL), a native governance token for the protocol. EUL tokens will represent the voting power of the protocol software. Holders with enough EUL tokens will be able to make a formal proposal for change on the protocol. Token holders will then be able to vote on the proposal themselves or delegate their vote shares to a third party. \nDecisions token holders might vote on include proposals to alter:\n* The tier of an asset \n* Collateral and borrow factors \n* Price oracle parameters \n* Reactive interest rate model parameters\n* Reserve factors\n\n**How can you earn EUL?**\n\n The Euler token (EUL) is distributed to borrowers\non select markets on the platform. Note that EUL is only earned by borrowing and cannot be earned by simply lending to the protocol.\n\n   \n "
         },
         {
           "key": "references",
@@ -677,7 +677,7 @@
     {
       "title": "Venus",
       "key": "venus",
-      "details": "Venus is an algorithm based money market system on the BNB blockchain. Venus brings the money  market protocol of Compound and the minting protocol of MakerDAO together, allowing the user to use  one collateral for both the functionalities.\n\n\n\n\n\n",
+      "details": "Venus is an algorithm based money market system on the BNB blockchain. Venus brings the money  market protocol of Compound and the minting protocol of MakerDAO together, allowing the user to use  one collateral for both the functionalities.\n\n\n\n\n",
       "order": 3,
       "explanations": [
         {
@@ -699,7 +699,683 @@
           "details": "Here are some important links to learn more about Venus\n\nhttps://docs.venus.io/docs/\n\nhttps://blog.venus.io/venus-tokenomics-proposal-final-version-cc9afb51bdb7\n\nhttps://venus.io/\n\nhttps://testnet.venus.io/"
         }
       ],
-      "questions": [],
+      "questions": [
+        {
+          "uuid": "9e285187-2ae0-42dc-8b91-e36926634f47",
+          "type": "SingleChoice",
+          "content": "Which of these features are available in Venus?",
+          "hint": "NoHint",
+          "explanation": "Venus has the features of a money market protocol and stablecoin minting protocol together.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "Lending and borrowing",
+              "key": "A"
+            },
+            {
+              "content": "Stablecoin minting feature",
+              "key": "B"
+            },
+            {
+              "content": "Permissionless listing",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "db7b0642-1254-40c1-955a-4f50af3fd615",
+          "type": "SingleChoice",
+          "content": "What are the usecases of vTokens?",
+          "hint": "NoHint",
+          "explanation": "vToken contract is used for interacting with all the currency supported by Venus. They can be used as collateral to borrow.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "To accrue interest only assets supplied",
+              "key": "A"
+            },
+            {
+              "content": "To accrue debt and be used as collateral",
+              "key": "B"
+            },
+            {
+              "content": "To accrue debt only",
+              "key": "C"
+            },
+            {
+              "content": "To accrue debt and interest for borrowed and supplied assets respectively and be used as collateral",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6d862849-fcb2-4d76-b96c-170f556d5c72",
+          "type": "SingleChoice",
+          "content": "The Mint (supply) function in Venus is used to?",
+          "hint": "NoHint",
+          "explanation": "The mint function in venus is used to supply assets to the protocol and mint an equivalent amount of vTokens for the underlying asset.",
+          "answerKeys": [
+            "C"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "To mint their stable coin, VAI",
+              "key": "A"
+            },
+            {
+              "content": "To recursively supply and borrow the same asset to achieve a leveraged position",
+              "key": "B"
+            },
+            {
+              "content": "To supply assets and mint vTokens",
+              "key": "C"
+            },
+            {
+              "content": "None of these",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b64d4986-72a8-45cd-97a2-84749a4755cc",
+          "type": "SingleChoice",
+          "content": "What asset is VAI pegged to? At what LTV is it borrowed at?",
+          "hint": "NoHint",
+          "explanation": "VAI is pegged to the USD and it is borrowed at 50% LTV.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "VAI is pegged to the EUR, it has LTV of 60%",
+              "key": "A"
+            },
+            {
+              "content": "VAI is pegged to the ETH, it has LTV of 70%",
+              "key": "B"
+            },
+            {
+              "content": "VAI is pegged to the gold, it has LTV of 20%",
+              "key": "C"
+            },
+            {
+              "content": "VAI is pegged to the USD, it has LTV of 50%",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "aea581c9-d986-4ba1-a224-a06e36a0a12b",
+          "type": "MultipleChoice",
+          "content": "What is account liquidity? How is it calculated?",
+          "hint": "NoHint",
+          "explanation": "Account Liquidity represents the USD value of assets borrowable by a user, before it reaches liquidation. For each market the user has entered into, their supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity.",
+          "answerKeys": [
+            "A",
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Account liquidity represents USD value of assets borrowable by user before it reaches liquidation",
+              "key": "A"
+            },
+            {
+              "content": "Account liquidity represents total collateral supplied to the protocol by the user",
+              "key": "B"
+            },
+            {
+              "content": "The total collateral supplied by user to each market is multipled with the respective collateral factor and then summed, to give account liquidity",
+              "key": "C"
+            },
+            {
+              "content": "Supplied balance is multiplied by the market’s collateral factor, and summed. Borrow balances (Total amount borrower owes, including interest) are then subtracted, to equal Account Liquidity",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "697fa18b-3cf7-4210-affe-a45c59323838",
+          "type": "SingleChoice",
+          "content": "What is the governance token of Venus?",
+          "hint": "NoHint",
+          "explanation": "XVS is the goveranance token of Venus",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "VEN is the governance token of Venus",
+              "key": "A"
+            },
+            {
+              "content": "XVS is the governance token of Venus",
+              "key": "B"
+            },
+            {
+              "content": "VAI is the governance token of Venus",
+              "key": "C"
+            },
+            {
+              "content": "VNS is the governance token of Venus",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "6d8ee145-b7aa-463b-8cd6-842a10aafb75",
+          "type": "SingleChoice",
+          "content": "How is the amount of XVS distrubuted decided?",
+          "hint": "NoHint",
+          "explanation": "How much XVS is distributed to suppliers and borrowers in each market is determined by “venus speed”. This number is updated regularly to ensure that XVS is being distributed proportionally to the amount of utility each market provides.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Decided by a value called \"venus speed\"",
+              "key": "A"
+            },
+            {
+              "content": "Decided by a value called \"XVS distrubution rate\"",
+              "key": "B"
+            },
+            {
+              "content": "Decided by VenusDAO",
+              "key": "C"
+            },
+            {
+              "content": "Decided by price oracles",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "aee45a32-dcee-48b3-a42e-4e545b52fdf7",
+          "type": "SingleChoice",
+          "content": "What is VRT? What is its use case?",
+          "hint": "NoHint",
+          "explanation": "VRT is Venus Reward Token, it can be redeemed for XVS at a fixed rate.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "VRT is Venus Reward Token, used to redeem XVS at a fixed rate",
+              "key": "A"
+            },
+            {
+              "content": "VRT is Venus Repeat Token, used to borrow XVS at a fixed rate",
+              "key": "B"
+            },
+            {
+              "content": "VRT is Venus Reward Token, used to gain interest at a fixed rate",
+              "key": "C"
+            },
+            {
+              "content": "VRT is Venus Return Token, used to redeem XVS at a fixed rate",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "87d32f53-099d-4188-89a1-e942d7d408e3",
+          "type": "SingleChoice",
+          "content": "A user gains voting power by accumulating XVS in their account from interacting with the protocol",
+          "hint": "NoHint",
+          "explanation": "False, a user cannot gain voting power just by XVS accumulating XVS by interacting with the protocol. XVS has to be staked to get voting power.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "4b108797-6c8a-4235-8675-90174da10dc5",
+          "type": "SingleChoice",
+          "content": "How do vaults help Venus in the case of a shortfall (negative account liquidity) event?",
+          "hint": "NoHint",
+          "explanation": "After a risk event occurs in Venus and only if the Venus risk fund account is not sufficient to cover the shortfall, the XVS depositor in the vault will pay a maximum of 10% of the total deposit amount to compensate for the loss.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "There are no vaults in Venus",
+              "key": "A"
+            },
+            {
+              "content": "In case Venus risk funds are not sufficient to cover the shortfall, the XVS vault will be liquidated to to a maximum of 10% per user's deposited XVS to cover the loss",
+              "key": "B"
+            },
+            {
+              "content": "Immediately, the XVS vault will be liquidated to to a maximum of 10% per user's deposited XVS to cover the loss",
+              "key": "C"
+            },
+            {
+              "content": "XVS vaults are not used in times of risk events",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "e2d1368c-edf0-4445-a7c5-e411a265e9b8",
+          "type": "SingleChoice",
+          "content": "What happens when a user has negative account liquidity?",
+          "hint": "NoHint",
+          "explanation": "A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "The user will be liquidated, their collateral will be sold for a discounted price and their loan will be repaid in parts or whole by a liquidator",
+              "key": "A"
+            },
+            {
+              "content": "The user will be liquidated, their collateral will be held by the protocol and their loan will be repaid in parts or whole by a liquidator",
+              "key": "B"
+            },
+            {
+              "content": "The user will be warned by the Venus DAO",
+              "key": "C"
+            },
+            {
+              "content": "The user will be allowed to stay with negative liquidity without facing any consequences",
+              "key": "D"
+            }
+          ]
+        }
+      ],
+      "readings": [],
+      "summaries": []
+    },
+    {
+      "title": "Aave",
+      "key": "aave",
+      "details": "Aave is a decentralized, non-custodial liquidity market protocol that runs on the Ethereum blockchain. Not only does it allow its users to earn a passive income by providing liquidity  to the market, or by borrowing in an overcollateralized fashion, It also provides the user with a plethora of  innovative features in the realm of finance. \n \n\n\n\n\n\n",
+      "order": 4,
+      "explanations": [
+        {
+          "key": "about-aave",
+          "title": "About Aave",
+          "shortTitle": "About Aave",
+          "details": "### Aave\nAave is a decentralized, non-custodial liquidity market protocol that runs on the Ethereum blockchain. Users can earn a passive income by providing liquidity to the market, or by borrowing in an overcollateralized fashion. Aave has its own governance system, and AAVE is the governance token that gives holders voting rights. We will look into depth about the working of lending and borrowing in Aave V3 in the coming sections.\n### Lending and Borrowing\nLet us first talk about Lending in Aave. Aave is a protocol where users can supply their assets to the protocol and earn interest on the supplied asset. The interest rate provided by Aave for supplying an asset to the protocol depends on the utilization rate of that asset / market (total borrows / total supplies). The interest accumulated on the supplied asset is calculated using aTokens.\n\n**How are aTokens minted?**\n\naTokens are tokens that are minted and burnt every time there is a `supply` or `withdraw` of assets to an Aave market. These tokens signify the amount of crypto assets that have been supplied and the yield earned on those supplied assets. The value of an aToken is pegged to the value of the corresponding asset at a 1:1 ratio, which means it can be stored, transferred or traded safely.\n\n**How is interest accrued?**\n\nAt the time of supply, the user receives an equivalent amount of aTokens for the given asset. The exchange rate of the aTokens to the underlying asset remains 1:1, but the amount of aToken in the user's wallet increases over time. This allows the user to redeem a larger amount of the underlying asset over time, thus accruing interest.\n\n \n\naTokens can be transferred to other accounts as long as the transfer does not put the user in a position where they do not have enough underlying collateral in their possession to maintain the health factor of an open borrow above 1.           \n\nLet us now look at borrowing in Aave. Assets are borrowed in Aave by overcollateralization. The maximum amount a user can borrow is based on the collateral factor of the assets supplied as collateral. Users can choose to borrow at a stable or variable rate. The variable rate is often lower than the stable rate but bound to change, the stable rate is fixed. Borrowers can pick and choose which rate they prefer. If they change their mind or find the other rate of interest to be more profitable, users can switch from one form of interest to another. The debt accrued by the user is accounted for by debt tokenization instead of calculation in a smart contract. \n\n**What are debt tokens? How are they minted?**\n\nDebt tokens are interest-accruing tokens that are minted and burned on borrow and repay, representing the debt owed by the token holder. \n\nThere are 2 types of debt tokens:\n\n\n* Stable debt tokens, representing a debt with a stable interest rate\n* Variable debt tokens, representing a debt with a variable interest rate\n\n**Supply and borrow caps**\n* **Supply caps -** Limiting how much of a certain asset is supplied to the Aave protocol. This helps in reducing exposure to a certain asset and mitigate attacks like infinite minting or price oracle manipulation.\n* **Borrow caps -** Modulation of how much of each asset can be borrowed, which reduces insolvency risk.\n\n### Other features related to Lending and borrowing in Aave\n\n**Flash loans**\n\nA Flash Loan is a type of loan where you can borrow any amount of assets that are available without putting up any collateral, as long as the liquidity is returned to the protocol within the timeframe of one single block transaction. In order to take out a Flash Loan, you will need to create a contract that requests a loan. The contract will then need to execute the instructed steps and pay back the loan plus interest and fees all (including gas fees) within the same transaction.\n\n\n**Collateral trading / swapping**\n\nBuilt by using Flash Loans v2, this feature allows the user to swap their existing collateral for an equivalent amount of collateral in another asset.  For example, a user has 80MKR  and 20 SNX deposited in the protocol, with a debt of 50 USDC. He wants to swap both his deposited MKR and SNX to AAVE, without needing to pay back any debt within one transaction. This can be done using collateral trading / swapping.\n\n**Repay with collateral**\n\nAlso built by using Flash Loans v2, this feature allows for an user to use their collateral (any asset they supplied that is enabled as collateral) to be used to repay their borrow position partially or completely in a single transaction.\n\n**Credit delegation**\n\nThe credit delegation function allows users to deposit funds into the protocol in order to earn interest, and delegate borrowing power to other users. The terms of the loan and its enforcement are agreed upon between the depositor and borrowers, which can be done either off-chain or on-chain. Users can open credit lines to different addresses using the borrow function, other addresses can borrow from the user without the need for collateral, as long as the caller address has been granted the allowance by the user / supplier. This functionality is implemented by a function called approveDelegation which allows the user to approve another address to make borrows on behalf of the user.\n\n**Repay with atokens** \n\nAllows the user to repay with aTokens in case the underlying borrowed asset is locked in the Aave liquidity pool. This feature can only be done when the user holds atokens of the same asset that they have borrowed.  For example, User has USDC debt and also holds aUSDC token. The user in this case can use aUSDC to repay USDC debt in single transaction without any approvals or having to withdraw their supplied liquidity to the pool using repayWithATokens. The borrow of USDC can only be repaid by aUSDC in this feature. It cannot be repaid with another token, like aDAI.\n\n**Siloed borrowing**\n\nThe Aave protocol allows for the listing of assets with potentially manipulatable oracles as single borrow assets. If a user borrows a siloed asset, they will not be able to borrow any other assets, ensuring that the risks are contained. This helps to mitigate the risk associated with such assets and helps prevent them from impacting the overall solvency of the protocol.\n\n#### **How can a user enter a siloed borrowing state?**\n\nUsers automatically enter a siloed borrowing state on their first successful borrow of a siloed asset.\n\n#### **How does a user exit a siloed borrowing state?**\n\nUser must repay all their debt to exit the state\n\n\n**Isolation mode**                    \n\nIsolation mode on Aave lets you list new assets as Isolated with a designated debt ceiling. This is useful for borrowing stablecoins that have been approved by Aave Governance to be borrowed in isolation mode. When using an Isolated Asset as collateral, borrowers are restricted to only using that particular asset as collateral and can only borrow assets that are borrowable in isolation mode. If users need to, they can turn off isolation mode by disabling the isolated asset as collateral. The only time this isn't possible is when the user has outstanding debt.\n\n**E-Mode**\n\nEnabling E-Mode restricts borrowers into borrowing only from assets belonging to a certain category. For example, stablecoin. When E-mode is enabled and the user supplies collateral of the same category as the E-mode asset, the user is given more capital efficiency. That is, the user is allowed a higher LTV on his collateral and the liquidation threshold is changed to provide better capital efficiency when they supply assets that are in the same category as the E-Mode asset they borrowed. This means that the user can borrow more by enabling E-Mode, given conditions mentioned above are met.\n    \n\n### Liquidations\n\nA liquidation is a process that occurs when a borrower's health factor goes below 1 due to their collateral value not properly covering their loan/debt value. This might happen when the collateral decreases in value or the borrowed debt increases in value against each other. This collateral vs borrow balance value ratio is shown in the health factor. In collateral we consider all assets that the user has supplied to the protocol which are enabled to be used as collateral. Borrow balance includes the amount borrowed by the user along with the interest they must pay. Liquidators can liquidate a part of (< 100% of borrowed amount) or the whole borrow (100% of borrowed amount) depending on whether the HF is above or below the close factor HF threshold respectively and get incentivized by being able to buy the seized collateral at a discounted rate.\n \n\nIn order to avoid liquidations, the borrower must maintain a good health factor (HF>1). This can be done in two ways,\n\n* Increase the collateral supplied\n* Repay the borrowed amount\n \n\nAs for liquidators, more often than not, only the liquidator with the most efficient solutions and bots who find the bad loan first will get the liquidation bonus. There are 2 ways of participating in a liquidation,\n\n* By calling the liquidationCall() directly in the Pool contract.\n* By creating your own automated bot or system to liquidate loans.\n\nThe liquidator has the option to receive their liquidation incentive in the form of the underlying asset or an aToken. This system is beneficial for liquidators as they are rewarded with liquidation incentives, motivating more liquidators to get rid of bad loans. This acts as an incentive to ensure that lenders are provided with protection against loan defaults and bad loans. Liquidations are especially useful during bearish markets when viewed from the lender's perspective. The liquidation bonuses for all assets are evaluated and determined based on each asset's liquidity risk and updated through the Aave Governance process.\n\n\n"
+        },
+        {
+          "key": "aave-token",
+          "title": "AAVE Token",
+          "shortTitle": "AAVE Token",
+          "details": "\n### AAVE\n\nThe AAVE token is the native currency of the Aave platform. There is a maximum supply of 16 million AAVE tokens. AAVE token is what gives user voting power in Aave governance, it can be delegated to other users. The primary use of AAVE tokens is for governance; this means that users can vote and decide on the outcomes of platform improvement proposals (AIPs). Additionally, the token offers several advantages to users, token holders will be able to stake their tokens to provide liquidity to the Aave protocol and earn staking rewards.\n \n \n**DelegationAwareAToken**                        \n\nThe special type of aToken that are minted and burned upon supply and withdraw of assets that has voting power associated (which can be delegated) with them. These aTokens are enabled to delegate voting power of the underlying asset to a different address.\n\n**Aave safety module**\n\nThe Aave Protocol is secured by AAVE holders locking their tokens into the Safety Module (SM). The SM is a Smart Contract-based component that will be used to mitigate Shortfall Events within the money markets that belong to the Aave ecosystem. A Shortfall Event occurs when there is a deficit of liquidity for the liquidity providers, which will be interpreted by Protocol Governance (detailed in Governance) and subject to voting. If a Shortfall Event occurs, part of the locked AAVE is auctioned on the market to help raise funds to cover the deficit. The SM has mechanisms in place that would not allow a sudden surge of AAVE into the market, which would further reduce the value of AAVE. Participants who lock their AAVE into the SM do so knowing that there is a chance of a Shortfall Event occurring, but they are rewarded with Safety Incentives (SI). \n \n\nThe Aave protocol allows users to stake their AAVE tokens in the Safety Module in order to receive rewards in return. These rewards can be claimed at any time. Users can withdraw their staked AAVE (unstake) by activating a cool-down period, which is currently 7 days. The protocol rewards 550 new AAVE tokens per day, to be split between the stakers in proportion to how much they have staked.\n \n\nThe Aave Protocol V3 now supports multiple rewards per token, which means that it's possible for an asset listing to enable additional incentive rewards denominated in the underlying tokens. This is a great improvement over the previous version, which only allowed rewards to be denominated in stkAAVE. V3 also allows users to claim rewards to another account, as well as themselves, and to claim multiple types of rewards per asset in a single transaction.\n\n \n "
+        },
+        {
+          "key": "references",
+          "title": "References",
+          "shortTitle": "References",
+          "details": "Here are some important links to learn more about Aave \n\nhttps://docs.aave.com/developers/\n \nhttps://docs.aave.com/faq/\n \nhttps://github.com/aave/protocol-v2/blob/master/aave-v2-whitepaper.pdf\n \nhttps://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf"
+        }
+      ],
+      "questions": [
+        {
+          "uuid": "7f149261-b99b-49eb-9813-669ec7b1bcb1",
+          "type": "SingleChoice",
+          "content": "How do aTokens accrue interest for the supplier / lender?",
+          "hint": "NoHint",
+          "explanation": "The value of an aToken is pegged to the value of the corresponding asset at a 1:1 ratio, and the user accumulates aTokens in their wallet according to the interest rate offered.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens remains the same",
+              "key": "A"
+            },
+            {
+              "content": "The number of aTokens in the user's possession keeps remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing",
+              "key": "B"
+            },
+            {
+              "content": "The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens also increases",
+              "key": "C"
+            },
+            {
+              "content": "aTokens are not used as of Aave V3",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "384ffe8c-9ec7-4b9c-bef7-9eb1c4f464aa",
+          "type": "SingleChoice",
+          "content": "What logic does Aave follow to keep count of user's debt?",
+          "hint": "NoHint",
+          "explanation": "Aave uses debt tokenization to keep count of user's debt called Debt tokens. Debt tokens are interest-accruing tokens that are minted and burned on borrow and repay, representing the debt owed by the token holder and are non-transferrable.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Debt tokenization",
+              "key": "A"
+            },
+            {
+              "content": "Calculation and accounting of debt in smart contracts",
+              "key": "B"
+            },
+            {
+              "content": "Appointing individuals to keep track of debt",
+              "key": "C"
+            },
+            {
+              "content": "Both A and C",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "672b8249-5e9b-4589-aee5-c0b0d27eab3a",
+          "type": "MultipleChoice",
+          "content": "What are the types of debt tokens in Aave?",
+          "hint": "NoHint",
+          "explanation": "Stable and variable debt tokens are the two type of debt tokens in Aave.",
+          "answerKeys": [
+            "C",
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "EMI debt tokens",
+              "key": "A"
+            },
+            {
+              "content": "Transferrable debt tokens",
+              "key": "B"
+            },
+            {
+              "content": "Variable debt tokens",
+              "key": "C"
+            },
+            {
+              "content": "Stable debt tokens",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "9c36eba7-363d-4b0f-8e02-880b80930f03",
+          "type": "SingleChoice",
+          "content": "Which of these functionalities in Aave is built upon flash loans?",
+          "hint": "NoHint",
+          "explanation": "Collateral swapping / trading and Repay with collateral are built by using Flash Loans V2.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Interest on supplied asset",
+              "key": "A"
+            },
+            {
+              "content": "Collateral trading and repaying with collateral",
+              "key": "B"
+            },
+            {
+              "content": "Debt tokenization",
+              "key": "C"
+            },
+            {
+              "content": "Credit delegation",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "a153bd00-916b-4eef-81d4-20fe5be5014a",
+          "type": "SingleChoice",
+          "content": "Which of the following are use cases of aTokens",
+          "hint": "NoHint",
+          "explanation": "aTokens are used to accrue interest, and they can also be used to directly repay loans without redeeming them for their underlying tokens.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Repay loans",
+              "key": "A"
+            },
+            {
+              "content": "Accrue interest on supplied collateral",
+              "key": "B"
+            },
+            {
+              "content": "Debt tokenization",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "048e1805-d768-4988-804d-617a7b3ed51d",
+          "type": "SingleChoice",
+          "content": "Which of the following is a use case for E-Mode",
+          "hint": "NoHint",
+          "explanation": "E-Mode allows the borrower to maximize capital efficiency by increasing the LTV and lowering the liquidation threshold on assets borrowed in E-Mode.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Minimize capital efficiency",
+              "key": "A"
+            },
+            {
+              "content": "Maximize capital efficiency",
+              "key": "B"
+            },
+            {
+              "content": "To borrow newly listed assets",
+              "key": "C"
+            },
+            {
+              "content": "To improve the security of the protocol",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "7e5100a4-5aa8-423c-a38d-8c1c53f72ded",
+          "type": "SingleChoice",
+          "content": "Which of the following modes in Aave allows the user to list new assets with a designated debt ceiling?",
+          "hint": "NoHint",
+          "explanation": "Isolation mode on Aave lets you list new assets as Isolated with a designated debt ceiling.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Isolation mode",
+              "key": "A"
+            },
+            {
+              "content": "E-Mode",
+              "key": "B"
+            },
+            {
+              "content": "Siloed borrowing mode",
+              "key": "C"
+            },
+            {
+              "content": "New listing mode",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "982e2c16-d5b7-473d-ada9-605f35e14794",
+          "type": "SingleChoice",
+          "content": "In what denomination are the rewards users get for staking Aave in the Safety Module?",
+          "hint": "NoHint",
+          "explanation": "The Aave Protocol V3 now supports multiple rewards per token, which means that it's possible for an asset listing to enable additional incentive rewards denominated in underlying tokens.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "In stkAAVE",
+              "key": "A"
+            },
+            {
+              "content": "In underlying tokens",
+              "key": "B"
+            },
+            {
+              "content": "Only in aTokens",
+              "key": "C"
+            },
+            {
+              "content": "Both A and B",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "9e2e7ef6-2978-47bc-a6c9-29c38d686436",
+          "type": "SingleChoice",
+          "content": "Debt tokens are transferrable.",
+          "hint": "NoHint",
+          "explanation": "False, debt tokens are not transferrable.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "8d57cef0-aea7-4666-bbe9-c4166ef19a98",
+          "type": "SingleChoice",
+          "content": "How does locking your AAVE in the Safety Module help in a shortfall event?",
+          "hint": "NoHint",
+          "explanation": "If a Shortfall Event occurs, part of the locked AAVE is auctioned on the market to help raise funds to cover the deficit.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Part of the AAVE locked in the Safety Module will be given to the lenders in the market where there is a shortfall",
+              "key": "A"
+            },
+            {
+              "content": "Part of the AAVE locked in the Safety Module will be auctioned off to help raise funds to cover the deficit",
+              "key": "B"
+            },
+            {
+              "content": "The AAVE locked in the Safety Module will be unlocked and given back to those who staked it",
+              "key": "C"
+            },
+            {
+              "content": "The Safety Module does not help in the event of a shortfall",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "cc90df55-794c-4c98-b957-4523d2d8a518",
+          "type": "SingleChoice",
+          "content": "What are the ways of participating in liquidating a bad loan?",
+          "hint": "NoHint",
+          "explanation": "A user with negative account liquidity who doesn't have enough collateral to cover their outstanding borrows may be subject to liquidation by other users of the protocol. When a liquidation occurs, a liquidator may repay some or all of an outstanding borrow on behalf of a borrower and in return receive a discounted amount of collateral held by the borrower.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "By calling liquidationCall directly in the pool contract and by creating bots or automated systed to liquidate bad loans",
+              "key": "A"
+            },
+            {
+              "content": "By buying the collateral from the address with bad debt by an off-chain settlement",
+              "key": "B"
+            },
+            {
+              "content": "Only by calling liquidationCall directly in the pool",
+              "key": "C"
+            },
+            {
+              "content": "Only by creating your own automated system to liquidate loans",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b6196329-09be-4fdf-b8fa-76212137a04f",
+          "type": "SingleChoice",
+          "content": "Users can only receive awards on their behalf for staking AAVE.",
+          "hint": "NoHint",
+          "explanation": "False, Aave V3 allows users to claim rewards to another account, as well as themselves, and to claim multiple types of rewards per asset in a single transaction.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        }
+      ],
       "readings": [],
       "summaries": []
     }

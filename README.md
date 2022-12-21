@@ -25,4 +25,5 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
  | 1      | Intoduction | | [Details](generated/topics/intoduction.md) <br/>  <br/>  <br/>  <br/>  | undefined | undefined |
  | 2      | Compound | | [Details](generated/topics/compound.md) <br/> [Explanations](generated/explanations/compound.md) <br/>  <br/>  <br/> [Questions](generated/questions/compound.md) | undefined | undefined |
  | 3      | Euler | | [Details](generated/topics/euler.md) <br/> [Explanations](generated/explanations/euler.md) <br/>  <br/>  <br/> [Questions](generated/questions/euler.md) | undefined | undefined |
- | 4      | Venus | | [Details](generated/topics/venus.md) <br/> [Explanations](generated/explanations/venus.md) <br/>  <br/>  <br/>  | undefined | undefined | 
+ | 4      | Venus | | [Details](generated/topics/venus.md) <br/> [Explanations](generated/explanations/venus.md) <br/>  <br/>  <br/> [Questions](generated/questions/venus.md) | undefined | undefined |
+ | 5      | Aave | | [Details](generated/topics/aave.md) <br/> [Explanations](generated/explanations/aave.md) <br/>  <br/>  <br/> [Questions](generated/questions/aave.md) | undefined | undefined | 
