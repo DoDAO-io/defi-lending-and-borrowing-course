@@ -703,5 +703,8 @@
       "readings": [],
       "summaries": []
     }
-  ]
+  ],
+  "courseFailContent": "Failed Content",
+  "coursePassContent": "Pass content",
+  "coursePassCount": 5
 }
