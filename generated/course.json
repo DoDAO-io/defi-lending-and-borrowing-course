@@ -707,5 +707,9 @@
   ],
   "courseFailContent": "Failed Content",
   "coursePassContent": "Pass content",
-  "coursePassCount": 1
+  "coursePassCount": 1,
+  "topicConfig": {
+    "showExplanations": true,
+    "showHints": true
+  }
 }
