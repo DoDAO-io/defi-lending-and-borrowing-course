@@ -7,10 +7,10 @@
     - A
   difficultyLevel: "Medium"
   choices:
-    - content: The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens remains the same
+    - content: Aave keeps sending part of the supplied tokens as interest every second
       key: A
       
-    - content: The number of aTokens in the user's possession keeps remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing
+    - content: The number of aTokens in the user's possession remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing
       key: B
       
     - content: The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens also increases
@@ -31,7 +31,7 @@
     - content: Debt tokenization
       key: A
       
-    - content: Calculation and accounting of debt in smart contracts
+    - content: Calculation and accounting of debt in excel sheets
       key: B
       
     - content: Appointing individuals to keep track of debt
@@ -174,7 +174,7 @@
   type: SingleChoice
   content: Debt tokens are transferrable.
   hint: NoHint
-  explanation: False, debt tokens are not transferrable.
+  explanation: False, debt tokens are not transferrable. Although debt tokens are modelled on the ERC20/EIP20 standard, they are non-transferrable as they do not implement any of the standard ERC20/EIP20 functions relating to `transfer()`.
   answerKeys:
     - B
   difficultyLevel: "Low"

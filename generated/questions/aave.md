@@ -10,8 +10,8 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
 
 ##### How do aTokens accrue interest for the supplier / lender?  
 
-- [x]  The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens remains the same
-- [ ]  The number of aTokens in the user's possession keeps remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing
+- [x]  Aave keeps sending part of the supplied tokens as interest every second
+- [ ]  The number of aTokens in the user's possession remains the same while the rate of exchange between atokens and the underlying tokens keeps increasing
 - [ ]  The number of aTokens in the user's possession keeps increasing while the rate of exchange between atokens and the underlying tokens also increases
 - [ ]  aTokens are not used as of Aave V3
   
@@ -27,7 +27,7 @@ Sub Topics: No Sub-Topics
 ##### What logic does Aave follow to keep count of user's debt?  
 
 - [x]  Debt tokenization
-- [ ]  Calculation and accounting of debt in smart contracts
+- [ ]  Calculation and accounting of debt in excel sheets
 - [ ]  Appointing individuals to keep track of debt
 - [ ]  Both A and C
   
@@ -143,7 +143,7 @@ Sub Topics: No Sub-Topics
   
 Hint: NoHint
          
-Explanation: False, debt tokens are not transferrable.
+Explanation: False, debt tokens are not transferrable. Although debt tokens are modelled on the ERC20/EIP20 standard, they are non-transferrable as they do not implement any of the standard ERC20/EIP20 functions relating to `transfer()`.
 
 Sub Topics: No Sub-Topics
  
