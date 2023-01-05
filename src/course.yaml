@@ -100,6 +100,23 @@ topics:
     
     explanations: aave.yaml
     questions: aave.yaml
+  
+  - title: MakerDAO
+    key: makerdao
+    details: >+
+     MakerDAO is a decentralized finance protocol built on the Ethereum blockchain, enabling users to generate DAI stablecoin 
+     in a decentralized fashion. The Maker Protocol uses a two-token system, with the first being Dai - a collateral-backed 
+     stablecoin pegged to the USD. The second is MKR, a governance token that is used by stakeholders to keep the system running 
+     and manage Dai.
+      
+
+
+
+
+    
+    explanations: makerdao.yaml
+    questions: makerdao.yaml
+  
 
 courseAdmins:
   - '0xc28f5a9f1dcaf540660adde8b93d172f560d140f'
