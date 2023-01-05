@@ -18,6 +18,12 @@
     "0xc28f5a9f1dcaf540660adde8b93d172f560d140f",
     "0x34d014758297c00fea49935fce172677904d51ef"
   ],
+  "courseFailContent": "Failed Content",
+  "coursePassContent": "Pass content",
+  "topicConfig": {
+    "showExplanations": true,
+    "showHints": true
+  },
   "topics": [
     {
       "title": "Intoduction",
@@ -1380,12 +1386,5 @@
       "readings": [],
       "summaries": []
     }
-  ],
-  "courseFailContent": "Failed Content",
-  "coursePassContent": "Pass content",
-  "coursePassCount": 1,
-  "topicConfig": {
-    "showExplanations": true,
-    "showHints": true
-  }
+  ]
 }
