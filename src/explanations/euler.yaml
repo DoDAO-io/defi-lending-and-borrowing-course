@@ -55,7 +55,7 @@
 
     `1000 * 0.5 * 0.9 = $450 worth of XYZ`
 
-     as opposed to the usual 1000 * 0.9 that we are used to. 
+     as opposed to the usual `1000 * 0.9` that we are used to. 
 
     ### Liquidations
 
@@ -167,8 +167,8 @@
   title: EUL token
   shortTitle: EUL token
   details: >-
-
-    ## EUL
+  
+    ### EUL
 
     The total supply of EUL is 27,182,818 (in homage to Euler’s number, e. The
     total supply of EUL is fixed for the first 4 years, after which EUL token
@@ -183,10 +183,20 @@
 
     Decisions token holders might vote on include proposals to alter:
 
-    * The tier of an asset * Collateral and borrow factors * Price oracle
-    parameters * Reactive interest rate model parameters * Reserve factors
+    * The tier of an asset 
 
-    **How can you earn EUL?** The Euler token (EUL) is distributed to borrowers
+    * Collateral and borrow factors 
+    
+    * Price oracle parameters 
+
+    * Reactive interest rate model parameters
+
+    * Reserve factors
+
+
+    **How can you earn EUL?**
+    
+     The Euler token (EUL) is distributed to borrowers
     on select markets on the platform. Note that EUL is only earned by borrowing
     and cannot be earned by simply lending to the protocol.
 

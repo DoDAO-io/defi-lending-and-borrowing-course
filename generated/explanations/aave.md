@@ -1,0 +1,140 @@
+## Header
+This is the course header. This will be added on top of every page. Go to [DoDAO.io](https://www.dodao.io) to know more.
+
+ ---
+ 
+ ## Aave
+ 
+ **About Aave**        
+### Aave
+Aave is a decentralized, non-custodial liquidity market protocol that runs on the Ethereum blockchain. Users can earn a passive income by providing liquidity to the market, or by borrowing in an overcollateralized fashion. Aave has its own governance system, and AAVE is the governance token that gives holders voting rights. We will look into depth about the working of lending and borrowing in Aave V3 in the coming sections.
+### Lending and Borrowing
+Let us first talk about Lending in Aave. Aave is a protocol where users can supply their assets to the protocol and earn interest on the supplied asset. The interest rate provided by Aave for supplying an asset to the protocol depends on the utilization rate of that asset / market (total borrows / total supplies). The interest accumulated on the supplied asset is calculated using aTokens.
+
+**How are aTokens minted?**
+
+aTokens are tokens that are minted and burnt every time there is a `supply` or `withdraw` of assets to an Aave market. These tokens signify the amount of crypto assets that have been supplied and the yield earned on those supplied assets. The value of an aToken is pegged to the value of the corresponding asset at a 1:1 ratio, which means it can be stored, transferred or traded safely.
+
+**How is interest accrued?**
+
+At the time of supply, the user receives an equivalent amount of aTokens for the given asset. The exchange rate of the aTokens to the underlying asset remains 1:1, but the amount of aToken in the user's wallet increases over time. This allows the user to redeem a larger amount of the underlying asset over time, thus accruing interest.
+
+ 
+
+aTokens can be transferred to other accounts as long as the transfer does not put the user in a position where they do not have enough underlying collateral in their possession to maintain the health factor of an open borrow above 1.           
+
+Let us now look at borrowing in Aave. Assets are borrowed in Aave by overcollateralization. The maximum amount a user can borrow is based on the collateral factor of the assets supplied as collateral. Users can choose to borrow at a stable or variable rate. The variable rate is often lower than the stable rate but bound to change, the stable rate is fixed. Borrowers can pick and choose which rate they prefer. If they change their mind or find the other rate of interest to be more profitable, users can switch from one form of interest to another. The debt accrued by the user is accounted for by debt tokenization instead of calculation in a smart contract. 
+
+**What are debt tokens? How are they minted?**
+
+Debt tokens are interest-accruing tokens that are minted and burned on borrow and repay, representing the debt owed by the token holder. 
+
+There are 2 types of debt tokens:
+
+
+* Stable debt tokens, representing a debt with a stable interest rate
+* Variable debt tokens, representing a debt with a variable interest rate
+
+**Supply and borrow caps**
+* **Supply caps -** Limiting how much of a certain asset is supplied to the Aave protocol. This helps in reducing exposure to a certain asset and mitigate attacks like infinite minting or price oracle manipulation.
+* **Borrow caps -** Modulation of how much of each asset can be borrowed, which reduces insolvency risk.
+
+### Other features related to Lending and borrowing in Aave
+
+**Flash loans**
+
+A Flash Loan is a type of loan where you can borrow any amount of assets that are available without putting up any collateral, as long as the liquidity is returned to the protocol within the timeframe of one single block transaction. In order to take out a Flash Loan, you will need to create a contract that requests a loan. The contract will then need to execute the instructed steps and pay back the loan plus interest and fees all (including gas fees) within the same transaction.
+
+
+**Collateral trading / swapping**
+
+Built by using Flash Loans v2, this feature allows the user to swap their existing collateral for an equivalent amount of collateral in another asset.  For example, a user has 80MKR  and 20 SNX deposited in the protocol, with a debt of 50 USDC. He wants to swap both his deposited MKR and SNX to AAVE, without needing to pay back any debt within one transaction. This can be done using collateral trading / swapping.
+
+**Repay with collateral**
+
+Also built by using Flash Loans v2, this feature allows for an user to use their collateral (any asset they supplied that is enabled as collateral) to be used to repay their borrow position partially or completely in a single transaction.
+
+**Credit delegation**
+
+The credit delegation function allows users to deposit funds into the protocol in order to earn interest, and delegate borrowing power to other users. The terms of the loan and its enforcement are agreed upon between the depositor and borrowers, which can be done either off-chain or on-chain. Users can open credit lines to different addresses using the borrow function, other addresses can borrow from the user without the need for collateral, as long as the caller address has been granted the allowance by the user / supplier. This functionality is implemented by a function called approveDelegation which allows the user to approve another address to make borrows on behalf of the user.
+
+**Repay with atokens** 
+
+Allows the user to repay with aTokens in case the underlying borrowed asset is locked in the Aave liquidity pool. This feature can only be done when the user holds atokens of the same asset that they have borrowed.  For example, User has USDC debt and also holds aUSDC token. The user in this case can use aUSDC to repay USDC debt in single transaction without any approvals or having to withdraw their supplied liquidity to the pool using repayWithATokens. The borrow of USDC can only be repaid by aUSDC in this feature. It cannot be repaid with another token, like aDAI.
+
+**Siloed borrowing**
+
+The Aave protocol allows for the listing of assets with potentially manipulatable oracles as single borrow assets. If a user borrows a siloed asset, they will not be able to borrow any other assets, ensuring that the risks are contained. This helps to mitigate the risk associated with such assets and helps prevent them from impacting the overall solvency of the protocol.
+
+#### **How can a user enter a siloed borrowing state?**
+
+Users automatically enter a siloed borrowing state on their first successful borrow of a siloed asset.
+
+#### **How does a user exit a siloed borrowing state?**
+
+User must repay all their debt to exit the state
+
+
+**Isolation mode**                    
+
+Isolation mode on Aave lets you list new assets as Isolated with a designated debt ceiling. This is useful for borrowing stablecoins that have been approved by Aave Governance to be borrowed in isolation mode. When using an Isolated Asset as collateral, borrowers are restricted to only using that particular asset as collateral and can only borrow assets that are borrowable in isolation mode. If users need to, they can turn off isolation mode by disabling the isolated asset as collateral. The only time this isn't possible is when the user has outstanding debt.
+
+**E-Mode**
+
+Enabling E-Mode restricts borrowers into borrowing only from assets belonging to a certain category. For example, stablecoin. When E-mode is enabled and the user supplies collateral of the same category as the E-mode asset, the user is given more capital efficiency. That is, the user is allowed a higher LTV on his collateral and the liquidation threshold is changed to provide better capital efficiency when they supply assets that are in the same category as the E-Mode asset they borrowed. This means that the user can borrow more by enabling E-Mode, given conditions mentioned above are met.
+    
+
+### Liquidations
+
+A liquidation is a process that occurs when a borrower's health factor goes below 1 due to their collateral value not properly covering their loan/debt value. This might happen when the collateral decreases in value or the borrowed debt increases in value against each other. This collateral vs borrow balance value ratio is shown in the health factor. In collateral we consider all assets that the user has supplied to the protocol which are enabled to be used as collateral. Borrow balance includes the amount borrowed by the user along with the interest they must pay. Liquidators can liquidate a part of (< 100% of borrowed amount) or the whole borrow (100% of borrowed amount) depending on whether the HF is above or below the close factor HF threshold respectively and get incentivized by being able to buy the seized collateral at a discounted rate.
+ 
+
+In order to avoid liquidations, the borrower must maintain a good health factor (HF>1). This can be done in two ways,
+
+* Increase the collateral supplied
+* Repay the borrowed amount
+ 
+
+As for liquidators, more often than not, only the liquidator with the most efficient solutions and bots who find the bad loan first will get the liquidation bonus. There are 2 ways of participating in a liquidation,
+
+* By calling the liquidationCall() directly in the Pool contract.
+* By creating your own automated bot or system to liquidate loans.
+
+The liquidator has the option to receive their liquidation incentive in the form of the underlying asset or an aToken. This system is beneficial for liquidators as they are rewarded with liquidation incentives, motivating more liquidators to get rid of bad loans. This acts as an incentive to ensure that lenders are provided with protection against loan defaults and bad loans. Liquidations are especially useful during bearish markets when viewed from the lender's perspective. The liquidation bonuses for all assets are evaluated and determined based on each asset's liquidity risk and updated through the Aave Governance process.
+
+
+ 
+ **AAVE Token**        
+
+### AAVE
+
+The AAVE token is the native currency of the Aave platform. There is a maximum supply of 16 million AAVE tokens. AAVE token is what gives user voting power in Aave governance, it can be delegated to other users. The primary use of AAVE tokens is for governance; this means that users can vote and decide on the outcomes of platform improvement proposals (AIPs). Additionally, the token offers several advantages to users, token holders will be able to stake their tokens to provide liquidity to the Aave protocol and earn staking rewards.
+ 
+ 
+**DelegationAwareAToken**                        
+
+The special type of aToken that are minted and burned upon supply and withdraw of assets that has voting power associated (which can be delegated) with them. These aTokens are enabled to delegate voting power of the underlying asset to a different address.
+
+**Aave safety module**
+
+The Aave Protocol is secured by AAVE holders locking their tokens into the Safety Module (SM). The SM is a Smart Contract-based component that will be used to mitigate Shortfall Events within the money markets that belong to the Aave ecosystem. A Shortfall Event occurs when there is a deficit of liquidity for the liquidity providers, which will be interpreted by Protocol Governance (detailed in Governance) and subject to voting. If a Shortfall Event occurs, part of the locked AAVE is auctioned on the market to help raise funds to cover the deficit. The SM has mechanisms in place that would not allow a sudden surge of AAVE into the market, which would further reduce the value of AAVE. Participants who lock their AAVE into the SM do so knowing that there is a chance of a Shortfall Event occurring, but they are rewarded with Safety Incentives (SI). 
+ 
+
+The Aave protocol allows users to stake their AAVE tokens in the Safety Module in order to receive rewards in return. These rewards can be claimed at any time. Users can withdraw their staked AAVE (unstake) by activating a cool-down period, which is currently 7 days. The protocol rewards 550 new AAVE tokens per day, to be split between the stakers in proportion to how much they have staked.
+ 
+
+The Aave Protocol V3 now supports multiple rewards per token, which means that it's possible for an asset listing to enable additional incentive rewards denominated in the underlying tokens. This is a great improvement over the previous version, which only allowed rewards to be denominated in stkAAVE. V3 also allows users to claim rewards to another account, as well as themselves, and to claim multiple types of rewards per asset in a single transaction.
+
+ 
+  
+ **References**        
+Here are some important links to learn more about Aave 
+
+https://docs.aave.com/developers/
+ 
+https://docs.aave.com/faq/
+ 
+https://github.com/aave/protocol-v2/blob/master/aave-v2-whitepaper.pdf
+ 
+https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf 
+ 
