@@ -1,0 +1,202 @@
+
+- key: about-makerdao
+  title: About MakerDAO
+  shortTitle: About MakerDAO
+  details: >+
+    ### Introduction
+
+    MakerDAO is a decentralized finance protocol built on the Ethereum blockchain, enabling users to generate DAI stablecoin in a decentralized fashion. The Maker Protocol uses a two-token system, with the first being DAI - a collateral-backed stablecoin pegged to the USD. The second is MKR, a governance token that is used by stakeholders to keep the system running and manage DAI. MKR token holders have the final say in Maker Protocol decisions.
+
+    
+    The Maker Protocol generates new DAI through smart contracts known as Maker Vaults. These contracts can be created through various web UIs and apps that essentially act as portals to access the network. The most popular and well-known portal is Oasis Borrow, but there are others such as Instadapp. Since the MakerDAO website redirects you directly to Oasis, we will be discussing Oasis in the upcoming sessions.
+
+
+
+    ### Features offered by MakerDAO
+
+
+    #### **Borrowing / Minting DAI**
+
+
+    Oasis Borrow is the portal where users can access Vaults to secure their collateral assets and generate DAI. Each collateral asset deposited will have its own Vault. 
+    The types of collateral assets will be determined by governance. 
+
+
+    In order to mint DAI, the users are required to borrow it from MakerDAO by overcollateralizing their position. Maker Vaults require customers to overcollateralize 
+    the vault position by a minimum of 150% to ensure safety from liquidation risks. If the value of the collateral falls below the borrowed value,  lenders liquidate 
+    the deposited collateral to fetch their amount. As Maker depends upon volatile crypto assets for collateral, the portal needs sufficient backing to keep the solvency of DAI intact for users.
+
+
+    An investor seeking to withdraw their locked collateral from the Maker collateral vault must repay the outstanding borrowed DAI, along with the associated annual 
+    percentage yield fee (stability fee). The borrowed DAI is then destroyed, permanently removing it from the circulating supply. The creation and destruction of DAI 
+    tokens in this way makes the currency's supply value elastic, allowing it to maintain its peg to the USD.
+
+
+    If the collateral ratio falls below the liquidation ratio, meaning that the borrow position is in danger of being undercollateralized, the user must provide more collateral to the 
+    vault or repay their debt in order to avoid liquidation. If they fail to do so, their collateral will be liquidated. Liquidation mechanisms and incentives in MakerDAO are discussed in upcoming sections.
+    
+    
+
+    #### **Maker Vaults**
+
+
+    The Maker Protocol allows users to generate DAI through the use of smart contracts called Maker Vaults. These Vaults can be accessed and created through a number interfaces, such as Oasis Borrow or 
+    various community-built interfaces. While creating a Vault is not complicated, it is important to note that generating DAI does come with the responsibility of repaying the DAI, plus a Stability Fee. 
+    In the vault, the user assumes a CDP in an overcollateralized fashion to borrow DAI.
+
+
+    Every Maker Vault has its own risk parameters, which means that the minimum collateral ratio for each Vault can differ. In other words, your Vault's collateral value must be greater than the total debt 
+    in DAI by a certain minimum percentage. There is also a dust factor, which is basically a minimum borrow cap that is different for different collateral (vaults), the user must generate a minimum amount 
+    of DAI (dust factor) to be able to open a vault with the given collateral asset. If the amount of collateral produced by the user is not enough to produce the dust factor amount of DAI, then the vault cannot be opened.  
+
+
+    Users interact with Vaults and the Maker Protocol directly without middlemen (decentralized and non-custodial), and each user has complete and independent control over their deposited collateral as long the 
+    value of that collateral doesn’t fall below the Liquidation Ratio.
+
+
+    ### Other features provided by Oasis on MakerDAO
+
+
+    #### **Earn**
+
+
+    G-UNI Multiply (Earn) is a feature that allows Uniswap V3 trading fees to be earned by users with DAI. G-UNIV3DAIUSDC is a collateral type that represents a fungible version of a Uniswap V3 DAI/USDC position trading within a tight range. By using this as collateral to generate DAI, users can multiply their position and collect the fees earned from being a liquidity provider in Uniswap V3 with high capital efficiency.
+    
+
+    #### **Multiply**
+
+
+    Oasis Multiply, which is built on top of the Maker Protocol, 1inch DEX aggregator and Aave, allows users to borrow DAI and create Multiply Positions. These positions are similar to leveraged or margin positions but without the need to borrow funds from a centralised counterparty. You are able to immediately utilize your generated DAI to buy more collateral without having to leave Oasis.
+    With Oasis Multiply, user can use their ETH, wBTC or other Maker supported collateral types to create a Multiply position (up to 4x*) and take advantage of upward trends of the supplied collateral. 
+
+
+    ### Important terms in MakerDAO
+
+
+    **Dust**                                                                                                                                                                    
+    
+    The minimum vault debt, also called “dust” or “Debt Floor”, is the minimum possible debt of a Vault. When opening a vault, a user has to generate at least this amount in DAI. Otherwise, the transaction will fail 
+    
+    
+    **Collateralized Debt Position (CDP)**                                                                                                                                                                                                                        
+    
+    A collateralized debt position (CDP) is a position that users create every time they lock up collateral in MakerDAO’s smart contracts to generate DAI. That is, when users borrow DAI by overcollateralization, they are said to be in an open CDP. 
+    
+    
+    **DAI Savings Rate (DSR)**                                                                                                                                                                      
+    
+    The DAI interest rate is earned by depositing DAI into the DAI Savings Rate (DSR). The DSR is supported by fees charged on the owners of the Maker collateral vault. It is free for every DAI owner. The DSR does not deprive users of their ownership rights on their assets, and they are free to withdraw their funds anytime depending on their choice. The DSR rate is determined by MKR token holders, based on prevailing market conditions. DSR helps maintain DAI’s peg by balancing the protocol using the stability fees accrued. Since the demand for DAI can be reduced or increased by decreasing and increasing the DSR respectively.
+    
+    
+    **DAI and SAI**                                                                                                                                                                             
+    
+    When DAI was initially launched, it was backed by only one collateral, ETH. This version of DAI was known as “SAI,” aka Single Collateral DAI. However, the end goal was always to have a multi-collateral DAI or MCD. Eventually Maker’s protocol was updated to include other assets as collateral along with ETH. 
+    
+    
+    **Stability fee**                                                                                                                                             
+    
+    When users deposit crypto assets to mint the protocol’s stablecoin, DAI, the debt incurs a stability fee which is effectively a continuously accruing interest that is due upon repayment of the borrowed tokens.                                                                                                                                        
+    Let's say I have 100 ETH, and I deposit it to OASIS as collateral. Say, currently there is a 9% stability fee and let's say that the price of ETH is $100. I take out a loan for 5000 dai and BUY 50 ETH with it. I wait a few days and the price of ETH goes to 110. I then sell the 50 ETH for 5500 DAI and pay back 5000 dai. The stability fee is 9% APY, meaning that it would turn out to be a total of 9% of your debt after a full year, but the stability fee accumulates for every block at some smaller APR meaning I have to pay a few DAI as stability fee as opposed to 0.9*5000 = 45 DAI, which I would have to pay only if the loan has been accumulating stability fee for a year.                                                                                                          
+    It is essentially used to control the supply and demand of DAI borrowing. Increasing the stability fee pushes up the cost of borrowing DAI, reducing demand for minting the token. Conversely, reducing the fees, as MakerDAO has just done, drops the cost of borrowing DAI to stimulate demand.
+    
+    
+    **System stabilizer module**                                                                                                                            
+    
+    The System Stabilizer Module's purpose is to protect the system from instability by providing incentives for Auction Keepers (external actors) to participate in both debt and surplus auctions. In doing so, they can help drive the system back to a safe state (system balance) and earn profits in the process.
+    
+    
+    **Keepers**
+    
+    
+    Keeper is an independent party that is motivated by the potential for profit to provide liquidity in various aspects of a decentralized system. In the Maker Protocol, Keepers are market participants that help DAI maintain its Target Price ($1): they sell DAI when the market price is above the Target Price, and buy DAI when the market price is below the Target Price. Keepers participate in Surplus Auctions, Debt Auctions, and Collateral Auctions when Maker Vaults are liquidated.
+    
+    
+    **Auction keepers**                                                                                                                              
+    
+    Auction Keepers are third-party actors that are motivated by profit to contribute to decentralized systems. In the context of the Maker Protocol, these agents are incentivized to automate operations around the Ethereum blockchain, such as seeking out and starting new auctions, detecting auctions started by other participants, and bidding on auctions.
+   
+   
+    **Emergency shutdown (ES)**                                                                                                                                                         
+    
+
+    A metaphorical switch turns off to protect the DAO from serious threats or pause proceedings during a Protocol upgrade. MKR holders are able to trigger the ES. It works in the following way. First, the MKR holders deposit their MKR into the Emergency Shutdown Module (ESM). When 50,000 MKR has been deposited in the ESM by the users, ESM calls ES. Immediately, the Maker protocol is shut down while ensuring that all the DAI holders and Vault users are paid what they are owed. 
+    
+    
+    **How are the assets listed on MakerDAO chosen?**                                                                            
+    
+    They are chosen based on governance proposals by the users.
+
+
+    ### Liquidation
+
+
+    The collateralization ratio is the ratio between the total DAI loan taken to the collateral's value. When this collateralization ratio drops below the liquidation ratio, it triggers the liquidation event. 
+    In the event that a Vault does not have enough collateral to support its outstanding debt, the protocol will automatically liquidate the Vault's collateral in order to repay the debt. The liquidation process is handled by a smart contract called the "Dog." Once a Vault is liquidated, an auction is immediately started in order to sell the Vault's collateral for DAI. The goal of the auction is to raise enough DAI to cancel out the debt owed to the protocol.
+    Liquidation 2.0 uses Dutch auctions, which settle instantly, rather than the old Liquidation 1.2 system, which used English auctions. In a Dutch auction, DAI bids are placed according to a price calculated from the initial price and the time elapsed since the auction began. This lack of a lock-up period mitigates much of the price volatility risk for auction participants and allows for faster capital recycling.
+    
+   
+    **Partial vs total liquidations**
+
+
+    In the current system, the liquidation function (Cat.bite) transfers a fixed amount of debt (the dunk) from the affected Vault to the protocol, along with a proportional amount of the Vault's collateral. For example, if 50% of a Vault's debt is taken by the protocol, then half of its collateral is taken as well. If the Vault's debt is less than the dunk, then all debt and collateral is taken.
+    
+    In 2.0, all debt is taken when the liquidation function (Dog.bark) is called, and no analogue of the dunk parameter exists. This means that when a Vault is liquidated, all of its debt and collateral will be taken by the protocol.
+    
+    The rationale for this change is that, with the new auctions now allowing for partial purchases of collateral, liquidity is no longer an issue for participants and so the total number of auctions should be reduced. Just to reiterate, there is now no minimum DAI liquidity requirement for the sale of collateral on a per-participant basis.
+    
+    
+    **Flash lending of collateral**
+
+
+    This feature, enabled by instant settlement, eliminates the need for bidders to have any capital (except for gas). Meaning that even a participant with zero DAI could still purchase from an auction by directing the sale of the auction's collateral into other protocols in exchange for DAI.
+    
+    
+    
+    **Liquidation incentive mechanism**
+
+    
+    The incentive is done on a per-collateral type basis a constant amount of DAI plus an amount of DAI that scales linearly with the amount of debt associated with the liquidation. This is to ensure proper motivation for liquidators to keep the system running smoothly. Either contribution can be set to zero. Let us look at the two components in a little more detail.
+     - The purpose of the liquidator rewards that increase proportionally to the total Vault debt is to incentivize them for reducing risk to the system. This is because risk accumulates in direct relation to the size of undercollateralized Vaults. In other words, a Vault that is twice the size as another Vault represents twice the risk of bad debt accrual. From another perspective, liquidating two vaults of size X would present the same amount of risk reduction as liquidating one Vault of size 2X—thus, the reward given to a liquidator should be similar.
+     - The constant component of the reward can be used to cover gas costs (which are per-Vault for liquidators) or to allow MKR holders to effectively pay Keepers to clear small Vaults that would otherwise not be attractive for liquidation. In this way, the constant component helps to ensure that the liquidation process is more efficient and that small Vaults are not left unchecked. Since it is understood that the liquidation incentive for liquidating a small vault would be miniscule if the incentives depended solely on the size of the vault.
+    
+    
+
+- key: makerdao-tokens
+  title: MakerDAO Tokens
+  shortTitle: MakerDAO Tokens
+  details: >-
+    ### Tokens and vaults in MakerDAO
+
+    **MKR**
+    
+    The MKR governance token is the key to the Maker Protocol. It allows those who hold it to vote on changes to the Maker Protocol. Note that anyone can submit proposals for changes to the protocol, not just MKR holders. Another use of MKR, apart from governance, is that if existing collateral does not cover the amount of DAI loans in circulation, the protocol mints MKR tokens and sells them to cover for the collateral deficit in the system. MakerDAO initially launched with a supply of 1 million MKR tokens and there is currently a circulating supply of around 900,000 MKR.
+    There are two types of voting, governance and executive. The governance issues are to resolve problems while the executive issues aim at changing the system’s state / working. To vote, it is recommended that the user set up a proxy contract but that is beyond the scope of what we wish to cover.
+    
+    
+    **DAI**
+   
+    The need for DAI arised because there is a lack of open transparency when it comes to fiat stablecoin, centralized agencies producing stablecoin are not well audited and the problem of censorship of certain assets by the centralized agencies which prevent users from using a given currency.The DAI stablecoin is pegged to the USD and is generated by users depositing collateral assets into Maker Vaults within the Maker Protocol. To generate DAI, the Maker Protocol accepts as collateral any Ethereum-based asset that has been approved by MKR holders. MKR holders must also approve specific, corresponding Risk Parameters for each accepted collateral to ensure that DAI is entered into circulation safely and users have access to liquidity.Others obtain DAI by buying it from brokers or exchanges, or simply by receiving it as a means of payment.   
+    DAI is a cryptocurrency that can be used in the same way as any other cryptocurrency: it can be sent to others, used as payment for goods or services, and even saved. DAI is different from other cryptocurrencies because it is backed by collateral, meaning that there is always more value in the collateral than in the DAI debt. All DAI transactions are publicly viewable on the Ethereum blockchain.
+    
+    
+    DAI is kept stable in the following ways,
+
+
+    * **Surplus auction -** During surplus auctions, surplus DAI is auctioned off in exchange for MKR. The system accumulates surplus DAI via stability fees. The MKR collected during surplus auctions is eventually burnt off.
+   
+    * **Collateral auction -** Collateral Auctions are used to recover the debt in liquidated Vaults. A vault gets liquidated when the collateral value has dropped below a specific limit (as determined by the community).
+    
+    * **Debt auction -** In this auction, Maker auctions off MKR for a fixed amount of DAI. Debt auctions are triggered when the system has DAI debt drops below this pre-specified level. This is done to recapitalize the system.
+
+    
+- key: references
+  title: References
+  shortTitle: References
+  details: |-
+    Here are some important links to learn more about MakerDAO
+
+    https://docs.makerdao.com/
+
+    https://oasis.app/#earn
+
+    https://decrypt.co/resources/makerdao-guide-learn-explained-decrypt-3-minutes
