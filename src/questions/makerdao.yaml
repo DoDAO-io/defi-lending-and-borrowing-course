@@ -1,6 +1,6 @@
 - uuid: cb274dad-bb8d-484a-83a5-486530ddff69
   type: SingleChoice
-  content: What are the two tokens in MakerDAO's two token system?
+  content: What are the tokens in MakerDAO's two token system?
   hint: NoHint
   explanation: MKR and DAI
   answerKeys:
@@ -42,7 +42,7 @@
       
 - uuid: 27b70dc5-b43e-46f9-a311-2d545ad3794c
   type: MultipleChoice
-  content: All Maker vaults have the same set of risk parameters (for example, dust)
+  content: All Maker vaults have the same set of risk parameters (for example, dust, collateral factor, liquidation ratio / factor etc)
   hint: NoHint
   explanation: Every Maker Vault has its own risk parameters.
   answerKeys:
@@ -59,12 +59,12 @@
   type: SingleChoice
   content: What is dust in MakerDAO?
   hint: NoHint
-  explanation: The minimum vault debt (or) the minimum possible debt of a vault is called dust. 
+  explanation: The minimum vault debt (or) the minimum possible debt of a vault is called dust. If the user attempts to open a vault for a collateral asset, borrowing less than the dust value, the request will be denied by the protocol.
   answerKeys:
     - A
   difficultyLevel: "Medium"
   choices:
-    - content: Minimum amount of DAI that must be borrowed from a given vault
+    - content: Minimum amount of DAI that must be borrowed to open a vault with the given collateral asset
       key: A
       
     - content: The fees paid by user to stabilize the protocol
@@ -78,7 +78,7 @@
           
 - uuid: 8af1460a-a78f-4a08-8ad3-ba5e1ec27d39
   type: MultipleChoice
-  content: What are the use cases of DSR?
+  content: What are the use cases of DSR (Dai Savings Rate)?
   hint: NoHint
   explanation: Users can deposit DAI into DSR (Dai Savings Rate) to earn interest, the Maker protocol can use the DSR to maintain the peg of DAI by increasing and decreasing the rate of interest.
   answerKeys:
@@ -95,7 +95,7 @@
     - content: Users can borrow more DAI using DSR
       key: C
       
-    - content: The protocol can use DSR to maintain a stable peg for DAI
+    - content: By increasing or decreasing the returns on DAI invested, the protocol can increase or decrease the demand (value) of DAI 
       key: D
 
 - uuid: 0134d2f6-28b5-42a7-9e94-afb0e2c5992f

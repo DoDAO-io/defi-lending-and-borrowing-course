@@ -1411,7 +1411,343 @@
           "details": "Here are some important links to learn more about MakerDAO\n\nhttps://docs.makerdao.com/\n\nhttps://oasis.app/#earn\n\nhttps://decrypt.co/resources/makerdao-guide-learn-explained-decrypt-3-minutes"
         }
       ],
-      "questions": [],
+      "questions": [
+        {
+          "uuid": "cb274dad-bb8d-484a-83a5-486530ddff69",
+          "type": "SingleChoice",
+          "content": "What are the tokens in MakerDAO's two token system?",
+          "hint": "NoHint",
+          "explanation": "MKR and DAI",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "low",
+          "choices": [
+            {
+              "content": "MKR and DAI",
+              "key": "A"
+            },
+            {
+              "content": "DAI and SAI",
+              "key": "B"
+            },
+            {
+              "content": "DAI and VAI",
+              "key": "C"
+            },
+            {
+              "content": "MKR and DAO",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "567a6a91-b11f-4823-908f-a3a7903ce614",
+          "type": "SingleChoice",
+          "content": "How is DAI borrowed?",
+          "hint": "NoHint",
+          "explanation": "DAI is borrowed by opening an overcollateralized debt position by creating a maker vault",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "DAI can no longer be borrowed in MakerDAO",
+              "key": "A"
+            },
+            {
+              "content": "By buying it at a 1:1 ratio with USD",
+              "key": "B"
+            },
+            {
+              "content": "By requesting MakerDAO officials",
+              "key": "C"
+            },
+            {
+              "content": "By opening an overcollateralized borrow position in a Maker vault",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "27b70dc5-b43e-46f9-a311-2d545ad3794c",
+          "type": "MultipleChoice",
+          "content": "All Maker vaults have the same set of risk parameters (for example, dust, collateral factor, liquidation ratio / factor etc)",
+          "hint": "NoHint",
+          "explanation": "Every Maker Vault has its own risk parameters.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "89b629ad-2c5f-4aee-bb15-7218360ba572",
+          "type": "SingleChoice",
+          "content": "What is dust in MakerDAO?",
+          "hint": "NoHint",
+          "explanation": "The minimum vault debt (or) the minimum possible debt of a vault is called dust. If the user attempts to open a vault for a collateral asset, borrowing less than the dust value, the request will be denied by the protocol.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Minimum amount of DAI that must be borrowed to open a vault with the given collateral asset",
+              "key": "A"
+            },
+            {
+              "content": "The fees paid by user to stabilize the protocol",
+              "key": "B"
+            },
+            {
+              "content": "The interest paid by user on their debt",
+              "key": "C"
+            },
+            {
+              "content": "The interest received by user for depositing in Maker vaults",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "8af1460a-a78f-4a08-8ad3-ba5e1ec27d39",
+          "type": "MultipleChoice",
+          "content": "What are the use cases of DSR (Dai Savings Rate)?",
+          "hint": "NoHint",
+          "explanation": "Users can deposit DAI into DSR (Dai Savings Rate) to earn interest, the Maker protocol can use the DSR to maintain the peg of DAI by increasing and decreasing the rate of interest.",
+          "answerKeys": [
+            "A",
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Users can earn interest on deposited DAI",
+              "key": "A"
+            },
+            {
+              "content": "DSR is a function used to liquidate bad borrows",
+              "key": "B"
+            },
+            {
+              "content": "Users can borrow more DAI using DSR",
+              "key": "C"
+            },
+            {
+              "content": "By increasing or decreasing the returns on DAI invested, the protocol can increase or decrease the demand (value) of DAI",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "0134d2f6-28b5-42a7-9e94-afb0e2c5992f",
+          "type": "SingleChoice",
+          "content": "What is the difference between DAI and SAI?",
+          "hint": "NoHint",
+          "explanation": "DAI can be borrowed using multiple kinds of collateral, whereas SAI could only be borrowed using ETH.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "SAI can be borrowed using multiple kinds of collateral whereas DAI only accepted ETH as collateral",
+              "key": "A"
+            },
+            {
+              "content": "DAI can be borrowed using multiple kinds of collateral whereas SAI only accepted ETH as collateral",
+              "key": "B"
+            },
+            {
+              "content": "SAI has been renamed to DAI but they are identical",
+              "key": "C"
+            },
+            {
+              "content": "DAI has been renamed to SAI but they are identical",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "a2896a2c-dc4f-4f74-b8ac-1f1b270420db",
+          "type": "SingleChoice",
+          "content": "Which of these is true about Stability fee?",
+          "hint": "NoHint",
+          "explanation": "Stability fee is accrued continually on opening a borrow and is paid while repaying a borrow position.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "It is accrued continually and paid back while repaying the open borrow",
+              "key": "A"
+            },
+            {
+              "content": "It is a fixed fee paid while opening a vault",
+              "key": "B"
+            },
+            {
+              "content": "It is a fixed fee paid while closing the vault",
+              "key": "C"
+            },
+            {
+              "content": "The protocol pays the user to user in order to provide reassurance (stability) to the user",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "5ee63327-8ff6-4f3f-9393-dafaaf5bf4e6",
+          "type": "SingleChoice",
+          "content": "What are keepers?",
+          "hint": "NoHint",
+          "explanation": "Keeper is an independent party that is motivated by the potential for profit to provide liquidity in various aspects of a decentralized system.",
+          "answerKeys": [
+            "D"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "Holders of MKR are called Keepers",
+              "key": "A"
+            },
+            {
+              "content": "Keeper is the smartcontract that provides the logic for the maker vaults",
+              "key": "B"
+            },
+            {
+              "content": "Keeper is a smartcontract that provides liquidity in various aspects of a decentralized system.",
+              "key": "C"
+            },
+            {
+              "content": "Keeper is an independent party that is motivated by the potential for profit to provide liquidity in various aspects of a decentralized system.",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "039e6048-59a8-48b4-bd6b-7bf7079401b0",
+          "type": "SingleChoice",
+          "content": "The Emergency shutdown takes place when MKR holders vote for it.",
+          "hint": "NoHint",
+          "explanation": "False, Emergency shutdown takes place when users deposit 50,000 MKR in the Emergency Shutdown Module (ESM).",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "True",
+              "key": "A"
+            },
+            {
+              "content": "False",
+              "key": "B"
+            }
+          ]
+        },
+        {
+          "uuid": "1ded303b-fbb1-4b7a-beeb-31e9444a6bf4",
+          "type": "MultipleChoice",
+          "content": "What is done to maintain the peg of DAI?",
+          "hint": "NoHint",
+          "explanation": "The protocol uses Surplus auctions, Collateral auctions and Debt auctions to increase / decrease the supply of DAI which could be used to regulate its peg to the USD.",
+          "answerKeys": [
+            "B",
+            "C",
+            "D"
+          ],
+          "difficultyLevel": "High",
+          "choices": [
+            {
+              "content": "DAI is only borrowable using the USD fiat currency",
+              "key": "A"
+            },
+            {
+              "content": "Surplus DAI is auctioned off in exchange for MKR to decrease DAI supply",
+              "key": "B"
+            },
+            {
+              "content": "Collateral Auctions are used to recover the debt in liquidated Vaults",
+              "key": "C"
+            },
+            {
+              "content": "Maker auctions off MKR for a fixed amount of DAI which could increase DAI demand",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "a593a298-ce9f-46b8-96df-a6d12355fc08",
+          "type": "SingleChoice",
+          "content": "Which of these is true regarding the liquidation incentive?",
+          "hint": "NoHint",
+          "explanation": "The incentive is, on a per-collateral type basis, a constant amount of DAI plus an amount of DAI that scales linearly with the amount of debt associated with the liquidation.",
+          "answerKeys": [
+            "A"
+          ],
+          "difficultyLevel": "Medium",
+          "choices": [
+            {
+              "content": "It is a constant amount of DAI plus an amount linearly dependant on the amount of debt liquidated",
+              "key": "A"
+            },
+            {
+              "content": "It is a constant amount of DAI only",
+              "key": "B"
+            },
+            {
+              "content": "It is an amount only depending on how much debt has been liquidated",
+              "key": "C"
+            },
+            {
+              "content": "Liquidations are no longer incentivized",
+              "key": "D"
+            }
+          ]
+        },
+        {
+          "uuid": "b5d460b3-eb82-4032-9f28-5d0a8a0ca122",
+          "type": "SingleChoice",
+          "content": "Liquidation 2.0 uses which of these to auction underwater debts?",
+          "hint": "NoHint",
+          "explanation": "Liquidation 2.0 uses Dutch auctions, which settle instantly, rather than the old Liquidation 1.2 system, which used English auctions.",
+          "answerKeys": [
+            "B"
+          ],
+          "difficultyLevel": "Low",
+          "choices": [
+            {
+              "content": "English auctions",
+              "key": "A"
+            },
+            {
+              "content": "Dutch auctions",
+              "key": "B"
+            },
+            {
+              "content": "Real life auctions",
+              "key": "C"
+            },
+            {
+              "content": "American auctions",
+              "key": "D"
+            }
+          ]
+        }
+      ],
       "readings": [],
       "summaries": []
     }

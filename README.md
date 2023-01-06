@@ -27,4 +27,4 @@ This is the course header. This will be added on top of every page. Go to [DoDAO
  | 3      | Euler | | [Details](generated/topics/euler.md) <br/> [Explanations](generated/explanations/euler.md) <br/>  <br/>  <br/> [Questions](generated/questions/euler.md) | undefined | undefined |
  | 4      | Venus | | [Details](generated/topics/venus.md) <br/> [Explanations](generated/explanations/venus.md) <br/>  <br/>  <br/> [Questions](generated/questions/venus.md) | undefined | undefined |
  | 5      | Aave | | [Details](generated/topics/aave.md) <br/> [Explanations](generated/explanations/aave.md) <br/>  <br/>  <br/> [Questions](generated/questions/aave.md) | undefined | undefined |
- | 6      | MakerDAO | | [Details](generated/topics/makerdao.md) <br/> [Explanations](generated/explanations/makerdao.md) <br/>  <br/>  <br/>  | undefined | undefined | 
+ | 6      | MakerDAO | | [Details](generated/topics/makerdao.md) <br/> [Explanations](generated/explanations/makerdao.md) <br/>  <br/>  <br/> [Questions](generated/questions/makerdao.md) | undefined | undefined | 
