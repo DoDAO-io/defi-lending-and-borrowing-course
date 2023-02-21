@@ -109,4 +109,4 @@ coursePassContent: Pass content
 topicConfig:
   showExplanations: true
   showHints: true
-priority: 60
+priority: 65
