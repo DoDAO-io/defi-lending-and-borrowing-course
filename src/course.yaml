@@ -11,7 +11,8 @@ highlights:
   - Venus
   - Maker
 publishStatus: Live
-thumbnail: https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/lending_and_borrowing_course.png
+thumbnail: >-
+  https://d31h13bdjwgzxs.cloudfront.net/courses/DoDAO/CourseIcons/lending_and_borrowing_course.png
 details: >-
   In this course we first give some introduction to Lending and Borrowing in
   DeFi and then we  discuss how lending and borrowing works in various protocols
@@ -84,23 +85,22 @@ topics:
 
     questions: venus.yaml
     explanations: venus.yaml
-
   - title: Aave
     key: aave
     details: >+
-     Aave is a decentralized, non-custodial liquidity market protocol that runs on
-     the Ethereum blockchain. Not only does it allow its users to earn a passive income by providing liquidity 
-     to the market, or by borrowing in an overcollateralized fashion, It also provides the user with a plethora of 
-     innovative features in the realm of finance. 
-      
+      Aave is a decentralized, non-custodial liquidity market protocol that runs
+      on the Ethereum blockchain. Not only does it allow its users to earn a
+      passive income by providing liquidity  to the market, or by borrowing in
+      an overcollateralized fashion, It also provides the user with a plethora
+      of  innovative features in the realm of finance. 
+       
 
 
 
 
-    
+
     explanations: aave.yaml
     questions: aave.yaml
-
 courseAdmins:
   - '0xc28f5a9f1dcaf540660adde8b93d172f560d140f'
   - '0x34d014758297c00fea49935fce172677904d51ef'
@@ -109,3 +109,4 @@ coursePassContent: Pass content
 topicConfig:
   showExplanations: true
   showHints: true
+priority: 60
